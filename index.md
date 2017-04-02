@@ -20,4 +20,5 @@ to the "serving lead" philosophy by giving people a clear goal
 and then helping them do the best work possible and improve along
 the way.
 
-Download my [CV in pdf format](./CV_Radan_Skoric.pdf).
+Download my [CV in pdf format](./CV_Radan_Skoric.pdf) or
+browse [my presentations](./present).
