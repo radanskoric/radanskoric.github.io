@@ -10,6 +10,8 @@ permalink: /present/
 * [State of Remote Freelancing](https://www.youtube.com/watch?v=g9UgPsdP9vI) (Webcamp Zagreb 2015)
 
 #### Presentation given at [Ruby ZG meetup](https://www.meetup.com/rubyzg/)
+* [Stumbling off the Rails](../presentations/files/stumbling_off_the_rails.pdf)
+    ([keynote file](../presentations/files/stumbling_off_the_rails.key))
 * [Extreme programming explained](../presentations/files/extreme_programming.pdf)
     ([keynote file](../presentations/files/extreme_programming.key))
 * [**** microservices](../presentations/files/microservices.pdf)
