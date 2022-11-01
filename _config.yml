@@ -21,6 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://radanskoric.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: radanskoric
 linkedin_username: radanskoric
+google_analytics: "FAKE-TO-GET-MINIMA-TO-EMBED-ANALYTICS-INCLUDE"
 
 # Build settings
 markdown: kramdown
