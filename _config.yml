@@ -18,10 +18,9 @@ email: radan.skoric@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Radan Skorić's personal site.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://radanskoric.eu" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://radanskoric.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: radanskoric
 linkedin_username: radanskoric
-google_analytics: UA-161623914-1
 
 # Build settings
 markdown: kramdown
