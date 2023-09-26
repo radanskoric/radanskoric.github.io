@@ -1,4 +1,4 @@
-RSpec.describe "Ruby local variables post" do
+RSpec.describe "POST: Is it possible to conditionally define a local variable in Ruby?" do
   specify do
     if true
       x = 42

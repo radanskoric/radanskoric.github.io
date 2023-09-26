@@ -31,4 +31,7 @@ group :development, :test do
    gem "webrick"
 
    gem "rspec"
+
+   gem "pry", "~> 0.14.2"
+   gem "pry-doc", require: false
 end
