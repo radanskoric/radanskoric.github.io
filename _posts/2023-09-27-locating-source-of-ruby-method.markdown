@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "How to locate the source of a Ruby method"
-date:   2023-09-26
-categories: ruby
+date:   2023-09-27
+categories: articles
+tags: ruby
 ---
 
 _"Wait, where the hell is this method coming from??"_"

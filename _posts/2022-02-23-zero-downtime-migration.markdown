@@ -2,7 +2,8 @@
 layout: post
 title:  "PostgreSQL zero-downtime migration of a primary key from int to bigint (with Ruby on Rails specific notes)!"
 date:   2022-02-23
-categories: postgresql rails
+categories: articles
+tags: postgresql rails
 ---
 
 _**Preface: I wrote this post for [the Silverfin engineering blog](https://engineering.silverfin.com/pg-zero-downtime-bigint-migration/) and replicated it here on my personal blog with permission.**_

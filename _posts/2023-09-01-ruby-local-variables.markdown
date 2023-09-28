@@ -2,7 +2,8 @@
 layout: post
 title:  "Is it possible to conditionally define a local variable in Ruby?"
 date:   2023-09-01
-categories: ruby
+categories: articles
+tags: ruby
 ---
 
 Let's say you wish to conditionally define a local variable in Ruby. Why would you need that? That's beside the point, it's mostly a thought excercise that's an excuse to learn about a specific corner of Ruby. But, if you still want a real use case, you're being a bit difficult, but let's say that you've got some metaprogramming code that at some points uses `defined?(x)` calls to do something based on whether a local variable is defined or not. Yes, it's very contrived.
