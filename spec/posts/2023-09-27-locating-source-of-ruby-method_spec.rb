@@ -20,6 +20,29 @@ RSpec.describe "POST: How to locate the source of a Ruby method" do
       ]
     end
 
+    it "does not works when trying to access super method directly" do
+      expect do
+        Class.new(Foo) do
+          def bar
+            method(:super).source_location
+          end
+        end.new.bar
+      end.to raise_error(NameError)
+    end
+
+    it "works when trying to access the super method via super_method method" do
+      expect(
+        Class.new(Foo) do
+          def bar
+            self.method(__method__).super_method.source_location
+          end
+        end.new.bar
+      ).to eq [
+        "#{File.dirname(__FILE__)}/#{REGULAR}",
+        3
+      ]
+    end
+
     it "works for dynamic method with a block" do
       expect(Dynamic.new.method(:bar).source_location).to eq [
         "#{File.dirname(__FILE__)}/#{DYNAMIC}",

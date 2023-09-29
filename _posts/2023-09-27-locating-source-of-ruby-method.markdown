@@ -2,6 +2,7 @@
 layout: post
 title:  "How to locate the source of a Ruby method"
 date:   2023-09-27
+modified_date: 2023-09-29
 categories: articles
 tags: ruby
 ---
@@ -32,6 +33,18 @@ Ruby has the answer ready in the form of `source_location` which will very helpf
  => ["~/foo.rb", 3]
 ```
 
+### The super special case
+
+Calling the `super` method from a method looks suspiciously like a method call:
+```ruby
+class FooChild < Foo
+  def bar
+    super()
+  end
+end
+```
+But if you try to get its location directly with `method(:super)` you'll get a `NameError: undefined method 'super'`. That is because `super` is a keyword that is resolved by the VM to the actual super method. Instead you want to use `Method#super_method` and apply the same approach we just learned to get **its** location: `FooChild.new.method(:bar).super_method.source_location`.
+
 ## Bonus: locating constants.
 
 Since Ruby 2.7 we have another powerful method at our disposal: `const_source_location` which allows us to do the same for constants:
@@ -39,7 +52,7 @@ Since Ruby 2.7 we have another powerful method at our disposal: `const_source_lo
 3.2.2 :002 > Object.const_source_location(:Foo)
  => ["~/foo.rb", 2]
 ```
-#### Pry
+### Pry
 If you are using [Pry](https://rubygems.org/gems/pry){:target="_blank"} as your REPL instead of the default IRB, it's even easier. Pry has the `show-source` (aliased as `$` ) command which is even more helpful and automatically works for both constants and methods:
 ```
 [2] pry(main)> show-source Foo.new.bar
@@ -54,6 +67,7 @@ def bar
 end
 ```
 Side note, there's also a companion `show-doc` (aliased as `?`) command that shows the YARD documentation for the method.
+
 ## The hard case: Dynamically defined Ruby method
 
 Let's consider a case where we dynamically define some methods but still use regular Ruby code defined in a block:
