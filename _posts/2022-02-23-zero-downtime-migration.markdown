@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "PostgreSQL zero-downtime migration of a primary key from int to bigint (with Ruby on Rails specific notes)!"
-date:   2022-02-23
+date: 2022-02-23
+modified_date: 2023-10-10
 categories: articles
 tags: postgresql rails
 ---
@@ -231,6 +232,12 @@ Once we’ve done that the now renamed `old_id` field still owns the primary key
 ALTER SEQUENCE table_id_seq OWNED BY table.id;
 ALTER TABLE table ALTER COLUMN old_id DROP DEFAULT;
 ```
+
+If the sequence was created as an `int` sequence it will have an int value for its `MAXVALUE`. To take care of that run:
+```sql
+ALTER SEQUENCE table_id_seq AS bigint;
+```
+If the sequence is already a `bigint`, this will not do anything so it is safe to run just to be sure.
 
 Now finally you can move the primary key from the old to the new field. Normally adding a primary key constraint requires an underlying unique index to be built. However, you can tell it to use an existing unique index which makes the operation a fast metadata only change. This is also why it was important that we built this index before:
 ```sql
