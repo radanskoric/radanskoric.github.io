@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Presentations
 permalink: /present/
+icon: fas fa-person-chalkboard
+order: 2
 ---
 
 #### Presentations given at conferences
