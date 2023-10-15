@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Where should RoR business logic be kept?</title>
+
+		<meta name="description" content="A quick birds eye overview of a few techniques for organising business logic in Rails applications">
+		<meta name="author" content="Radan Skorić">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<style>
+		  .reveal pre code { font-size: 80%; }
+
+      #logo { position: absolute; top: 20px; right: 20px; width: 105px; height: 34px; }
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Where's the business logic?</h2>
+					<br>
+					<p>
+						Radan Skorić
+					</p>
+				</section>
+
+        <section>
+          <section>
+            <h2>Story time</h2>
+          </section>
+
+          <section>
+            <blockquote>
+              It was a fine day and Radan was thinking about how to make the day even better.
+            </blockquote>
+          </section>
+
+          <section>
+            <blockquote>
+              Radan: I'll go grab lunch.
+            </blockquote>
+          </section>
+
+          <section>
+            <blockquote>
+              A wild sales person appears.
+            </blockquote>
+          </section>
+
+          <section>
+            <blockquote>
+              Sales person: Hey, quick question. What exactly happens when I edit the company and change its business type to Enterprise, I remember you guys saying you tied some logic to that.
+            </blockquote>
+          </section>
+
+          <section>
+            <blockquote>
+              Radan: Hm, yeah, I'm not sure, give me a moment, I'll check in the code.
+            </blockquote>
+          </section>
+
+          <section>
+            <blockquote>
+              Radan (thinking): Let's see ... hm ... and these callbacks run when ... why is this done like this ... what idiot wrote this ... oh, me ...
+            </blockquote>
+          </section>
+
+          <section>
+            <blockquote>
+              Radan (20 minutes later): Here's a list of all side effects. I'm mostly sure that's it.
+            </blockquote>
+          </section>
+
+          <section>
+            <blockquote>
+              Radan leaves, questioning his life choices.
+            </blockquote>
+          </section>
+        </section>
+
+        <section>
+          <h2>Business logic is usually the fastest changing code in the system</h2>
+        </section>
+
+        <section>
+          <section>
+            <p style='font-size: 50pt'>
+              Business/Domain logic encodes the real world rules of your business domain.
+            </p>
+          </section>
+
+          <section>
+            <p style='font-size: 50pt'>
+              Business logic that changes <br> the state of the system
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <img src="./images/MVC-Process.svg" />
+        </section>
+
+        <section>
+          <h3>Applying to a job on a job board</h3>
+
+          <ol>
+            <li>Check that applicant skills match job requirements</li>
+            <li>Create a job application record</li>
+            <li>Notify job owner about a new applicant</li>
+          </ol>
+        </section>
+
+        <section>
+          <section>
+            <h3>All in the models</h3>
+            <ul>
+              <li>
+                Put all the business logic into models, as special methods
+              </li>
+              <li>
+                Controllers do nothing but invoke methods on the model
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="./images/all-in-the-model.svg" />
+          </section>
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Only one place to look at for all the rules related to a certain model</li>
+              <li>Easy to add simple methods that are related to only one model</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Hard to decide where to put code related to multiple models</li>
+              <li>Huge models</li>
+              <li>Hard to make it context dependent</li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h3>All in the controllers</h3>
+            <ul>
+              <li>
+                Controller actions contain all business logic checks and side-effects
+              </li>
+              <li>
+                Each controller action is responsible for a clear business action
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="./images/all-in-controllers.svg" />
+          </section>
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Linear code, easy to read and understand</li>
+              <li>Easy to have it be context specific</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Coupled with the delivery mechanism and HTTP response formatting</li>
+              <li>Hard to reuse business logic</li>
+              <li>Hard to check business action preconditions from view</li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h3>Service objects</h3>
+            <ul>
+              <li>Introduce special objects to contain the business logic</li>
+              <li>Business actions are implemented as methods on the objects</li>
+              <li>Side effects and validations are explicitly stated in the methods</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="./images/service-objects.svg" />
+          </section>
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Linear code, easy to read and understand</li>
+              <li>Easy to have it be context specific</li>
+              <li>Service objects can easily call other service objects
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Need to introduce another type of entity into the system</li>
+              <li>Tends to cause somewhat big procedural style methods</li>
+              <li>Hard to check business action preconditions from views</li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h3>Form / Business action objects</h3>
+            <ul>
+              <li>Each business action is a single class</li>
+              <li>Instances of the class are specific business actions</li>
+              <li>Expose methods needed to check validity and to execute the action</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="./images/ba-objects.svg" />
+          </section>
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>All logic related to a business action in one place</li>
+              <li>Business actions can mimic normal models</li>
+              <li>BAs can call other BAs</li>
+              <li>Easy to reuse same code (e.g. validations) in multiple contexts</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Separate class for each business action</li>
+              <li>Logic can still become complex is same action behaves differently in different contexts</li>
+              <li>Long chains of business actions calling other business actions can become hard to follow</li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <h2>Data, Context, Interaction</h2>
+          <ul>
+            <li>Models are thin, only contain data, relationships and invariants</li>
+            <li>We introduce contexts that inject roles (extra behaviour) into models at runtime</li>
+            <li>The roles are responsible for implementation of interactions between models</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2> Questions? </h2>
+          <h3> For reference, the approaches: </h3>
+          <ul style="font-size: 1.2em; line-height:1.2em">
+            <li>All in the models</li>
+            <li>All in the controllers</li>
+            <li>Service objects</li>
+            <li>Form / Business action objects</li>
+            <li>Data, Context, Interaction</li>
+          </ul>
+        </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width:'80%',
+				height: '100%',
+				transition: 'linear',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

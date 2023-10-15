@@ -1,0 +1,71 @@
+<svg width="550" height="550" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <defs>
+  <marker orient="auto" refY="0" refX="0" id="Arrow2Mstart">
+   <path id="path3232" d="m8.71859,4.03374l-10.92588,-4.01773l10.92588,-4.01772c-1.7455,2.37206 -1.73544,5.61745 0,8.03545z" transform="scale(0.6000000238418579) " stroke-linejoin="round" stroke-width="0.625" fill-rule="evenodd"/>
+  </marker>
+  <marker orient="auto" refY="0" refX="0" id="Arrow2Mend">
+   <path id="path3235" d="m8.71859,4.03374l-10.92588,-4.01773l10.92588,-4.01772c-1.7455,2.37206 -1.73544,5.61745 0,8.03545z" transform="scale(-0.6000000238418579) " stroke-linejoin="round" stroke-width="0.625" fill-rule="evenodd"/>
+  </marker>
+  <pattern height="100" width="100" y="0" x="0" patternUnits="userSpaceOnUse" id="gridpattern">
+   <image height="100" width="100" y="0" x="0" id="svg_6"/>
+  </pattern>
+  <pattern height="100" width="100" y="0" x="0" patternUnits="userSpaceOnUse" id="gridpattern">
+   <image height="100" width="100" y="0" x="0"/>
+  </pattern>
+ </defs>
+ <metadata id="metadata7">image/svg+xml</metadata>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <path id="path2383" d="m324.38891,465.55553a60,60 0 1 1 -120,0a60,60 0 1 1 120,0z" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" marker-end="none" marker-mid="none" marker-start="none" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.12497" fill-rule="nonzero" fill="#eaeaea"/>
+   <rect id="rect3155" width="231" height="82" x="16.5" y="224.94446" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" stroke-linejoin="round" stroke-linecap="round" fill-rule="nonzero" fill="#eaeaea"/>
+   <rect id="rect3157" width="254" height="57" x="261.5" y="165.94446" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" stroke-linejoin="round" stroke-linecap="round" fill-rule="nonzero" fill="#eaeaea"/>
+   <rect id="rect3159" width="159.00001" height="60.91177" x="181.5" y="31.48369" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" stroke-linejoin="round" stroke-linecap="round" fill-rule="nonzero" fill="#eaeaea"/>
+   <text xml:space="preserve" x="207.27318" y="71.44147" id="text3161" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px">
+    <tspan id="tspan3163" x="207.27318" y="67.44147">MODEL</tspan>
+   </text>
+   <text xml:space="preserve" x="93.17334" y="257.20145" id="text3165" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px">
+    <tspan id="tspan3167" x="93.17334" y="253.20145">VIEW</tspan>
+   </text>
+   <text xml:space="preserve" x="295.49854" y="206.94147" id="text3169" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px">
+    <tspan id="tspan3171" x="275.49854" y="202.94147" stroke="null">BA OBJECTS</tspan>
+   </text>
+   <text xml:space="preserve" x="-66.38675" y="527.71105" id="text3173" transform="matrix(0.6769594,-0.7360204,0.7360204,0.6769594,0,0) " font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="20px">
+    <tspan id="tspan3175" x="-63.44267" y="525.00321">USES</tspan>
+   </text>
+   <text xml:space="preserve" x="322.5" y="136.82448" id="text3177" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="20px">
+    <tspan id="tspan3179" x="322.5" y="132.82448">MANIPULATES</tspan>
+   </text>
+   <path d="m319.80074,417.01135l17.07682,-18.3407" id="path3181" stroke-width="2px" stroke="#000000" fill-rule="evenodd" fill="none"/>
+   <path d="m380.16308,351.60357l14.44404,-16.03158" id="path3183" marker-end="url(#Arrow2Mend)" stroke-width="2px" fill-rule="evenodd" fill="none" stroke="#000000"/>
+   <path d="m130.71511,319.32805l13.6543,17.88213" id="path3185" stroke-width="2px" stroke="#000000" fill-rule="evenodd" fill="none"/>
+   <path d="m184.33318,391.30583l22.90054,29.6327" id="path3187" marker-end="url(#Arrow2Mend)" stroke-width="2px" stroke="#000000" fill-rule="evenodd" fill="none"/>
+   <text xml:space="preserve" x="366.18085" y="75.8818" id="text3189" transform="matrix(0.563762,0.8259373,-0.8259373,0.563762,0,0) " font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="20px">
+    <tspan id="tspan3191" x="362.8771" y="73.62675">SEES</tspan>
+   </text>
+   <path d="m169.5,63.44447c-17.7096,1.18892 -42.76523,6.76628 -47,34l0,42" id="path3193" stroke-width="2px" fill-rule="evenodd" fill="none" stroke="#000000"/>
+   <path d="m353.5,65.42327c38.1344,-0.51249 64.53697,4.27533 68,21.48317l0,26.53804" id="path3195" marker-end="none" marker-start="url(#Arrow2Mstart)" stroke-width="2px" fill-rule="evenodd" fill="none" stroke="#000000"/>
+   <text xml:space="preserve" x="70.16766" y="164.82448" id="text3197" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="20px">
+    <tspan id="tspan3199" x="70.16766" y="160.82448">UPDATES</tspan>
+   </text>
+   <text xml:space="preserve" x="225.14006" y="473.70148" id="text3201" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px">
+    <tspan id="tspan3203" x="225.14006" y="469.70148">USER</tspan>
+   </text>
+   <path d="m124.5,173.44447l0,44" id="path8205" marker-end="url(#Arrow2Mend)" stroke-width="2px" stroke="#000000" fill-rule="evenodd" fill="none"/>
+   <path d="m420.5,160.37304l0,-15.85714" id="path8207" stroke-width="2.0702px" fill-rule="evenodd" fill="none" stroke="#000000"/>
+   <rect width="265.99999" height="71" x="257.00001" y="258.5" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" stroke-linejoin="round" stroke-linecap="round" fill-rule="nonzero" fill="#eaeaea" id="svg_1"/>
+   <text xml:space="preserve" x="327.99854" y="288.49701" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px" id="svg_2">
+    <tspan x="297.99854" y="284.49701" stroke="null" id="svg_3">CONTROLLER</tspan>
+   </text>
+   <path d="m395,251.92858l0,-22.85719" stroke-width="2.0702px" fill-rule="evenodd" fill="none" id="svg_4" stroke="#000000"/>
+   <text fill="#333333" stroke-width="1px" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="420.8522" y="240.4" id="svg_5" font-size="26px" font-family="Verdana" text-anchor="middle" xml:space="preserve" stroke="#000000" transform="matrix(0.7700888514518738,0,0,0.7142857313156127,115.40461847558616,74.85713869333267) " font-weight="bold">CALLS</text>
+   <text fill="#333333" stroke-width="1px" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="round" stroke-opacity="0.36905" x="416.04135" y="315" id="svg_7" font-size="20px" font-family="Verdana" text-anchor="middle" xml:space="preserve" transform="matrix(0.8452576994895934,0,0,0.8452576994895934,36.2894873181358,50.38213665038347) ">JobApply.new(job, user).run!</text>
+   <text xml:space="preserve" x="-40.72698" y="287.80662" transform="rotate(26.976459503173828 198.45945739746102,193.55963134765625) matrix(0.6769594,-0.7360204,0.7360204,0.6769594,0,0) " font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="20px" id="svg_8">
+    <tspan x="-37.7829" y="285.09878" id="svg_9">ASKS</tspan>
+   </text>
+   <path d="m140.59681,221.71968l17.07682,-18.3407" stroke-width="2px" stroke="#000000" fill-rule="evenodd" fill="none" id="svg_10" transform="rotate(25.136343002319336 149.13522338867176,212.5493316650391) "/>
+   <path d="m236.95915,194.3119l14.44404,-16.03158" marker-end="url(#Arrow2Mend)" stroke-width="2px" fill-rule="evenodd" fill="none" stroke="#000000" id="svg_11" transform="rotate(44.24284744262695 244.18116760253903,186.29611206054685) "/>
+  </g>
+  <text transform="matrix(0.7085613720271553,0,0,0.7085613720271553,5.0074178938541145,85.76091449104294) " xml:space="preserve" text-anchor="middle" font-family="Verdana" font-size="20px" id="svg_12" y="292" x="174.99319" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="1px" fill="#333333">JobApply.new(job,user).errors</text>
+ </g>
+</svg>

@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Agile and friends</title>
+
+		<meta name="description" content="A light introduction to Agile and some of its flavours.">
+		<meta name="author" content="Radan Skorić">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<style>
+		  .reveal pre code { font-size: 80%; }
+      .reveal { font-family: Helvetica, Arial; }
+
+      #logo { position: absolute; top: 20px; right: 20px; width: 105px; height: 34px; }
+
+      p.large { font-size: 120%; line-height: 170%; }
+
+      div.scrum {
+        float: left;
+        width: 40%;
+        text-align: left;
+        border-left: 6px solid black;
+        padding-left: 10px;
+        font-size: 80%;
+      }
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h3>Agile and Friends</h3>
+					<br>
+					<p>
+						Radan Skorić
+					</p>
+				</section>
+
+        <section>
+          <h2>Waterfall method</h2>
+
+          <ul>
+            <li class="fragment" data-fragment-index="0">BRUF</li>
+            <li class="fragment" data-fragment-index="1">
+              Distinct phases:
+              <ol>
+                <li>Requirements</li>
+                <li>Design</li>
+                <li>Implementation</li>
+                <li>Verification</li>
+                <li>Maintenance</li>
+              </ol>
+          </ul>
+
+          <aside class="notes">
+            Let's dive a bit into the early days of the software development.
+            The common approach to software development back then was the waterfall model.
+
+            For those of you not familiar with it, it consists of two key concepts.
+
+            One is the Big Requirements Up Front approach that says that all of the requirements of
+            the project should be identified and documented up front in a comprehensive document.
+
+            The project then proceeds through these distinct phases of the project where each phase is
+            fully completed before proceeding to the next phase.
+
+            However there is one big problem with approach.
+
+            Anyone wnat to take a guess at what's the biggest problem with it? *ask the audience*
+          </aside>
+        </section>
+
+        <section>
+          <h2>Change!</h2>
+          <h2 class="fragment" data-fragment-index="0">Unexpected Change!</h2>
+          <h2 class="fragment" data-fragment-index="1">Unexpected Late Change!</h2>
+
+          <aside class="notes">
+            Maybe this sounds familiar:
+
+            You deploy a test version for the client and they tell you
+            that they have a great a idea how to make the whole thing
+            much better ... you just have to change, you know, everything.
+
+            OR, even worse
+
+            You deploy a test version and the client tells you that this
+            is not what they were expecting.
+          </aside>
+        </section>
+
+        <section>
+          <h2>2001, Snowbird, Utah</h2>
+
+          <h3>17 Software development experts</h3>
+          <h3>The birth of the <i>Agile Manifesto</i></h3>
+
+          <aside class="notes">
+            17 experienced software developers got together in February of 2001 in
+            Snowbird ski resort in Utah to ski, eat and discuss these very problems.
+
+            They were all representatives of various software development approaches
+            that will later come to be referred as Agile methodologies. So, the funny
+            thing is that all of these methodologies that we today regard as flavours
+            of Agile are actually older than the term Agile itself.
+
+            And the main reason is that back then in Snowbird they managed to find common
+            ground between all of the methodologies and compile it into the Agile Manifesto.
+          </aside>
+        </section>
+
+        <section>
+          <h2>The Agile Manifesto</h2>
+          <a href="http://agilemanifesto.org/">agilemanifesto.org</a>
+        </section>
+
+        <section>
+          <p class="large">We are uncovering better ways of developing
+          software by doing it and helping others do it.
+          Through this work we have come to value:</p>
+
+          <aside class="notes">
+            Note the emphasis is on lessons learned through experience
+            developing software projects rather trying to think their
+            way into the right approach.
+          </aside>
+        </section>
+
+        <section>
+          <p class="large">
+            <b>Individuals and interactions</b>
+            over
+            processes and tools
+          </p>
+
+          <aside class="notes">
+            This point is primarily about the fact that software is developed
+            by humans and humans work like humans, not like robots.
+
+            This is obvious but a lot of people seem to forget that.
+          </aside>
+        </section>
+
+        <section>
+          <p class="large">
+            <b>Working software</b>
+            over
+            comprehensive documentation
+          </p>
+
+          <aside class="notes">
+            The purpose of the documentation is always to communicate
+            information about the software. However, nothing can communicate
+            it more clearly than the software itself.
+          </aside>
+        </section>
+
+        <section>
+          <p class="large">
+            <b>Customer collaboration</b>
+            over
+            contract negotiation
+          </p>
+
+          <aside class="notes">
+            Collaboration works to enhance value created while contracts
+            work to protect the parties involved.
+          </aside>
+        </section>
+
+        <section>
+          <p class="large">
+            <b>Responding to change</b>
+            over
+            following a plan
+          </p>
+
+          <aside class="notes">
+            Change is inevitable and if the change will result in a higher quality
+            product than the work of everyone involved will be more valuable if you
+            embrace this change rather than fight it.
+          </aside>
+        </section>
+
+        <section>
+          <p class="large">
+            That is, while there is value in the items on
+            the right, we value the items on the left more.
+          </p>
+
+          <aside class="notes">
+            The main point of this ending is that both things have value, it's about finding the right mix.
+
+            Some kind of process, documentation, contract and plan is definitely required but it is much better
+            to try and find just the right amount in order to support the values on the left rather than
+            relying solely on them.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Scrum</h2>
+          <p class="fragment" data-fragment-index="0">
+            Sprint - timeboxed effort
+            <img src='sprints.png' style="border: none; box-shadow: none"/>
+          </p>
+          <div class="fragment scrum" data-fragment-index="1" style="width: 50%">
+            Sprint planning
+            <ol>
+              <li>Select Product Backlog items</li>
+              <li>Breakdown to create the Sprint Backlog</li>
+            </ol>
+          </div>
+          <div class="fragment scrum" data-fragment-index="2">
+            <p>Sprint Review</p>
+            <p>Sprint Retrospective</p>
+          </div>
+
+          <aside class="notes">
+            Sprint is the basic unit of Scrum. It is a timeboxed effort that aims to
+            deliver the next iteration of the working software at the end of it. It
+            is usually between 1 week and 1 month long with 2 weeks being the most common.
+
+            It starts with Sprint planning which consists of two phases. In the first timeboxed
+            phase the whole team works to identify items from the higher level product backlog
+            that could be delivered in this sprint. In the second phase the team works to break
+            it down into smaller tickets that are then estimated and form the Sprint backlog.
+
+            At the end of the sprint working, and only working, features are demoed for the
+            stakeholders during the Sprint Review.
+
+            After the Review the team holds a restrospective where they discuss what went wall and
+            what went wrong during the sprint and how they can improve.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Scrum & Agile values</h2>
+          <ol>
+            <li class="fragment" data-fragment-index="0">Everyone creates the sprint together</li>
+            <li class="fragment" data-fragment-index="1">Working software at the end of each sprint</li>
+            <li class="fragment" data-fragment-index="2">Customers are involved in between sprints</li>
+            <li class="fragment" data-fragment-index="3">The product backlog can change for the next sprint</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Values to principles</h2>
+          <p class="fragment" data-fragment-index="0">Welcome change</p>
+          <p class="fragment" data-fragment-index="1">=> Discover the need for it early</p>
+          <p class="fragment" data-fragment-index="2">=> Remove ambiguity</p>
+          <p class="fragment" data-fragment-index="3">=> Show working software often</p>
+
+          <aside class="notes">
+            The last value, responding to change over following a plan is maybe the most important one.
+
+            And we can examine how it can naturally lead us to the basic principle of Scrum.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Other agile methodologies</h2>
+          <ul>
+            <li class="fragment" data-fragment-index="0">Kanban</li>
+            <li class="fragment" data-fragment-index="1">Scrumban</li>
+            <li class="fragment" data-fragment-index="2">Extreme programming</li>
+          </ul>
+
+          <aside class="notes">
+            Kanban is a method that focuses on the continuous flow and elimination of bottlenecks.
+            There are no sprints, the team focuses on the things that are in progress and
+            when done it pulls from the top of the backlog which the product owner is free
+            to reprioritise to keep the most important items on the top. A key component is WIP limit
+            prevent accumulation of partially finished work.
+
+            Scrumban, as the name suggest tries to borrow from both Scrum and Kanban and then adds a bit
+            of its own into the mix. Roughly speaking, from Scrum it takes sprints but has them in variable length and sprint planning is triggered when number of planned tickets becomes too low.
+            From Kanban it takes WIP limits to ensure an efficient flow.
+
+            Extreme programming is on the surface very similar to Scrum, it also has planned sprints.
+            It is different is a number of subtle ways which I won't get into now. Perhaps the biggest
+            difference is that XP prescribes engineering practices like TDD and Pair programming while
+            Scrum doesn't. However XP practices are usable in almost any Agile methodology.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Importance of culture</h2>
+          <ol>
+            <li class="fragment" data-fragment-index="0">All together</li>
+            <li class="fragment" data-fragment-index="1">Shared success</li>
+            <li class="fragment" data-fragment-index="2">Chicken vs Pig</li>
+            <li class="fragment" data-fragment-index="3">Valuable work</li>
+          </ol>
+
+          <aside class="notes">
+            Quite often you might hear that people tried to implement Agile,
+            followed the practices to the letter but failed.
+
+            The first place to look for a culprit is the culture. Company and team culture.
+
+            The most important thing to adopt is the notion that everyone is working together.
+            Great team work is of paramount importance to get Agile right.
+
+            That implies that there has to be a notion of shared success. If one developer
+            finishes their tasks on time but the feature is not finished because another
+            didn't finish his then there is no value delivered. It might have been better if the first
+            developer first helped the other finish their task. An extreme example is how a
+            CEO, if he can't help in any other way than by bringing coffee to the developers then the
+            best thing he can do for the project is to go make some coffee.
+
+            The concept of a Chicken and a Pig is sometimes used. It comes from an anecdote about
+            Chicken telling a Pig that they should open a restaurant together. Pig asks what would
+            it be called. "Ham and eggs" says the chicken. The pig answers "No thanks, I'd be committed but
+            you'd be only invested." It is important for all of the team members to feel like Pigs, committed
+            into the project. People on the outside that provide valuable insight, like users or beta testers, are chickens, invested but not committed.
+
+            And the only way for people to get that sense intrinsically is to draw pleasure from their
+            work and the best way for it is to see clearly the value you create from your work.
+            That is another reason why all Agile methodologies put so much emphasis on Value, their
+            rapid delivery and putting developers in contact with the stakeholders who's lives they
+            improve.
+          </aside>
+        </section>
+
+        <section>
+          <h3>Thank you!</h3>
+          Questions?
+        </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width:'80%',
+				height: '100%',
+				transition: 'linear',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

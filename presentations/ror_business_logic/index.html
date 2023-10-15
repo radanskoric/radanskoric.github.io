@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Where should RoR business logic be kept?</title>
+
+		<meta name="description" content="A quick birds eye overview of a few techniques for organising business logic in Rails applications">
+		<meta name="author" content="Radan Skorić">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<style>
+		  .reveal pre code { font-size: 80%; }
+
+      #logo { position: absolute; top: 20px; right: 20px; width: 105px; height: 34px; }
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Where should RoR business logic be kept?</h2>
+					<br>
+					<p>
+						Radan Skorić
+					</p>
+				</section>
+
+        <section>
+          <p style='font-size: 50pt'>
+            Business logic that changes <br> the state of the system
+          </p>
+        </section>
+
+        <section>
+          <h2>Why bother?</h2>
+        </section>
+
+        <section>
+          <h2>Business logic is often the fastest changing code in the system</h2>
+        </section>
+
+        <section>
+          <section>
+            <h3>Fat models, thin controllers</h3>
+            <ul>
+              <li>
+                Put all the business logic into models, as special methods
+              </li>
+              <li>
+                Controllers do nothing but invoke methods on the model
+              </li>
+            </ul>
+          </section>
+
+  				<section style="width:100%">
+  				  <pre style="display: inline-block;width:39%;"><code data-trim class='ruby stretch'>
+  class JobsController < ApplicationController
+    #...
+    def create
+      @job = current_user.post_job(job_params)
+      if @job.persisted?
+        redirect_to jobs_path,
+        	notice: 'Job was successfully created.'
+      else
+        render :new
+      end
+    end
+
+    def apply
+      if current_user.apply_for_job(@job)
+        redirect_to jobs_path,
+        	notice: 'You successfully applied to the job'
+      else
+        redirect_to jobs_path,
+        	alert: "You don't have the necessary skills"
+      end
+    end
+    #...
+  end
+  				 	</code></pre>
+  				  <pre style="display: inline-block;width:59%;"><code data-trim class='ruby stretch'>
+  class User < ActiveRecord::Base
+    has_many :jobs
+    has_many :user_skills
+    has_many :skills, through: :user_skills
+
+    def post_job(job_params)
+      job_params[:skills] &&= Skill.where(id: job_params.delete(:skills)).load
+      jobs.create(job_params).tap do |job|
+        if job.persisted?
+          #Notify users with matching skills
+        end
+      end
+    end
+
+    def apply_for_job(job)
+      return false if (self.skills & job.skills).size != job.skills.size
+
+      #Notify job owner about application
+      true
+    end
+  end
+  				 	</code></pre>
+  				</section style="width:100%">
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Nice rails-style interface for method calls, e.g. job.apply</li>
+              <li>Only one place to look at for all the rules related to a certain model</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Can't manipulate the model directly using native rails methods</li>
+              <li>Controllers are not unified, each calls custom business method</li>
+              <li>Without any rule for splitting business rules into other classes, the models source will grow without bound</li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h3>Concerns</h3>
+            <ul>
+              <li>
+                Put the logic into the models but through mixins, i.e. concerns
+              </li>
+              <li>
+                Each concern contains a group of related methods
+              </li>
+            </ul>
+          </section>
+
+          <section style="width:100%">
+            <pre style="display: inline-block;width:39%;"><code data-trim class='ruby stretch'>
+module JobPoster
+  def post_job(job_params)
+    job_params[:skills] &&= Skill.where(id: job_params.delete(:skills)).load
+    jobs.create(job_params).tap do |job|
+      if job.persisted?
+        #Notify users with matching skills
+      end
+    end
+  end
+end
+
+module JobApplicant
+  def apply_for_job(job)
+    return false if (self.skills & job.skills).size != job.skills.size
+
+    #Notify job owner about application
+    true
+  end
+end
+            </code></pre>
+            <pre style="display: inline-block;width:59%;"><code data-trim class='ruby stretch'>
+  class User < ActiveRecord::Base
+    has_many :jobs
+    has_many :user_skills
+    has_many :skills, through: :user_skills
+
+    include JopPoster
+    include JobApplicant
+  end
+            </code></pre>
+          </section style="width:100%">
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Allows for cleaner files (although not classes), each responsible for its own piece of logic</li>
+              <li>Keeps rails-style interface for method calls</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Easy to fall into bad practice of using methods that don't belong to particular concern, but still accessible (since they are all in the same class), so everyone in the team should be extremely cautious about this</li>
+              <li>Team members have to be careful about using unique method names to avoid method shadowing in the models</li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h3>Fat models with callbacks</h3>
+            <ul>
+              <li>
+                Design the models so that all business actions are mapped to direct manipulations of the models
+              </li>
+              <li>
+                Side effects and updating of related objects are handled through callbacks
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <pre><code data-trim class='ruby stretch'>
+class Job < ActiveRecord::Base
+  ...
+  after_create :notify_users_with_matching_skills
+  ...
+end
+
+class JobApplication < ActiveRecord::Base
+  ...
+  validate :user_has_necessary_skills
+  ...
+  after_create :notify_job_owner
+  ...
+end
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>You are free to use any low-level rails methods to update model attributes and still have consistent data</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Logic is non linear and it is hard to track what happens when you do an update</li>
+              <li>For the same reason hard to handle bugs and extend code</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Fat controllers</h3>
+            <ul>
+              <li>
+                Put the logic into controllers
+              </li>
+              <li>
+                Each controller action is responsible for a clear business action
+              </li>
+            </ul>
+          </section>
+
+          <section style="width:100%">
+            <pre style="display: inline-block;width:59%;"><code data-trim class='ruby stretch'>
+  class JobsController < ApplicationController
+    #...
+    def create
+      job_params[:skills] &&=
+        Skill.where(id: job_params.delete(:skills)).load
+      @job = current_user.jobs.create(job_params)
+      if @job.persisted?
+        #Notify users with matching skills
+        redirect_to jobs_path,
+          notice: 'Job was successfully created.'
+      else
+        render :new
+      end
+    end
+
+    def apply
+      if (current_user.skills & job.skills).size == job.skills.size
+        #Notify job owner about application
+        redirect_to jobs_path,
+          notice: 'You successfully applied to the job'
+      else
+        redirect_to jobs_path,
+          alert: "You don't have the necessary skills"
+      end
+    end
+  end
+            </code></pre>
+            <pre style="display: inline-block;width:39%;"><code data-trim class='ruby stretch'>
+  class User < ActiveRecord::Base
+    has_many :jobs
+    has_many :user_skills
+    has_many :skills,
+      through: :user_skills
+  end
+            </code></pre>
+          </section style="width:100%">
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Simplicity, easy to start</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Coupled with rails, as a result hard to test and reuse.</li>
+              <li>Can not have business rules invoking other business rules since controllers can't call other controllers without resorting to ugly hacks</li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h3>Form objects</h3>
+            <ul>
+              <li>Create a plain ruby class and mixin some of the ActiveModel behaviour</li>
+              <li>Use it as a regular model with the main difference being that it won't be persisted</li>
+              <li>Place the business logic into its validations and "save" methods</li>
+            </ul>
+          </section>
+          <section>
+            <pre>
+            <code data-trim class='ruby stretch'>
+#app/forms/job_application_form.rb
+class JobApplicationForm
+  include ActiveModel::Model
+
+  attr_accessor :user, :job
+
+  validates :user_has_necessary_skills
+
+  def save
+    # Notify job owner
+    # ...
+    # Create/Update real models as needed
+  end
+
+private
+
+  def user_has_necessary_skills
+    (@user.skills & @job.skills).size != @job.skills.size
+  end
+
+end
+
+            </code>
+            </pre>
+          </section>
+          <section>
+            <pre>
+            <code data-trim class='ruby stretch'>
+#app/controller/jobs_controller.rb
+def apply
+  @form = JobApplicationForm.new(job_application_form_params).save
+  if @form.persisted?
+    redirect_to jobs_path, notice: 'Job was successfully created.'
+  else
+    render :new
+  end
+end
+
+#app/models/job.rb
+class Job < ActiveRecord::Base
+  belongs_to :user
+  has_many :job_skills
+  has_many :skills, through: :job_skills
+
+  validates_presence_of :description
+end
+            </code></pre>
+          </section>
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Can use rails form builders with any custom attributes</li>
+              <li>The controllers and views can be implemented in standard ways since they can pretend that they are dealing with normal models</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Separate class for each action</li>
+              <li>Logic still a bit unlinear</li>
+              <li>Becomes akward when logic is not easily maped to form submissions</li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h3>Service objects</h3>
+            <ul>
+              <li>Introduce special objects to contain the business logic</li>
+              <li>Business actions are implemented as methods on the objects</li>
+              <li>Side effects and validations are explicitly stated in the methods</li>
+            </ul>
+          </section>
+          <section>
+            <pre style="display: inline-block;width:49%;">
+            <code data-trim class='ruby stretch'>
+#app/controller/jobs_controller.rb
+def create
+  @job = JobPostingService.new(current_user).post(job_params)
+  if @job.persisted?
+    redirect_to jobs_path, notice: 'Job was successfully created.'
+  else
+    render :new
+  end
+end
+
+def apply
+  if JobApplicationService.new(current_user, @job).apply
+    redirect_to jobs_path, notice: 'You successfully applied to the job'
+  else
+    redirect_to jobs_path, alert: "You don't have the necessary skills"
+  end
+end
+            </code></pre>
+            <pre style="display: inline-block;width:49%;">
+            <code data-trim class='ruby stretch'>
+#app/models/user.rb
+class User < ActiveRecord::Base
+  has_many :jobs
+  has_many :user_skills
+  has_many :skills, through: :user_skills
+end
+
+#app/models/job.rb
+class Job < ActiveRecord::Base
+  belongs_to :user
+  has_many :job_skills
+  has_many :skills, through: :job_skills
+
+  validates_presence_of :description
+end
+            </code>
+            </pre>
+          </section>
+          <section>
+            <pre style="display: inline-block;width:49%;">
+            <code data-trim class='ruby stretch'>
+#app/managers/base_service.rb
+class BaseService
+  def initialize(performer)
+    @performer = performer
+  end
+end
+
+#app/managers/job_posting_service.rb
+class JobPostingService < BaseService
+  def post(job_params)
+    job_params[:skills] &&= Skill.where(id: job_params.delete(:skills)).load
+    @performer.jobs.create(job_params).tap do |job|
+      if job.persisted?
+        #Notify users with matching skills
+      end
+    end
+  end
+end
+            </code></pre>
+            <pre style="display: inline-block;width:49%;">
+            <code data-trim class='ruby stretch'>
+#app/managers/job_application_service.rb
+class JobApplicationService < BaseService
+  def initialize(performer, job)
+    @job = job
+    super(performer)
+  end
+
+  def apply
+    return false if (@performer.skills & @job.skills).size != @job.skills.size
+
+    #Notify job owner about application
+    true
+  end
+end
+            </code>
+            </pre>
+          </section>
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>Minimum "magic", code linear and easy to follow</li>
+              <li>Easy to have business action invoking other business actions</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Can't use form builders (without hybrid approach)</li>
+              <li>Tends to cause somewhat big procedural style methods</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2> Data, Context, Interaction </h2>
+            <ul>
+              <li>Models are thin, only contain data, relationships and invariants</li>
+              <li>We introduce contexts to "JIT" bind the roles to models </li>
+              <li>The roles are responsible for implementation of interactions between models</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>The code:</h3>
+            <pre style="display: inline-block;width:49%;">
+            <code data-trim class='ruby stretch'>
+class JobsController < ApplicationController
+  #...
+  def create
+    @job = JobCreationContext.new(current_user, job_params).post_new_job
+    if @job.persisted?
+      redirect_to jobs_path,
+        notice: 'Job was successfully created.'
+    else
+      render :new
+    end
+  end
+
+  def apply
+    if EmploymentNegotiationContext.new(current_user, @job).apply
+      redirect_to jobs_path,
+        notice: 'You successfully applied to the job'
+    else
+      redirect_to jobs_path,
+        alert: "You don't have the necessary skills"
+    end
+  end
+  #...
+end
+          </code></pre>
+          <pre style="display: inline-block;width:49%;">
+          <code data-trim class='ruby'>
+#app/models/user.rb
+class User < ActiveRecord::Base
+  has_many :jobs
+  has_many :user_skills
+  has_many :skills, through: :user_skills
+end
+
+#app/models/job.rb
+class Job < ActiveRecord::Base
+  belongs_to :user
+  has_many :job_skills
+  has_many :skills, through: :job_skills
+
+  validates_presence_of :description
+end
+            </code>
+            </pre>
+          </section>
+          <section>
+            <pre style="display: inline-block;width:49%;">
+            <code data-trim class='ruby stretch'>
+#app/contexts/post_job_context.rb
+class JobCreationContext
+  def initialize(user, job_params)
+    @user, @job_params = user, job_params
+    @user.extend Employer
+  end
+
+  def post_new_job
+    @user.post_job(@job_params)
+  end
+end
+#app/contexts/apply_to_job_context.rb
+class EmploymentNegotiationContext
+  def initialize(user, job)
+    @user, @job = user, job
+    @user.extend Developer
+  end
+
+  def apply
+    @user.apply_for_job(@job)
+  end
+end
+            </code></pre>
+            <pre style="display: inline-block;width:49%;">
+            <code data-trim class='ruby stretch'>
+#app/roles/employer.rb
+module Employer
+  def post_job(job_params)
+    job_params[:skills] &&= Skill.where(id: job_params.delete(:skills)).load
+    jobs.create(job_params).tap do |job|
+      if job.persisted?
+        #Notify users with matching skills
+      end
+    end
+  end
+end
+#app/roles/developer.rb
+module Developer
+  def apply_for_job(job)
+    return false if (self.skills & job.skills).size != job.skills.size
+
+    #Notify job owner about application
+    true
+  end
+end
+            </code>
+            </pre>
+
+          </section>
+
+          <section>
+            <h3>Pros</h3>
+            <ul>
+              <li>More oop-style than services and methods are leaner</li>
+              <li>Provides additional logic only when needed</li>
+            </ul>
+
+            <h3>Cons</h3>
+            <ul>
+              <li>Generates a lot of classes, i.e. a lot of boilerplate code</li>
+              <li>The usual ruby implementation has no way of removing a role from a model once context finishes execution</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2> Questions? </h2>
+          <h3> For reference, the approaches: </h3>
+          <ul style="font-size: 1.2em; line-height:1.2em">
+            <li>Fat models, thin controllers</li>
+            <li>Concerns</li>
+            <li>Callbacks</li>
+            <li>Fat controllers</li>
+            <li>Form objects</li>
+            <li>Service objects</li>
+            <li>Data, Context, Interaction</li>
+          </ul>
+        </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width:'80%',
+				height: '100%',
+				transition: 'linear',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

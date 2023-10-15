@@ -1,0 +1,62 @@
+<svg width="500" height="550" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <defs>
+  <marker orient="auto" refY="0" refX="0" id="Arrow2Mstart">
+   <path id="path3232" d="m8.71859,4.03374l-10.92588,-4.01773l10.92588,-4.01772c-1.7455,2.37206 -1.73544,5.61745 0,8.03545z" transform="scale(0.6000000238418579) " stroke-linejoin="round" stroke-width="0.625" fill-rule="evenodd"/>
+  </marker>
+  <marker orient="auto" refY="0" refX="0" id="Arrow2Mend">
+   <path id="path3235" d="m8.71859,4.03374l-10.92588,-4.01773l10.92588,-4.01772c-1.7455,2.37206 -1.73544,5.61745 0,8.03545z" transform="scale(-0.6000000238418579) " stroke-linejoin="round" stroke-width="0.625" fill-rule="evenodd"/>
+  </marker>
+  <pattern height="100" width="100" y="0" x="0" patternUnits="userSpaceOnUse" id="gridpattern">
+   <image height="100" width="100" y="0" x="0" id="svg_6"/>
+  </pattern>
+ </defs>
+ <metadata id="metadata7">image/svg+xml</metadata>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <path id="path2383" d="m291.38891,464.55553a60,60 0 1 1 -120,0a60,60 0 1 1 120,0z" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" marker-end="none" marker-mid="none" marker-start="none" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.12497" fill-rule="nonzero" fill="#eaeaea"/>
+   <rect id="rect3155" width="188" height="82" x="13.5" y="224.94446" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" stroke-linejoin="round" stroke-linecap="round" fill-rule="nonzero" fill="#eaeaea"/>
+   <rect id="rect3157" width="254" height="57" x="228.5" y="164.94446" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" stroke-linejoin="round" stroke-linecap="round" fill-rule="nonzero" fill="#eaeaea"/>
+   <rect id="rect3159" width="159.00001" height="60.91177" x="148.5" y="30.48369" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" stroke-linejoin="round" stroke-linecap="round" fill-rule="nonzero" fill="#eaeaea"/>
+   <text xml:space="preserve" x="174.27318" y="70.44147" id="text3161" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px">
+    <tspan id="tspan3163" x="174.27318" y="66.44147">MODEL</tspan>
+   </text>
+   <text xml:space="preserve" x="67.17334" y="276.20145" id="text3165" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px">
+    <tspan id="tspan3167" x="67.17334" y="272.20145">VIEW</tspan>
+   </text>
+   <text xml:space="preserve" x="262.49854" y="205.94147" id="text3169" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px">
+    <tspan id="tspan3171" x="232.49854" y="201.94147" stroke="null">SERVICE OBJECT</tspan>
+   </text>
+   <text xml:space="preserve" x="-87.99039" y="502.74542" id="text3173" transform="matrix(0.6769594,-0.7360204,0.7360204,0.6769594,0,0) " font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="20px">
+    <tspan id="tspan3175" x="-85.04631" y="500.03758">USES</tspan>
+   </text>
+   <text xml:space="preserve" x="289.5" y="135.82448" id="text3177" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="20px">
+    <tspan id="tspan3179" x="289.5" y="131.82448">MANIPULATES</tspan>
+   </text>
+   <path d="m286.80074,416.01135l17.07682,-18.3407" id="path3181" stroke-width="2px" stroke="#000000" fill-rule="evenodd" fill="none"/>
+   <path d="m347.16308,350.60357l14.44404,-16.03158" id="path3183" marker-end="url(#Arrow2Mend)" stroke-width="2px" fill-rule="evenodd" fill="none" stroke="#000000"/>
+   <path d="m97.71511,318.32805l13.6543,17.88213" id="path3185" stroke-width="2px" stroke="#000000" fill-rule="evenodd" fill="none"/>
+   <path d="m151.33318,390.30583l22.90054,29.6327" id="path3187" marker-end="url(#Arrow2Mend)" stroke-width="2px" stroke="#000000" fill-rule="evenodd" fill="none"/>
+   <text xml:space="preserve" x="346.75077" y="102.57397" id="text3189" transform="matrix(0.563762,0.8259373,-0.8259373,0.563762,0,0) " font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="20px">
+    <tspan id="tspan3191" x="343.44702" y="100.31892">SEES</tspan>
+   </text>
+   <path d="m136.5,62.44447c-17.7096,1.18892 -42.76523,6.76628 -47,34l0,42" id="path3193" stroke-width="2px" fill-rule="evenodd" fill="none" stroke="#000000"/>
+   <path d="m320.5,64.42327c38.1344,-0.51249 64.53697,4.27533 68,21.48317l0,26.53804" id="path3195" marker-end="none" marker-start="url(#Arrow2Mstart)" stroke-width="2px" fill-rule="evenodd" fill="none" stroke="#000000"/>
+   <text xml:space="preserve" x="37.16766" y="163.82448" id="text3197" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="20px">
+    <tspan id="tspan3199" x="37.16766" y="159.82448">UPDATES</tspan>
+   </text>
+   <text xml:space="preserve" x="192.14006" y="472.70148" id="text3201" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px">
+    <tspan id="tspan3203" x="192.14006" y="468.70148">USER</tspan>
+   </text>
+   <path d="m91.5,172.44447l0,44" id="path8205" marker-end="url(#Arrow2Mend)" stroke-width="2px" stroke="#000000" fill-rule="evenodd" fill="none"/>
+   <path d="m387.5,159.37304l0,-15.85714" id="path8207" stroke-width="2.0702px" fill-rule="evenodd" fill="none" stroke="#000000"/>
+   <rect width="254" height="71" x="230" y="257.5" stroke-opacity="0.36905" stroke-dashoffset="0" stroke-miterlimit="4" stroke-linejoin="round" stroke-linecap="round" fill-rule="nonzero" fill="#eaeaea" id="svg_1"/>
+   <text xml:space="preserve" x="294.99854" y="287.49701" font-family="Verdana" stroke-width="1px" fill="#333333" font-weight="bold" font-style="normal" font-size="26px" id="svg_2">
+    <tspan x="264.99854" y="283.49701" stroke="null" id="svg_3">CONTROLLER</tspan>
+   </text>
+   <path d="m362,250.92858l0,-22.85719" stroke-width="2.0702px" fill-rule="evenodd" fill="none" id="svg_4" stroke="#000000"/>
+   <text fill="#333333" stroke-width="1px" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="378" y="239" id="svg_5" font-size="26px" font-family="Verdana" text-anchor="middle" xml:space="preserve" stroke="#000000" transform="matrix(0.7700888514518738,0,0,0.7142857313156127,115.40461847558616,74.85713869333267) " font-weight="bold">CALLS</text>
+   <text fill="#333333" stroke-width="1px" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="round" stroke-opacity="0.36905" x="377" y="315" id="svg_7" font-size="20px" font-family="Verdana" text-anchor="middle" xml:space="preserve" transform="matrix(0.8452576994895935,0,0,0.8452576994895935,36.2894873181358,49.38213665038347) ">job_service.apply(job, user)</text>
+  </g>
+ </g>
+</svg>

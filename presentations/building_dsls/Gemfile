@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+
+gem 'ruby-graphviz'
+
+group :development do
+  gem 'colorize'
+
+  gem 'guard', require: false
+  gem 'guard-rspec', require: false
+  gem 'terminal-notifier-guard', require: false
+end
+
+group :development, :test do
+  gem 'rspec'
+end

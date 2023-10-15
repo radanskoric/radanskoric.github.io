@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Refaktoriranje na veliko</title>
+
+		<meta name="description" content="Zašto vaša aplikacija treba proljetno čišćenje i par smjernica kako ga napraviti bez da se upucate u nogu">
+		<meta name="author" content="Radan Skorić">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<style>
+		  .reveal pre code { font-size: 80%; }
+      .reveal { font-family: Helvetica, Arial; }
+
+      #logo { position: absolute; top: 20px; right: 20px; width: 105px; height: 34px; }
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h3>Zašto vaša aplikacija treba proljetno čišćenje i par smjernica kako ga napraviti bez da se upucate u nogu</h3>
+					<br>
+					<p>
+						Radan Skorić
+					</p>
+				</section>
+
+        <section>
+          Bio jednom jedan
+          drvosječa koji je došao raditi u tvornicu drva. Uvjeti su bili odlični pa je odlučio dati sve od sebe.
+          Prvi dan je, sav entuzijastičan, posjekao 18 stabala.
+          Idućeg je jutra ustao prije
+          svih i otišao u šumu s ciljem da posječe još više. Unatoč svom naporu nije uspio posjeći više od petnaest stabala. Sigurno
+          sam umoran, pomislio je. To veče je legao rano ali sutradan nije uspio posjeći niti 10 stabala. Idućeg dana ih je
+          bilo sedam, onda pet, a posljednjeg je dana čitavo
+          popodne pokušavao posjeći svoje drugo
+          stablo. Uznemiren zbog toga što će pomisliti nadglednik, otišao mu je reći
+          što se događa i kleo se da se trudio do granica iscrpljenosti.
+        </section>
+
+        <section>
+          Nadglednik ga je
+          upitao: “Kad si posljednji put naoštrio svoju
+          sjekiru?“ <br><br>
+          „Naoštrio? <br><br>
+          Nisam imao vremena
+          naoštriti je: <br><br>
+          <b>bio sam prezauzet sječom stabala.</b>“
+        </section>
+
+        <section>
+          <section>
+            <h3>Zašto bi uopće refaktorirali?</h3>
+            <ul>
+              <li>Radi poboljšanja performansi</li>
+              <li>Radi poboljšanja arhitekture</li>
+              <li>Zašto što su originalne pretpostavke zastarile</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Banalni primjer: ime klase u kodu ne odgovara stvarnom imenu</h3>
+            <br>
+            Da li je to nešto što uopće treba dirati?
+          </section>
+
+          <section>
+            <h3>Veličina kratkotrajne memorije?</h3>
+            7 +/- 2 (Millerov zakon)
+          </section>
+
+          <section>
+            Stenbergov eksperiment<br>
+            <img src="sternberg.gif" style="width: 50%">
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Priprema</h2>
+          </section>
+
+          <section>
+            <h3>1. Testovi</h3>
+
+            <ol>
+              <li>Ako su dobri, super, nastavi dalje</li>
+              <li>Podići pokrivenost</li>
+              <li>Ako ih nema, odmaknuti se do kraja i dodati samo mnogo Acceptance/Integration testova</li>
+              <li>Unit testove dodavati za dijelove koda koje mijenjas</li>
+            </ol>
+          </section>
+
+          <section>
+            <h3>Analiza</h3>
+
+            <ol>
+              <li>Mapiraj promjene: koristi alat koji najbolje paše (npr. papir i olovka)</li>
+              <li>Aktivno traži prirodne točke prekida</li>
+            </ol>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Izvedba</h2>
+
+            <ol>
+              <li>Mir i tišina</li>
+              <li>Koncentracija</li>
+              <li>Prati plan iz pripreme</li>
+              <li>Pazi na "ožiljke" u kodu</li>
+            </ol>
+          </section>
+          <section>
+            <h3>
+              Ne zaboravi ručno testiranje
+            </h3>
+            Pomaže u traženju prekida u kodu
+          </section>
+
+          <section>
+            <h3>Alati za lakše prisilno ubacivanje prekida</h3>
+            <ol>
+              <li>alias_attribute</li>
+              <li>Decoratori (gem: draper)</li>
+              <li>Proxy, Facade objekti</li>
+            </ol>
+          </section>
+
+        </section>
+
+        <section>
+          <h3>Kad ne bi trebali refaktorirat</h3>
+          <ol>
+            <li>Loša pokrivenost testovima</li>
+            <li>Kod se nije dugo mijenjao i trenutno nema potrebe da ga se mijenja</li>
+            <li>Vrlo ste kratki s vremenom</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Hvala!</h3>
+          http://www.toptal.com/ruby-on-rails/large-scale-refactoring
+          <img src="qrcode.svg" style="width: 50%">
+        </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width:'80%',
+				height: '100%',
+				transition: 'linear',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<svg width="500" height="550" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="Arrow2Mstart" refX="0" refY="0" orient="auto">
+   <path fill-rule="evenodd" stroke-width="0.625" stroke-linejoin="round" transform="scale(0.6000000238418579) " d="m8.71859,4.03374l-10.92588,-4.01773l10.92588,-4.01772c-1.7455,2.37206 -1.73544,5.61745 0,8.03545z" id="path3232"/>
+  </marker>
+  <marker id="Arrow2Mend" refX="0" refY="0" orient="auto">
+   <path fill-rule="evenodd" stroke-width="0.625" stroke-linejoin="round" transform="scale(-0.6000000238418579) " d="m8.71859,4.03374l-10.92588,-4.01773l10.92588,-4.01772c-1.7455,2.37206 -1.73544,5.61745 0,8.03545z" id="path3235"/>
+  </marker>
+ </defs>
+ <metadata id="metadata7">image/svg+xml</metadata>
+ <g>
+  <title>Layer 1</title>
+  <text stroke="#000000" transform="matrix(0.6707292795181274,0,0,0.6707292795181274,100.76198532246053,31.44535380601883) " xml:space="preserve" text-anchor="middle" font-family="Verdana" font-size="26px" id="svg_1" y="185.418527" x="430.291924" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="1px" fill="#333333">job.apply(current_user)</text>
+  <g id="layer1">
+   <rect fill="#eaeaea" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" stroke-opacity="0.369048" y="16.444471" x="118.5" height="105.715686" width="263" id="rect3159"/>
+   <path fill="#eaeaea" fill-rule="nonzero" stroke-width="1.124969" stroke-linecap="round" stroke-linejoin="round" marker-start="none" marker-mid="none" marker-end="none" stroke-miterlimit="4" stroke-dashoffset="0" stroke-opacity="0.369048" d="m304.388912,456.555527a60.000001,59.999999 0 1 1 -120.000002,0a60.000001,59.999999 0 1 1 120.000002,0z" id="path2383"/>
+   <rect fill="#eaeaea" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" stroke-opacity="0.369048" y="216.94446" x="26.5" height="82" width="188" id="rect3155"/>
+   <rect fill="#eaeaea" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" stroke-opacity="0.369048" y="242.157062" x="317.500006" height="50.039368" width="154.999993" id="rect3157"/>
+   <text font-size="26px" font-style="normal" font-weight="bold" fill="#333333" stroke-width="1px" font-family="Verdana" id="text3161" y="71.441475" x="198.27318" xml:space="preserve">
+    <tspan y="71.441475" x="198.27318" id="tspan3163">MODEL</tspan>
+   </text>
+   <text font-size="26px" font-style="normal" font-weight="bold" fill="#333333" stroke-width="1px" font-family="Verdana" id="text3165" y="268.20145" x="80.17334" xml:space="preserve">
+    <tspan y="268.20145" x="80.17334" id="tspan3167">VIEW</tspan>
+   </text>
+   <text transform="matrix(0.6968042254447937,0,0,0.6968042254447937,88.98322239797562,88.36261854693294) " font-size="26px" font-style="normal" font-weight="bold" fill="#333333" stroke-width="1px" font-family="Verdana" id="text3169" y="267.284867" x="348.033227" xml:space="preserve">
+    <tspan stroke="null" y="267.284867" x="348.033227" id="tspan3171">CONTROLLER</tspan>
+   </text>
+   <text font-size="20px" font-style="normal" font-weight="bold" fill="#333333" stroke-width="1px" font-family="Verdana" transform="matrix(0.6769594,-0.7360204,0.7360204,0.6769594,0,0) " id="text3173" y="504.367351" x="-66.11873" xml:space="preserve">
+    <tspan y="504.367351" x="-66.11873" id="tspan3175">USES</tspan>
+   </text>
+   <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="2px" id="path3181" d="m299.80074,408.01135l17.07682,-18.3407"/>
+   <path stroke="#000000" fill="none" fill-rule="evenodd" stroke-width="2px" marker-end="url(#Arrow2Mend)" id="path3183" d="m363.163077,337.603567l35.44406,-38.031579"/>
+   <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="2px" id="path3185" d="m110.71511,310.32805l13.6543,17.88213"/>
+   <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="2px" marker-end="url(#Arrow2Mend)" id="path3187" d="m164.33318,382.30583l22.90054,29.6327"/>
+   <text font-size="20px" font-style="normal" font-weight="bold" fill="#333333" stroke-width="1px" font-family="Verdana" transform="matrix(0.563762,0.8259373,-0.8259373,0.563762,0,0) " id="text3189" y="87.326678" x="347.472182" xml:space="preserve">
+    <tspan y="87.326678" x="347.472182" id="tspan3191">SEES</tspan>
+   </text>
+   <path stroke="#000000" transform="rotate(-13.225069999694824 101.99999999999999,89.9444732666015) " fill="none" fill-rule="evenodd" stroke-width="2px" id="path3193" d="m120.410151,48.59331c-13.87389,1.293769 -33.502736,7.362987 -36.820302,36.998406l0,45.703913"/>
+   <path transform="rotate(25.592710494995117 389.49999999999994,91.41567230224612) " fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="2px" marker-start="url(#Arrow2Mstart)" marker-end="none" id="path3195" d="m366.5,53.44447c25.7968,-0.81108 43.65736,6.76628 46,34l0,42"/>
+   <text font-size="20px" font-style="normal" font-weight="bold" fill="#333333" stroke-width="1px" font-family="Verdana" id="text3197" y="155.82448" x="50.167664" xml:space="preserve">
+    <tspan y="155.82448" x="50.167664" id="tspan3199">UPDATES</tspan>
+   </text>
+   <text font-size="26px" font-style="normal" font-weight="bold" fill="#333333" stroke-width="1px" font-family="Verdana" id="text3201" y="464.70148" x="205.14006" xml:space="preserve">
+    <tspan y="464.70148" x="205.14006" id="tspan3203">USER</tspan>
+   </text>
+   <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="2px" marker-end="url(#Arrow2Mend)" id="path8205" d="m104.5,164.44447l0,44"/>
+   <path stroke="#000000" fill="none" fill-rule="evenodd" stroke-width="2.070197px" id="path8207" d="m399.5,226.373036l0,-61.857136"/>
+  </g>
+ </g>
+</svg>
