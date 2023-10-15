@@ -16,7 +16,7 @@ timezone: Europe/Zagreb
 
 title: Radan Skorić's personal site
 
-tagline: Software development, primarily with Ruby # it will display as the sub-title
+tagline: Software development, mostly Ruby # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A blog about software development and the Ruby programming language
