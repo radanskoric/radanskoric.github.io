@@ -8,13 +8,18 @@ gem "jekyll-theme-chirpy", "~> 6.2", ">= 6.2.3"
 group :development, :test do
   gem "html-proofer", "~> 4.4"
 
-  # This is needed because since Ruby 3.0 webrick is no longer a bundled gem.
-  gem "webrick"
-
-  gem "rspec"
-
   gem "pry", "~> 0.14.2"
   gem "pry-doc", require: false
+
+  # The whole section below is gems for tests accompanying blog posts.
+  # The idea is to test the code that appears in the posts so I know
+  # if it broke with new versions of ruby or gems.
+  gem "rspec"
+
+  # For AR related blog posts.
+  gem "activerecord", "~> 7.1"
+  gem "sqlite3", "~> 1.3", ">= 1.3.11"
+  gem 'concurrent-ruby', '~> 1.2', '>= 1.2.2'
 end
 
 # === Various platform normalizations ===

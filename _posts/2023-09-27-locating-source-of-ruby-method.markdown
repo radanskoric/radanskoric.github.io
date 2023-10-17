@@ -4,7 +4,7 @@ title:  "How to locate the source of a Ruby method"
 date:   2023-09-27
 modified_date: 2023-09-29
 categories: articles
-tags: ruby
+tags: ruby metaprogramming
 ---
 
 _"Wait, where the hell is this method coming from??"_"
