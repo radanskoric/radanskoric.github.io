@@ -2,7 +2,7 @@
 layout: post
 title:  "PostgreSQL zero-downtime migration of a primary key from int to bigint (with Ruby on Rails specific notes)!"
 date: 2022-02-23
-modified_date: 2023-10-10
+last_modified_at: 2023-10-10
 categories: articles
 tags: postgresql rails
 ---

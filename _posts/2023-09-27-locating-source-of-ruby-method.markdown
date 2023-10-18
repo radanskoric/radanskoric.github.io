@@ -2,7 +2,7 @@
 layout: post
 title:  "How to locate the source of a Ruby method"
 date:   2023-09-27
-modified_date: 2023-09-29
+last_modified_at: 2023-09-29
 categories: articles
 tags: ruby metaprogramming
 ---
