@@ -99,6 +99,6 @@ The most important lesson is the value of doing a limited scale evaluation on yo
 
 For this particular project the finding is leaning heavily towards **raising test coverage as the main tool for preventing bugs**. I would also consider adding Sorbet at `typed: true` level since it had a good cost/benefit tradeoff.
 
-_Have you run an experiment like this? What was your experience?_ Let me know in the comments below.
+_Have you run an experiment like this? What was your experience?_ Let me know in the comments below or in the [Reddit discussion](https://www.reddit.com/r/ruby/comments/17kmfoy/i_did_an_experiment_of_fully_adding_both_sorbet/){:target="_blank"}.
 
 I am most interested in whether the value starts to rapidly increase with very large codebases since I just added this to a small project.
