@@ -209,7 +209,7 @@ Have you found this evaluation useful? Do you think there are criteria that I mi
     }
   }
 
-  let answers = []
+  let answers = [];
 
   document.querySelectorAll("ul.task-list").forEach((questionDom) => {
     answers.push(questionDom);
