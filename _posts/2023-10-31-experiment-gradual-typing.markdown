@@ -6,7 +6,7 @@ categories: experiments
 tags: ruby types static-analysis sorbet rbs correctness
 ---
 
-_I used statically typed languages and liked the extra safety but I also really like Ruby for how elegant it is and the freedom it gives me. Will I regret adopting types?_
+_I have also published a followup to this experiment: [Should I add typing to my Ruby project?](/articles/should-i-add-typing-to-my-ruby-project)_
 
 ## TL:DR;
 
@@ -26,9 +26,6 @@ For this project I would conclude that **raising test coverage** is the most wor
 > I absolutely do not consider this a definite verdict on the typing question. It is **one data point** that I found very educational and useful but you should always take it for what it is: **one experiment, one data point**. It will give you most value if you use it as an inspiration for **running an experiment on your own project** and comparing with my findings.
 {: .prompt-warning }
 
-My next article will be digging deeper into how to decide if you should adopt gradual typing in your project. Subscribe to not miss it:
-<script async data-uid="e83d1aa837" src="https://thoughtful-producer-2834.ck.page/e83d1aa837/index.js"></script>
-
 ## Background
 
 It all started when I asked myself: _Should I adopt gradual typing in my Ruby projects?_
@@ -36,6 +33,9 @@ It all started when I asked myself: _Should I adopt gradual typing in my Ruby pr
 We are seeing an ongoing investment in gradual typing for Ruby by [Sorbet team](https://sorbet.org/){:target="_blank"} as well as [the core team adopting RBS](https://github.com/ruby/rbs){:target="_blank"}. Large companies that adopted one of these approaches claim great gains but the community at large isn't eagerly adopting it. _What is going on?_
 
 To better understand Ruby gradual typing I decided to do an exercise. I took a small side-project (1.2k lines of Ruby) and **covered it completely** with both Sorbet and RBS annotations. The project is a vanilla (non-Rails) Ruby project: an implementation of the first part of the excellent [Crafting Intepreters](https://craftinginterpreters.com/a-tree-walk-interpreter.html){:target="_blank"} book. I recently finished it and [the repo with the code is here](https://github.com/radanskoric/ruby_lox){:target="_blank"}. I chose it because, as it's a full language interpreter, it has a lot of data being processed, transformed and flowing through the entire codebase. *Intuitively, I expect this kind of project to benefit from typing.* Also, as a side-project, I'm done with it, meaning there will be no changes on it between trying both options. Along the way I tracked what issues were uncovered by either approach.
+
+The exploration also resulted in ["Should I add typing to my Ruby project?"](/articles/should-i-add-typing-to-my-ruby-project) and I'm preparing an overview of all of the libraries and tools available to Ruby projects that in some way work to prevent defects. Subscribe to not miss it:
+<script async data-uid="e83d1aa837" src="https://thoughtful-producer-2834.ck.page/e83d1aa837/index.js"></script>
 
 ## Experiments
 
@@ -102,3 +102,5 @@ For this particular project the finding is leaning heavily towards **raising tes
 _Have you run an experiment like this? What was your experience?_ Let me know in the comments below or in the [Reddit discussion](https://www.reddit.com/r/ruby/comments/17kmfoy/i_did_an_experiment_of_fully_adding_both_sorbet/){:target="_blank"}.
 
 I am most interested in whether the value starts to rapidly increase with very large codebases since I just added this to a small project.
+
+If you are interested into more on this topic checkout my followup post: [Should I add typing to my Ruby project?](/articles/should-i-add-typing-to-my-ruby-project)_
