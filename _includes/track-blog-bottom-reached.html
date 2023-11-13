@@ -1,0 +1,12 @@
+<!-- This should be included in the post layout just below the content include. -->
+<div id="postBottom"></div>
+<script>
+  const element = document.getElementById("postBottom");
+  const reportContentBottomReached = function() {
+    if (element && element.getBoundingClientRect().top < window.innerHeight) {
+      plausible("Blog bottom reached");
+      this.removeEventListener("scroll", reportContentBottomReached);
+    }
+  };
+  window.addEventListener("scroll", reportContentBottomReached);
+</script>
