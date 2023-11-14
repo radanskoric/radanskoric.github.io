@@ -54,10 +54,10 @@ Since then, a lot of digital ink has been spilled over which approach is better.
 
 There are many dimensions that make up a measure of quality software development and not all of them are along the same axis. As evidenced by many teams successfully using both static and dynamic languages to build high quality software, it's possible to thrive with both approaches.
 
-And that is why it is safe to conclude that whether you would benefit from adopting gradual typing in your Ruby project is going to depend on a number of factors, i.e. you should do a **cost** vs **benefit** analysis for your particular project with considerations of **alternative solutions**.
+And that is why it is safe to conclude that whether you would benefit from adopting gradual typing in your Ruby project is going to depend on a number of factors, i.e. you should do a **cost** vs **benefit** analysis for your particular project with considerations of [**alternative solutions**](/articles/preventing-bugs-in-ruby-tools-of-the-trade).
 
-I am preparing an overview of all of the libraries and tools available to Ruby projects that in some way work to prevent defects. Subscribe to not miss it:
-<script async data-uid="e83d1aa837" src="https://thoughtful-producer-2834.ck.page/e83d1aa837/index.js"></script>
+If you are enjoying my work, consider subscribing to not miss future articles:
+<script async data-uid="a747d9cf0d" src="https://thoughtful-producer-2834.ck.page/a747d9cf0d/index.js"></script>
 
 ## Evaluation {#evaluation}
 
@@ -134,8 +134,7 @@ Here is the table for evaluating results which was created by a very scientific 
 #### 0-3 points
 You don't seem to be in a good position to benefit from gradual types. It's likely to be an uphill battle with little to show for it. I would suggest that instead you look into alternative approaches: increasing test coverage, adopting different kinds of linters, refactoring problematic parts of the codebase.
 
-I plan to write in more detail about that in the next article. Subscribe to not miss it:
-<script async data-uid="e83d1aa837" src="https://thoughtful-producer-2834.ck.page/e83d1aa837/index.js"></script>
+I wrote in more details about that in: ["Preventing bugs in Ruby: tools of the trade"](/articles/preventing-bugs-in-ruby-tools-of-the-trade).
 
 #### 4-7 points
 It's unclear if you'd benefit from adopting types. I would suggest doing an experiment by either adding it to part of your main project or to a smaller non-main project, a side project or an internal company facing project.
