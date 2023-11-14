@@ -22,6 +22,10 @@ group :development, :test do
   gem 'concurrent-ruby', '~> 1.2', '>= 1.2.2'
 end
 
+group :jekyll_plugins do
+  gem "commands", "0.1.0", path: "gems/commands"
+end
+
 # === Various platform normalizations ===
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
