@@ -41,7 +41,7 @@ It lives in this github gist: [https://gist.github.com/radanskoric/9bdaa8f64289b
 Rails usually does a lot of work behind the scenes to weave its magic in service of *complexity compression*, but in this case Rails actually needs to do very very little. So to use turbo without it you also need to do very little. What is needed is:
 1. A scheme to generate consistent ids for turbo frames so Turbo correctly knows what content is meant to go where.
 2. Wrap all relevant segments of HTML in `<turbo-frame id="my_consistent_id">` tags.
-4. Render the response with `content-type: text/html`. Every framework, including Sinatra, will do for you by default.
+4. Render the response with `content-type: text/html`. Every framework, including Sinatra, will do that for you by default.
 
 Consider the very first thing we needed for our application: an "Add task" link that loads displays a new task form inline.
 
