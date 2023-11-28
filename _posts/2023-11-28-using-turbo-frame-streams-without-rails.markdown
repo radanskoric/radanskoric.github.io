@@ -11,14 +11,14 @@ and [streams](https://turbo.hotwired.dev/handbook/streams){:target="_blank"} mor
 understand how they work. To do that I set out to rebuild a very simple To-Do application
 (*peak* originality!), using Turbo but without Rails or
 [turbo-rails](https://github.com/hotwired/turbo-rails){:target="_blank"} gem. I did that using Sinatra[^1].
-As you'll quickly see, it was really simple. So simple I wondered if it's worth a blog post.
-But then I realised that is kind of interesting in itself, so here we are.
+As you'll see, it was really simple. So simple I wondered if it's worth a blog post.
+But then I realised that is kind of interesting in itself.
 
 This is not an intro-to-turbo post and I am assuming you already have some *basic* familiarity with **using** Turbo
 in a Rails application and just want to know more about it. If you are just starting to use it I would recommend
 [the official handbook](https://turbo.hotwired.dev/handbook/introduction){:target="_blank"} and this
 [introductory blog post](https://medium.com/@alexischvez/hotwire-supercharged-rails-forms-with-turbo-6de79bb9e374){:target="_blank"}
-(there are other excellent posts but I read this one and liked it).
+(there are other excellent posts but I first read this one and found it easy to follow).
 
 ## The Sinatra application
 
@@ -34,7 +34,7 @@ I'm speaking in future tense but you've probably guessed that I've already built
 
 It lives in this github gist: [https://gist.github.com/radanskoric/9bdaa8f64289b00b3cfb1d35cd889196](https://gist.github.com/radanskoric/9bdaa8f64289b00b3cfb1d35cd889196){:target="_blank"}.
 
-*If you are comfortable* reading the code, I would suggest you **browse it now and then come back** for the short explanations that follow. *If you are not comfortable* reading the code I would suggest still read it and consider it as a practice ;) . I kept the code very straight forward and I've tried to explain it generously with comments. You don't need to read every line carefully, scanning it to get a sense of how it works will be enough.
+*If you are comfortable* reading the code, I would suggest you **browse it now and then come back** for the explanations that follow. *If you are not comfortable* reading the code I would suggest still read it and consider it as a practice ;) . I kept the code very straight forward and I've tried to explain it generously with comments. You don't need to read every line carefully, scanning it to get a sense of how it works will be enough.
 
 ## Using Turbo Frames
 
