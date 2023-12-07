@@ -4,7 +4,7 @@ title:  "Understand Rails async database queries by reimplementing them in 51 li
 date: 2023-10-17
 last_modified_at: 2023-10-18
 categories: articles
-tags: ruby rails activerecord
+tags: ruby rails activerecord how-stuff-works
 ---
 
 *Psst, listen here: this post is really about [leaky abstractions](https://en.wikipedia.org/wiki/Leaky_abstraction){:target="_blank"} and programmer mental models but I'm hiding it very cunningly. Don't tell anyone.*
