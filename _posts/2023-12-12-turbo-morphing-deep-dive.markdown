@@ -70,7 +70,7 @@ turbo_stream_from "Beeblebrox"
 
 The stream name is then signed using `Turbo.signed_stream_verifier#generate`to produce a signed name. The verifier is an instance of [ActiveSupport::MessageVerifier](https://api.rubyonrails.org/classes/ActiveSupport/MessageVerifier.html){:target="_blank"}, i.e. a standard Rails mechanism for preventing man in the middle attacks.
 
-Since all we're broadcasting is a message that the page needs to be refreshed, the content is very simple, it's just a turbo stream refresh tag rendered using [turbo_stream_refresh_tag helper](app/helpers/turbo/streams/action_helper.rb:38){:target="_blank"} and looks like this:
+Since all we're broadcasting is a message that the page needs to be refreshed, the content is very simple, it's just a turbo stream refresh tag rendered using [turbo_stream_refresh_tag helper](https://github.com/hotwired/turbo-rails/blob/4eb4e928e30be8cd537af8073f98b80ddea4a578/app/helpers/turbo/streams/action_helper.rb#L38){:target="_blank"} and looks like this:
 ```html
 <turbo-stream
   request-id=\"ca519ab9-1138-4625-abc2-6049317321a9\"
