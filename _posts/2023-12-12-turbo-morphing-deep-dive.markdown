@@ -7,6 +7,8 @@ tags: rails turbo hotwire how-stuff-works morphing
 mermaid: true
 ---
 
+_This is part 1 of a 2 part series on how Turbo 8 works. [Part 2](/articles/turbo-morphing-deep-dive-idiomorph) covers the idiomorph algorithm[^3] and this article covers the rest._
+
 Turbo 8 and the morphing functionality that was [presented at the first Rails World](https://www.youtube.com/watch?v=m97UsXa6HFg){:target="_blank"} is looking like a strong contender for the most magical Rails feature yet! And as with every *Rails magic* feature I'm part excited for all of the development time savings I'm about to reap and anxious for all of the time I will waste figuring out why it stopped working. In my 15+ year long professional career dominated by Rails projects I've experienced both. Thankfully it was mostly the former but the latter was quite painful and I would really like to eliminate it. My favourite way to battle it is to pull the curtain on the magic. I'm not scared once I've seen the wizard behind the curtain pulling the ropes.
 
 This is not an introduction on how to use Turbo Morph in your app, but a teardown of how it works under the hood. For the introduction to how to use it I would recommend [Turbo 8 in 8 minutes](https://fly.io/ruby-dispatch/turbo-8-in-8-minutes/){:target="_blank"}.
@@ -104,9 +106,7 @@ Turbo will find that tag and connect via websockets to the channel and listen fo
     - The node we are about to replace is a morphing remote turbo frame. These are reloaded separately after the morphing has finished.
 At this point the flow is done and the update has finished.
 
-This is a 2 part article. In this first part I'm looking at the backend side and the Turbo plumbing and in the next part I'm going to dive into idiomorph[^3] library that sits at the heart of morphing functionality and how it works. The easiest way to not miss it is to subscribe:
-<script async data-uid="f43925b4ae" src="https://thoughtful-producer-2834.ck.page/f43925b4ae/index.js"></script>
-
+This is a 2 part article. The 2nd part, which covers how idiomorph works can be found [here](/articles/turbo-morphing-deep-dive-idiomorph).
 
 ## Conclusions
 

@@ -61,7 +61,7 @@ This will be used extensively to check if two elements are a match. Whenever the
 ### Takeaways
 
 - It's very important that ids really are unique. They should already be unique but HTML and CSS are reasonably forgiving of repeated ids. However, it could cause big issues with this algorithm.
-- It's valuable to have ids on all the actual content. For example, if you have standard partials used in a lot of places, it would be beneficial to use a globally unique id on them, perhaps based on the id of the model being rendered (e.g. `id="project-123"`).
+- It's valuable to have ids on all the actual content. For example, if you have standard partials used in a lot of places, it would be beneficial to use a globally unique id on them, perhaps based on the id of the model being rendered (e.g. `id="project-123"`). The [dom_id Rails helper](https://api.rubyonrails.org/classes/ActionView/RecordIdentifier.html#method-i-dom_id){:target="_blank"} is your friend here.
 
 ## Morphing the head element
 
@@ -177,6 +177,9 @@ flowchart LR
 ## Insert the content surrounding the best match
 
 Remember that at the top level, in the case where new content is a list of nodes, we found the best match and morphed the old content into its best match. Well, this also means that there is more content at the top level: _around the best match_. Now we insert that content around the old content we just morphed, completing the morphing. This will only be relevant when morphing remote turbo frames since the full page morph will always have just the one top level `html` element.
+
+Before we get to the playground, if you're enjoying my content, it would mean a lot if you would consider subscribing:
+<script async data-uid="a747d9cf0d" src="https://thoughtful-producer-2834.ck.page/a747d9cf0d/index.js"></script>
 
 ## Interactive playground {#playground}
 
