@@ -241,130 +241,114 @@ Here are also some premade examples for you to try:
 <div id="demoContainer">
 </div>
 
-<div id="idiomorphExamples" style="display:none">
-  <div id="reorder">
-    <div>
-<div>
-    <p id="p1">A</p>
-</div>
-<div>
-    <p id="p2">B</p>
-</div>
-<div>
-    <p id="p3">C</p>
-</div>
-    </div>
-    <div>
-<div>
-    <p id="p2">B</p>
-</div>
-<div>
-    <p id="p1">A</p>
-</div>
-<div>
-    <p id="p3">C</p>
-</div>
-    </div>
-  </div>
-
-  <div id="append">
-    <div>
-<div>
-    <p id="p1">A</p>
-</div>
-<div>
-    <p id="p2">B</p>
-</div>
-<div>
-    <p id="p3">C</p>
-</div>
-    </div>
-    <div>
-<div>
-    <p id="p1">A</p>
-</div>
-<div>
-    <p id="p2">B</p>
-</div>
-<div>
-    <p id="p3">C</p>
-</div>
-<div>
-    <p id="p4">D</p>
-</div>
-    </div>
-  </div>
-
-  <div id="prepend">
-    <div>
-<div>
-    <p id="p1">A</p>
-</div>
-<div>
-    <p id="p2">B</p>
-</div>
-<div>
-    <p id="p3">C</p>
-</div>
-    </div>
-    <div>
-<div>
-    <p id="p0">0</p>
-</div>
-<div>
-    <p id="p1">A</p>
-</div>
-<div>
-    <p id="p2">B</p>
-</div>
-<div>
-    <p id="p3">C</p>
-</div>
-    </div>
-  </div>
-
-  <div id="insert">
-    <div>
-<div>
-    <p id="p1">A</p>
-</div>
-<div>
-    <p id="p3">C</p>
-</div>
-    </div>
-    <div>
-<div>
-    <p id="p1">A</p>
-</div>
-<div>
-    <p id="p2">B</p>
-</div>
-<div>
-    <p id="p3">C</p>
-</div>
-    </div>
-  </div>
-
-  <div id="soft">
-    <div>
-<div> I'm original div. </div>
-<p> I'm p and I stay in place and just change text.</p>
-<span> I'm original span.</span>
-    </div>
-    <div>
-<span> I soft match last original element but 2 others softmatch so I'll be re-inserted.</span>
-<p> I'm p, only div is after me so I'll morph in place. </p>
-<div> Old div was already removed when p was morped so I'm just inserted. </div>
-    </div>
-  </div>
-
-</div>
-
 <script>
+  const examples = {
+    "reorder" : [
+      '<div>\n' +
+      '    <p id="p1">A</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p2">B</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p3">C</p>\n' +
+      '</div>'
+      ,
+      '<div>\n' +
+      '    <p id="p2">B</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p1">A</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p3">C</p>\n' +
+      '</div>\n'
+    ],
+
+    "append" : [
+      '<div>\n' +
+      '    <p id="p1">A</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p2">B</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p3">C</p>\n' +
+      '</div>'
+      ,
+      '<div>\n' +
+      '    <p id="p1">A</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p2">B</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p3">C</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p4">D</p>\n' +
+      '</div>'
+    ],
+
+    "prepend" : [
+      '<div>\n' +
+      '    <p id="p1">A</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p2">B</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p3">C</p>\n' +
+      '</div>'
+      ,
+      '<div>\n' +
+      '    <p id="p0">0</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p1">A</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p2">B</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p3">C</p>\n' +
+      '</div>'
+    ],
+
+    "insert" : [
+      '<div>\n' +
+      '    <p id="p1">A</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p3">C</p>\n' +
+      '</div>'
+      ,
+      '<div>\n' +
+      '    <p id="p1">A</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p2">B</p>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '    <p id="p3">C</p>\n' +
+      '</div>'
+    ],
+
+    "soft" : [
+      '<div> I\'m original div. </div>\n' +
+      '<p> I\'m p and I stay in place and just change text.</p>\n' +
+      '<span> I\'m original span.</span>'
+      ,
+      '<span> I soft match last original element but 2 others softmatch so I\'ll be re-inserted.</span>\n' +
+      '<p> I\'m p, only div is after me so I\'ll morph in place. </p>\n' +
+      '<div> Old div was already removed when p was morphed so I\'m just inserted. </div>'
+    ]
+  }
+
   function loadExample(id) {
-    let example = document.getElementById("idiomorphExamples").querySelector(`#${id}`);
-    document.getElementById("currentDOM").value = example.children[0].innerHTML.trim();
-    document.getElementById("newDOM").value = example.children[1].innerHTML.trim();
+    let example = examples[id];
+    document.getElementById("currentDOM").value = example[0];
+    document.getElementById("newDOM").value = example[1];
     runIdiomorph();
   }
 

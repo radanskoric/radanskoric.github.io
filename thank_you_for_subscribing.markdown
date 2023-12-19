@@ -19,6 +19,9 @@ Then we’re all set.
 
 _Radan_
 
+> If you now click **the back button** in your browser you will return to the article you were reading.
+{: .prompt-tip}
+
 ## Trouble shooting tips …
 
 - If you can’t find the welcome email check your junk / spam folder.
