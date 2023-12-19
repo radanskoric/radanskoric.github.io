@@ -343,7 +343,7 @@ Here are also some premade examples for you to try:
       '<p> I\'m p, only div is after me so I\'ll morph in place. </p>\n' +
       '<div> Old div was already removed when p was morphed so I\'m just inserted. </div>'
     ]
-  }
+  };
 
   function loadExample(id) {
     let example = examples[id];
