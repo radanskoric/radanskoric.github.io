@@ -38,6 +38,7 @@ social:
   email: me@radanskoric.com
   links:
     # The first element serves as the copyright owner's link
+    - /about
     - https://github.com/radanskoric
     - https://www.linkedin.com/in/radanskoric
     - https://twitter.com/radanskoric
