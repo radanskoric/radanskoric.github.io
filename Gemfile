@@ -6,7 +6,7 @@ ruby RUBY_VERSION
 gem "jekyll-theme-chirpy", "~> 6.3"
 
 group :development, :test do
-  gem "html-proofer", "~> 5.0"
+  gem "html-proofer", "~> 4.4"
 
   gem "pry", "~> 0.14.2"
   gem "pry-doc", require: false
