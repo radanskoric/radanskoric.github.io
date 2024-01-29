@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 5
 ---
 
-![Radan with Karlos, on Medvednica, near Brestovac peak](/images/radan.jpg){: width="1196" height="1196" .w-50 .left}
+![Radan with Karlos, on Medvednica, near Brestovac peak](/images/radan.jpg){: width="1196" height="1196" .right.floating-image}
 
 I am a senior full stack developer with over 15 years of professional experience
 solving problems with Software and leading teams of developers.

@@ -1,0 +1,17 @@
+---
+---
+
+@import 'main';
+
+/* append your custom style below */
+
+.floating-image {
+  width: 50%;
+}
+
+@media (max-width: 400px) {
+  .floating-image {
+    width: auto;
+    max-width: 400px;
+  }
+}
