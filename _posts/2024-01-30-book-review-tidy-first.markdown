@@ -26,7 +26,7 @@ The first part is very specific, it covers ways in which a piece of code can be 
 
 Personally, I've been aware and have used all of the advice already in one way or the other, yet I still gathered significant value in 3 ways:
 1. I re-evaluated the usefulness of these techniques: e.g., I do order things for easier reading but not always. It made me appreciate its value more so I've started doing it more often.
-2. I better understand how to get the most out of techniques: e.g. I've unrolled functions when trying to understand how a library works but I've not used the unrolling as an intermediate step in refactoring my own code. There's a one page chapter that explains the benefit vividly.
+2. I better understand how to get the most out of techniques: e.g. I've unrolled functions when trying to [understand how a library works](/articles/understand-rails-async-db-queries) but I've not used the unrolling as an intermediate step in refactoring my own code. There's a one page chapter that explains the benefit vividly.
 3. Last but not least, Kent did a better job explaining their value than I could. I can reuse his words when explaining the value to someone else.
 
 If even *just one* of these little tidyings wasn't familiar to you before, that alone will make the book worth reading.
@@ -46,6 +46,10 @@ This part builds a theory and a mental framework for thinking of the tradeoffs i
 This part had me frequently stopping to think about what I just read and how I would apply it. The way in which he builds a bridge between software development and financial theory is especially illuminating. It would be foolish to attempt to summarise it here as it's already very concise in the book but I'll just tell you that it gave me a whole new way of deciding how flexible should my software design be in any given case. For me that insight was the biggest value I got from the book. I expect it to pay off massively on the next inflection point of any project I work on.
 
 This is also the part to which I expect to return most often. In fact, for example, while writing this I paused to re-read chapter 30.
+
+Before I continue, if you're enjoying my writing, please consider subscribing:
+<script async data-uid="a747d9cf0d" src="https://thoughtful-producer-2834.ck.page/a747d9cf0d/index.js"></script>
+
 ## Who is it for?
 
 The explanations are high level but rooted in real life experience. Without the relevant experience it's much harder to understand the explanation. That is why I believe that a junior developer would not get much value from the book.
