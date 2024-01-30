@@ -20,6 +20,7 @@ module Commands
             print_channel(post_doc, "RUBY ON RAILS LINK SLACK", "ruby-on-rails-link", "slack")
             print_channel(post_doc, "RUBYZG SLACK", "rubyzg", "slack")
             print_channel(post_doc, "LINKEDIN", "linkedin", "social")
+            print_channel(post_doc, "TWITTER", "twitter", "social")
           end
         end
       end
