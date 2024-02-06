@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Avoid most of the pain with test factories by adopting one fundamental principle"
+title: "Avoid most of the pain with test factories with the principal of minimal defaults"
 date: 2024-02-06
 categories: articles
 tags: testing factories principles maintainability ruby
