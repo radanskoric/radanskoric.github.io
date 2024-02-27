@@ -117,7 +117,8 @@ For me the main takeaways are:
 - I can exclude sections of the page from morphing by using `data-turbo-permanent` attribute.
 - The approach clearly has nuance to it and more corner cases that need to be handled will arise but it has a solid and straight forward logic so I'm optimistic about its future.
 
-The real meat of the feature is the idiomorph[^3] library and I am preparing a deep dive into how it works.
+The real meat of the feature is the idiomorph[^3] library and you can find its deep dive [here](/articles/turbo-morphing-deep-dive-idiomorph).
+If you are struggling to debug an issue you have with the morphing feature, I also wrote an article with tips on [debugging Turbo Morphing issues](/articles/how-to-debug-issues-with-turbo-morphing).
 
 ## Footnotes
 
