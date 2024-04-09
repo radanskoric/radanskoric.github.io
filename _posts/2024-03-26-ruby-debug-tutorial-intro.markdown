@@ -2,9 +2,12 @@
 layout: post
 title: "An interactive intro to ruby debugger, in the debugger"
 date: 2024-03-26
+last_modified_at: 2024-04-09
 categories: articles
 tags: ruby debugging tutorial
 ---
+
+**Update 2024-04-09**: Added a second tutorial on using breakpoints.
 
 This is an introduction tutorial to Ruby debugging, inside the ruby debugger itself.
 The instructions are woven through the code so you're learning to use the debugger as
@@ -19,7 +22,7 @@ git clone https://github.com/radanskoric/ruby_debug_tutorial.git
 
 And then run the following command in your terminal:
 ```bash
-rdbg intro.rb
+ruby start.rb
 ```
 Don't read the source code because it will spoil the fun. :)
 
