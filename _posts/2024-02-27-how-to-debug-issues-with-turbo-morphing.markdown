@@ -42,10 +42,14 @@ By default, a minified version of Turbo will be used. In a fresh Rails app using
 ```ruby
 pin "@hotwired/turbo-rails", to: "turbo.min.js"
 ```
+{: file='config/importmap.rb'}
+
 Change it to:
 ```ruby
 pin "@hotwired/turbo-rails", to: "turbo.js"
 ```
+{: file='config/importmap.rb'}
+
 This will make it easier to follow what's going on in the library itself when debugging and set breakpoints inside turbo code.
 
 ## Break on DOM change
