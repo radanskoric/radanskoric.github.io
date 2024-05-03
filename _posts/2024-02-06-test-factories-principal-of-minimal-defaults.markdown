@@ -99,8 +99,8 @@ Non minimal factories do more than the minimum needed for the test setup. Less s
 
 This is not the full solution to the speed problem but it is a significant part of it.
 
-> If this is useful, consider subscribing to receive more focused, advanced content:
-> <script async data-uid="eee193b17b" src="https://thoughtful-producer-2834.ck.page/eee193b17b/index.js"></script>
+> If you are finding this useful, consider subscribing to not miss future articles and to get my [printable Turbo 8 cheat-sheet](/cheatsheet):
+> <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
 {: .prompt-info}
 
 ## How to implement the principle

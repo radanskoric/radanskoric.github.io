@@ -97,8 +97,8 @@ We are doing two things:
 
 And that's pretty much it. Turbo will see the response content type, look for `turbo-stream` tags and run the action using the `target` and `template` data provided. There are a total of **7 actions** you can use, and you [can consult the official streams reference](https://turbo.hotwired.dev/reference/streams#the-seven-actions){:target="_blank"} for the full list.
 
-If you like these kind of breakdowns, you might also enjoy [my breakdown od how rails async database queries work](/articles/understand-rails-async-db-queries) or [a deep dive into turbo morphing](/articles/turbo-morphing-deep-dive). I also plan to dig into other aspects of Turbo as well as upcoming morph functionality. If you don't want to miss it you can subscribe to my mailing list (no spam, unsubscribe anytime):
-<script async data-uid="f43925b4ae" src="https://thoughtful-producer-2834.ck.page/f43925b4ae/index.js"></script>
+If you like these kind of breakdowns, you might also enjoy [my breakdown od how rails async database queries work](/articles/understand-rails-async-db-queries) or [a deep dive into turbo morphing](/articles/turbo-morphing-deep-dive). If you subscribe I will also send you my [printable Turbo 8 cheat-sheet](/cheatsheet):
+<script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
 
 ## Conclusion
 

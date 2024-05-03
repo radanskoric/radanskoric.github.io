@@ -74,6 +74,11 @@ All of the 3 options are useful in some scenarios:
 - **attribute modifications:** this one is especially useful for debugging issues with turbo frames inside morphed content. Remote turbo frames inside morphed content can be especially tricky because they have a more complex lifecycle than regular nodes or even regular turbo frames. If you find yourself running into strange issues related to Turbo Frames try putting some breakpoints inside [FrameController](https://github.com/hotwired/turbo/blob/main/src/core/frames/frame_controller.js){:target="\_blank"} in Turbo source. More on breakpoints in Turbo source in next section.
 - **node removal:** This is probably the least useful option because if a node is being completely removed when you expect it in the final output, the most likely cause is that it's missing in the new HTML response. Anything other than that is a bug in the morphing library.
 
+
+> To help you, you can also get my [printable Turbo 8 cheat-sheet](/cheatsheet) by subscribing to my blog:
+> <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
+{: .prompt-info}
+
 ## Setting breakpoints inside Turbo source
 
 At this point, if you just set breakpoints on the relevant elements and go through the recreation steps you'll probably find them firing before you got to the relevant reproduction step. You can keep pressing "Resume" to let it continue running until you get to the reproduction point but that is tedious. It will be easier if you stop execution just before the morphing starts and then set the breakpoints on elements while paused.

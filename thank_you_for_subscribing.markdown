@@ -9,7 +9,7 @@ permalink: /thank-you-for-subscribing
 
 I’ve got your address but I’m not allowed to send you stuff until you click the link in the welcome email.
 
-**Check your email** and **click the link** to confirm your email address please.
+**Check your email** and **click the link** to confirm your email address please. This will also get you the Turbo 8 printable PDF cheat-sheet.
 
 You will be missing out otherwise. This happens _a lot!_
 

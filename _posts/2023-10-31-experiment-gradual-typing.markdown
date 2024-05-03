@@ -26,8 +26,8 @@ For this project I would conclude that **raising test coverage** is the most wor
 > I absolutely do not consider this a definite verdict on the typing question. It is **one data point** that I found very educational and useful but you should always take it for what it is: **one experiment, one data point**. It will give you most value if you use it as an inspiration for **running an experiment on your own project** and comparing with my findings.
 {: .prompt-warning }
 
-If you are finding this useful, consider subscribing to not miss future articles:
-<script async data-uid="a747d9cf0d" src="https://thoughtful-producer-2834.ck.page/a747d9cf0d/index.js"></script>
+If you are finding this useful, consider subscribing to not miss future articles and to get my [printable Turbo 8 cheat-sheet](/cheatsheet):
+<script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
 
 
 ## Background

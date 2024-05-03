@@ -121,9 +121,6 @@ class AsyncQueryLoader
 end
 ```
 
-Subscribe to not miss the next teardown:
-<script async data-uid="f43925b4ae" src="https://thoughtful-producer-2834.ck.page/f43925b4ae/index.js"></script>
-
 ### Setup for testing the code
 
 I am testing it within a single file, outside a normal Rails application to isolate just the async loading. For the database I'm using Postgres. Normally I'd use SQLite for an easier setup but for `load_async` we need to be talking to an external process that does the actual work so we can actually parallelise on the IO. Also, Postgres conveniently has the `pg_sleep` function which we can use to simulate a slow query.

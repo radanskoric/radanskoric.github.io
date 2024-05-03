@@ -108,6 +108,10 @@ At this point the flow is done and the update has finished.
 
 This is a 2 part article. The 2nd part, which covers how idiomorph works can be found [here](/articles/turbo-morphing-deep-dive-idiomorph).
 
+> You can also get my [printable Turbo 8 cheat-sheet](/cheatsheet) by subscribing to my blog:
+> <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
+{: .prompt-info}
+
 ## Conclusions
 
 For me the main takeaways are:

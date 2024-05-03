@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 5
+order: 6
 ---
 
 ![Radan with Karlos, on Medvednica, near Brestovac peak](/images/radan.jpg){: width="1196" height="1196" .right.floating-image}
@@ -26,3 +26,5 @@ having a deep understanding of how the system and libraries I am using work.
 I try to reflect this in my writing.
 
 Download my [CV in pdf format](../CV_Radan_Skoric.pdf)
+
+I am also one of the organizers of the [RubyZG Meetup](https://www.meetup.com/rubyzg/){:target="_blank"}.

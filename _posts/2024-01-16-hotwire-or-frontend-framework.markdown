@@ -46,8 +46,8 @@ It's going to be your call which way it leans but once you look at it through th
 
 Don't forget that the hybrid approach is also viable: **A mostly Hotwire app with small self contained single page applications embeded in the pages.** If in the end there are still too many unknowns to make an informed call, this might be the safest way forward since it's closer to the default Rails approach.
 
-If you're enjoying my writing, please consider subscribing:
-<script async data-uid="a747d9cf0d" src="https://thoughtful-producer-2834.ck.page/a747d9cf0d/index.js"></script>
+If you are finding this useful, consider subscribing to not miss future articles and to get my [printable Turbo 8 cheat-sheet](/cheatsheet):
+<script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
 
 ## Conclusion
 

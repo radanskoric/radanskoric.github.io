@@ -178,8 +178,8 @@ flowchart LR
 
 Remember that at the top level, in the case where new content is a list of nodes, we found the best match and morphed the old content into its best match. Well, this also means that there is more content at the top level: _around the best match_. Now we insert that content around the old content we just morphed, completing the morphing. This will only be relevant when morphing remote turbo frames since the full page morph will always have just the one top level `html` element.
 
-Before we get to the playground, if you're enjoying my content, it would mean a lot if you would consider subscribing:
-<script async data-uid="a747d9cf0d" src="https://thoughtful-producer-2834.ck.page/a747d9cf0d/index.js"></script>
+Before we get to the playground, I also have a [printable Turbo 8 cheat-sheet](/cheatsheet) that you can get by subscribing:
+<script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
 
 ## Interactive playground {#playground}
 
