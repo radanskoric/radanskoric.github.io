@@ -3,7 +3,7 @@ layout: post
 title:  "Using Turbo Frames and Streams without Rails"
 date:   2023-11-28
 categories: experiments
-tags: rails turbo hotwire how-stuff-works
+tags: rails turbo hotwire how-stuff-works stream-actions turbo-frames
 ---
 
 Recently I've been using Turbo [frames](https://turbo.hotwired.dev/handbook/frames){:target="_blank"}
