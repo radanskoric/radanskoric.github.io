@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to reuse the same page in different Turbo Frame flows"
-date: 2024-05-24
+date: 2024-05-28
 categories: articles
 tags: rails hotwire turbo turbo-frames
 ---

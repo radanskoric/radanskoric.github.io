@@ -1,0 +1,49 @@
+<% turbo_page_requires_reload if params[:force_reload] %>
+
+<h1>FormInFrame#index</h1>
+<p>Testing different approaches for the form in a frame to navigate the full page</p>
+
+<div>
+  Control value, simulating database with cache using memory store: <%= session.fetch(:form_in_frame, "NONE") %>
+</div>
+
+<h2>Just have the form target top</h2>
+
+<%= turbo_frame_tag :target_top, target: "_top" do %>
+  <%= form_with url: form_in_frame_target_top_path, method: :post do |f| %>
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+    <%= f.submit "The frame targets the top!" %>
+  <% end %>
+<% end %>
+
+<h2>Respond with refresh action</h2>
+
+<%= turbo_frame_tag :refresh_action do %>
+  <%= form_with url: form_in_frame_refresh_action_path, method: :post do |f| %>
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+    <%= f.submit "Use refresh action!" %>
+  <% end %>
+<% end %>
+
+<h2>Rely on turbo-visit-control meta tag</h2>
+
+<%= turbo_frame_tag :visit_control do %>
+  <%= form_with url: form_in_frame_visit_control_path, method: :post do |f| %>
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+    <%= f.submit "Make redirect target have turbo-visit-control meta tag!" %>
+  <% end %>
+<% end %>
+
+<h2>Use custom full page redirect stream action</h2>
+
+<%= turbo_frame_tag :custom_action do %>
+  <%= form_with url: form_in_frame_custom_action_path, method: :post do |f| %>
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+    <%= f.submit "Make redirect target have turbo-visit-control meta tag!" %>
+  <% end %>
+<% end %>
+

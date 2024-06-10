@@ -22,3 +22,8 @@ package-lock.json
 # Misc
 assets/js/dist
 .DS_Store
+
+# The test rails app that's inside the spec folder
+spec/rails_app/tmp/
+spec/rails_app/log/*.log
+spec/rails_app/storage
