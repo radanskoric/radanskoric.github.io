@@ -52,7 +52,7 @@ RSpec.describe "POST: How to locate the source of a Ruby method" do
 
     it "works for dynamic method with string source" do
       expect(Dynamic.new.method(:evald).source_location).to eq [
-        "(eval)",
+        "(eval at #{File.dirname(__FILE__)}/#{DYNAMIC}:11)",
         1
       ]
     end

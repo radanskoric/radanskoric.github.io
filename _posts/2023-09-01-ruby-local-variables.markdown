@@ -2,6 +2,7 @@
 layout: post
 title:  "Is it possible to conditionally define a local variable in Ruby?"
 date:   2023-09-01
+last_modified_at: 2024-06-10
 categories: articles
 tags: ruby
 ---
@@ -107,7 +108,7 @@ puts RubyVM::InstructionSequence.compile("if defined?(x); x = true; end").disasm
 ```
 Gives:
 ```
-== disasm: #<ISeq:<compiled>@<compiled>:1 (1,0)-(1,29)> (catch: false)
+== disasm: #<ISeq:<compiled>@<compiled>:1 (1,0)-(1,29)>
 local table (size: 1, argc: 0 [opts: 0, rest: -1, post: 0, block: -1, kw: -1@-1, kwrest: -1])
 [ 1] x@0
 0000 putself                                                          (   1)[Li]
@@ -127,7 +128,7 @@ puts RubyVM::InstructionSequence.compile("x = true if defined?(x)").disasm
 ```
 Gives:
 ```
-== disasm: #<ISeq:<compiled>@<compiled>:1 (1,0)-(1,23)> (catch: false)
+== disasm: #<ISeq:<compiled>@<compiled>:1 (1,0)-(1,23)>
 local table (size: 1, argc: 0 [opts: 0, rest: -1, post: 0, block: -1, kw: -1@-1, kwrest: -1])
 [ 1] x@0
 0000 putobject                              true                      (   1)[Li]

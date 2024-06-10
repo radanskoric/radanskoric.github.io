@@ -2,9 +2,13 @@
 layout: post
 title:  "How to locate the source of a Ruby method"
 date:   2023-09-27
-last_modified_at: 2023-09-29
+last_modified_at: 2024-06-10
 categories: articles
 tags: ruby metaprogramming
+---
+
+**UPDATE Jun 10, 2024:** Modify the article to account for Ruby 3.3 [adding default location for eval'd methods](https://github.com/ruby/ruby/commit/43a5c191358699fe8b19314763998cb8ca77ed90){:target="_blank"}.
+
 ---
 
 _"Wait, where the hell is this method coming from??"_"
@@ -14,6 +18,7 @@ One of Ruby's strengths is how highly dynamic it is. This makes it very expressi
 However, Ruby is so dynamic that there are cases where it is impossible to determine reliably without actually running the code. Static analysis having its limits is the cost of super high dynamism and you will eventually find yourself in a ruby REPL wondering: "Where is this method actually defined?"
 
 There are multiple cases to consider, let's dig in.
+
 ## The easy case: Regular Ruby method
 
 Assume you have a source file defined as follows:
@@ -84,18 +89,18 @@ end
 ```
 Both `source_location` and Pry's `show-source` will point to the place where the method is defined, in this case the line number 6, the one calling `define_method`. Easy.
 
-However, in a case where you're calling one of the `eval` methods with a string, all of the information gets destroyed while parsing the string:
+Since Ruby 3.3., if you call one of the `eval` methods with a string, the caller location be shown in the location string:
 ```ruby
 # in dynamic.rb
 Dynamic.class_eval "def evald; 'EVALD!'; end"
 # later
-Dynamic.new.method(:evald).source_location # => returns [(eval), 1]
+Dynamic.new.method(:evald).source_location # => returns [(eval at dynamic.rb:1), 1]
 ```
-The reason is that `eval` requires you to explicitly pass what you consider the correct location of the source. I.e. if you do the following:
+However, this is just a default and eval allows you to pass what you consider the correct location of the source. I.e. if you do the following:
 ```ruby
-Dynamic.class_eval "def evald_with_source; 'EVALD!'; end", __FILE__, __LINE__
+Dynamic.class_eval "def evald_with_source; 'EVALD!'; end", "intended_source_file.rb", 42
 ```
-Then `source_location` will return the location where this was called, just like in the `define_method` with block case above.
+Then `source_location` will return the custom, and presumably correct, location you specified.
 
 To help your future self, get into the habit of specifying the file and line number when doing meta-programming with `eval` and friends. :)
 
