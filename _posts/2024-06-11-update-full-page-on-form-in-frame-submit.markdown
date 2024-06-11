@@ -6,7 +6,7 @@ categories: articles
 tags: rails hotwire turbo turbo-frames forms
 ---
 
-Let's consider some UI examples and check if we can get the Turbo magic by just slapping a Turbo Frame in the right place. By that I mean: can we make the implementation really **as simple as plain HTML** with the, as the slogan says *"the speed of a single-page web application"*:
+Let's consider some UI examples and mentally check if we can get the Turbo magic by just slapping a Turbo Frame in the right place. By that I mean: can we make the implementation really **as simple as plain HTML** with *"the speed of a single-page web application"*:
 - Navigating full pages of content. ✅
 - Links that change a fixed different part of UI, like tabs. ✅
 - Navigating a self contained small part of the UI like an image gallery. ✅
@@ -16,9 +16,9 @@ Let's consider some UI examples and check if we can get the Turbo magic by just 
 
 Huh, that last one is relatively common, why is it not straightforward?
 
-All we want there is to have a list and a form that can both show errors and add to the list when there are no errors. It's by no means **hard**, but it's not trivial and it sounds like it should be.
+All we want there is to have a list and a form that can both show errors and add to the list when there are no errors. It's by no means **hard**, but it's not trivial and it sounds like it should be. The problematic part is that **the logic** for which of those two actions are needed is **dynamically** determined **on the server**.
 
-The general problem description would be: **having a Turbo Frame that might update itself or might update the full page**. The problematic part is that **the logic** for which of those two actions are needed is dynamically determined **on the server**. Turbo has a number of mechanisms to **statically** define the target of a link click or form submission in the page itself, but it's not as easy when we need to control it from the server. It's confusing enough that there's [a long standing open issue on Turbo Github repo, with many comments]`(https://github.com/hotwired/turbo/issues/257){:target="_blank"}`.
+The general problem description would be: **having a Turbo Frame that might update itself or might update the full page based on information only available after processing the request on the server**. Turbo has a number of mechanisms to **statically** define the target of a link click or form submission in the page itself, but it's not as easy when we need to control it from the server. It's confusing enough that there's [a long standing open issue on Turbo Github repo, with many comments]`(https://github.com/hotwired/turbo/issues/257){:target="_blank"}`.
 
 I've faced this problem myself and used different solutions but I wanted to find the best one so I went through that whole thread. The answer: **it depends**. You don't have to go through the thread, here are all the techniques with their tradeoffs.
 
@@ -35,6 +35,8 @@ turbo_frame_tag :target_top, target: "_top"
 And voila, the form submission will navigate the full page rather than just the frame.
 
 The problem with that is that it will **always** navigate the full page. Even if there are errors that you want to render inside the frame, Turbo will attempt to navigate the full page, breaking the process. So this is not viable if you need to also show errors. But, if you know every form submission is successful, this is by far the simplest approach.
+
+**Use when** you know every submit will succeed.
 
 ### Emit a refresh action on a successful submit
 
@@ -55,6 +57,8 @@ def create
 end
 ```
 An important assumption of this approach is that you want to modify the current page. Next approach covers the case when that's not true.
+
+**Use when** you need to show errors and the happy path leads back to the same page.
 
 ### Use custom full page redirect stream action
 
@@ -77,6 +81,8 @@ end
 
 ```
 
+**Use when** you need to show errors and the happy path leads to a different page.
+
 ### Rely on turbo-visit-control meta tag
 
 A page can advertise to Turbo that it always needs to be loaded as a full page load. It does this with a special [turbo-visit-control]`(https://turbo.hotwired.dev/reference/attributes#meta-tags){:target="_blank"}` meta tag. It's as simple as calling a helper inside the view template:
@@ -91,6 +97,8 @@ When you respond with a redirect to a page with this meta tag, Turbo will:
 This is very simple if the destination page always requires to be a full page load. The downside is that it will cause the page to be loaded **twice**. However, this is a good tradeoff if the scenario happens rarely.
 
 A common example is the login page. If you have authentication that might expire, it means that any visit might redirect to the login page. In that case it makes perfect sense to place this meta tag on the page.
+
+**Use when** the target page must always be a full page load.
 
 ### Do not use a Turbo Frame
 
@@ -127,6 +135,8 @@ end
 ```
 
 As you can see, the reason that we opted before to keep the error path simple is that it *usually* results in overall simpler code. However, some cases might be different and then this can be a good choice.
+
+**Use when** your happy path flow is unusually complex and this makes it much simpler.
 
 ## Why is it like this and when will it be improved?
 
