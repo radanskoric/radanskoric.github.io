@@ -29,7 +29,7 @@ The problem with all of these is that they are good for reminding but not great 
 
 The bad news is that there aren't any shortcuts here. It's a pattern recognition skill that takes practice. The good news is that with the right attitude and habits you can pick up the skill faster.
 
-The one thing that has helped me a lot, more than reading books on the topic, is best summed up in a quote by Kent Beck[^2] (which I traced down to [a 2012 tweet of his](https://twitter.com/KentBeck/status/250733358307500032?lang=hr)){:target="_blank"}: "*for each desired change, make the change easy (warning: this may be hard), then make the easy change*"
+The one thing that has helped me a lot, more than reading books on the topic, is best summed up in a quote by Kent Beck[^2] (which I traced down to [a 2012 tweet of his](https://twitter.com/KentBeck/status/250733358307500032?lang=hr){:target="_blank"}): "*for each desired change, make the change easy (warning: this may be hard), then make the easy change*"
 
 You know how when you're in a hurry you're tempted to just hack something quick to get it working even though you know it's not good?
 
