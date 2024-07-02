@@ -104,7 +104,7 @@ assets:
     env: # [development|production]
 
 pwa:
-  enabled: true # the option for PWA feature
+  enabled: false # the option for PWA feature
   cache:
     enabled: false # It keeps firing constantly on regular website.
     # This makes it annoying. Since I don't think many (if any)
