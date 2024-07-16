@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Minesweeper in 100 lines of clean Ruby
+title: "Exercise: Minesweeper in 100 lines of clean Ruby"
 date: 2024-07-16
 categories: experiments
 tags: ruby game clean-code exercise
