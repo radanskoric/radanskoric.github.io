@@ -14,7 +14,7 @@ As an exercise, let's do this with good old minesweeper. I remember playing it o
 
 ![How much total time has humanity spent on this game?](/assets/img/posts/minesweeper.png){: width="506" height="363" .right.floating-image}
 
-For practice, I implemented it in CLI form in vanilla Ruby. Get my fully implemented version [here](https://github.com/radanskoric/minesweeper){:target="_blank"}. If you want to do it yourself, stop here and come back later to compare. The rest of the article walks through my implementation which landed on exactly 100 lines (counted by [cloc](https://github.com/AlDanial/cloc){:target="_blank"}) by a happy accident. No, really, I didn't cheat to make it be a round number. I was planning on doing it but turns out I didn't have to.
+For practice, I implemented it in CLI form in vanilla Ruby. Get my fully implemented version [here](https://github.com/radanskoric/minesweeper){:target="_blank"}. If you want to do it yourself, stop here and come back later to compare. The rest of the article walks through my implementation which landed on exactly 100 lines (counted by [cloc](https://github.com/AlDanial/cloc){:target="_blank"} in lib folder) by a happy accident. No, really, I didn't cheat to make it be a round number. I was planning on doing it but turns out I didn't have to.
 
 **Along the way we'll also refresh our memory of some less often used Ruby features.** I can't learn new things in a vacuum. I prefer to learn in context of a mini project over learning from Changelog overviews.
 
