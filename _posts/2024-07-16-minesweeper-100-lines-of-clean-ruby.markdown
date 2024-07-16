@@ -14,9 +14,10 @@ As an exercise, let's do this with good old minesweeper. I remember playing it o
 
 ![How much total time has humanity spent on this game?](/assets/img/posts/minesweeper.png){: width="506" height="363" .right.floating-image}
 
-For practice, I implemented it in CLI form in vanilla Ruby. You can get my fully implemented version [here](https://github.com/radanskoric/minesweeper){:target="_blank"}. If you want to do it yourself and later compare this is the place where you should stop and go implement it. The rest of the article walks through my implementation which landed on exactly 100 lines (counted by [cloc](https://github.com/AlDanial/cloc){:target="_blank"}) by a happy accident. No, really, I didn't cheat to make it be a round number. I was planning on doing it but turns out I didn't have to.
+For practice, I implemented it in CLI form in vanilla Ruby. Get my fully implemented version [here](https://github.com/radanskoric/minesweeper){:target="_blank"}. If you want to do it yourself, stop here and come back later to compare. The rest of the article walks through my implementation which landed on exactly 100 lines (counted by [cloc](https://github.com/AlDanial/cloc){:target="_blank"}) by a happy accident. No, really, I didn't cheat to make it be a round number. I was planning on doing it but turns out I didn't have to.
 
-**Along the way we'll also remind our selves of some less often used Ruby features.** I can't learn new things in a vacuum, I need to use them to have them really sink in, which is why I prefer to learn in context of a mini project over learning from Changelog overviews.
+**Along the way we'll also refresh our memory of some less often used Ruby features.** I can't learn new things in a vacuum. I prefer to learn in context of a mini project over learning from Changelog overviews.
+
 ## Generating the playing board
 
 The first thing we need is a `Board` class to represent, drum roll, the board. The board is fully defined by its width, height and the locations of mines:
@@ -28,7 +29,7 @@ end
 {: file='lib/minesweeper/board.rb'}
 Here we're using a feature [introduced in Ruby 3.2, Data class](https://docs.ruby-lang.org/en/3.2/Data.html){:target="_blank"}. It's perfect for defining immutable value objects. If you've used if before you're probably wondering why I didn't use the usual syntax of `Board = Data.define(...) do ... end` and instead inherited from it. That will be explained a bit later.
 
-We want to create the board by randomly placing a number of mines on it. We can't just give each mine a random pair of coordinates because then we could end up with 2 mines in the same location. Instead we want to take all possible locations on the board and then randomly take some of these locations.
+We'll create the board by randomly placing a number of mines on it. We can't just give each mine a random pair of coordinates because then we could end up with 2 mines in the same location. Instead we want to take all possible locations on the board and then randomly take some of these locations.
 
 Thankfully, in Ruby this is not far from the plain English description:
 ```ruby
@@ -50,7 +51,7 @@ The `Coordinate` class starts as another simple `Data` object:
 Coordinate = Data.define(:x, :y)
 ```
 
-The only other thing we need from the `Board` is to be able to ask it if a specific cell has a mine or is empty. If it is empty we want to know how many neighbouring mines it has. Since `mines` is already just an array of `Coordinate` objects, we can use it directly:
+The `Board` should also determine if a specific cell has a mine or is empty. If it is empty we want to know how many neighbouring mines it has. Since `mines` is already just an array of `Coordinate` objects, we can use it directly:
 ```ruby
 class Board < Data.define(:width, :height, :mines)
     # ...
@@ -98,7 +99,7 @@ end
 {: file='lib/minesweeper/game.rb'}
 Initially nothing has been revealed so we initialise an array matching the board size. By default it's initialised with all `nil`.
 
-The only method we need it to expose to allow us to interact with it is the `reveal` method which is what we'll run when we "click" on a cell to reveal it. The only tricky part is that when you reveal a cell that has no neighbouring mines, the game should then [recursively](https://en.wikipedia.org/wiki/Recursion_%28computer_science%29){:target="_blank"} auto reveal all neighbouring cells. This is what causes the satisfying "pop" when a whole area becomes revealed at once. We'll implement the logic just as we described it now, by recursively revealing all neighbouring cells:
+We'll reduce the interface to a single `reveal` method which is what we'll run when we "click" on a cell to reveal it. The only tricky part is that when you reveal a cell that has no neighbouring mines, the game should then [recursively](https://en.wikipedia.org/wiki/Recursion_%28computer_science%29){:target="_blank"} auto reveal all neighbouring cells. This is what causes the satisfying "pop" when a whole area becomes revealed at once. We'll implement the logic just as we described it now, by recursively revealing all neighbouring cells:
 ```ruby
 class Game
   # ...
@@ -161,7 +162,7 @@ end
 
 ## ASCII printing the board
 
-We'll print the board on the command line by iterating over the grid, converting the cells to ASCII characters:
+To print the board on the command line we'll iterate over the grid, converting the cells to ASCII characters:
 ```ruby
 AsciiRenderer = Data.define(:grid) do
   def render(output = $stdout)
@@ -205,7 +206,7 @@ end
 Here we're using [endless methods](https://allaboutcoding.ghinda.com/endless-method-a-quick-intro){:target="_blank"}. Yes, they did save 2 lines per each method, playing a role in the full game being exactly 100 lines, but that's not why I used them! The only requirement of endless methods is that the method body is just **one expression**, how ever many lines it spans. Notice there are several methods on `Coordinate` and `Board` which could also be endless methods. I didn't use it there because the result wasn't very readable. Aesthetics matter.
 
 ## Putting it all together
-The last thing is putting it all into a game we can actually play from the command line.
+Finally, we assemble all components into a playable command-line game.
 
 We want to be able to run it with `ruby lib/play.rb 20, 10, 20` and params defining: width, height, and number of mines. For that we'll parse the command line arguments:
 ```ruby
