@@ -3,8 +3,10 @@ layout: post
 title: "Exercise: Minesweeper in 100 lines of clean Ruby"
 date: 2024-07-16
 categories: experiments
-tags: ruby game clean-code exercise
+tags: ruby game clean-code exercise minesweeper
 ---
+
+_This article is part 1. [Part 2](/experiments/multiplayer-minesweeper-with-rails-and-hotwire) uses code from this article to make the game multiplayer using Rails and Hotwire._
 
 Ruby is such an expressive language. You can often do surprisingly much with just a few lines of code. It's why I find it so satisfying to think about how to accomplish the same thing in fewer lines of Ruby[^1].
 
