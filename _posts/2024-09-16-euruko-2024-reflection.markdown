@@ -27,7 +27,7 @@ I love conference starts, it's buzzing with excitement and I'm looking forward t
 
 It was an unusual choice for a Keynote, it was a very technical talk and keynotes are usually more philosophical, to get people excited. However, it was an excellent talk.
 
-The talk is about [the Zeitwerk gem](https://github.com/fxn/zeitwerk) . It was also a disguised lesson about software design. It covered the history of Zeitwerk, what was the motivation for building it and how valuable it was that Shopify and Github were early adopters. But I found the software design lessons more interesting.
+The talk is about [the Zeitwerk gem](https://github.com/fxn/zeitwerk){:target="_blank"} . It was also a disguised lesson about software design. It covered the history of Zeitwerk, what was the motivation for building it and how valuable it was that Shopify and Github were early adopters. But I found the software design lessons more interesting.
 
 Not to spoil the talk, some of the lessons were:
 - **The value of keeping the interface simple**: Zeitwerk does a lot of work behind the scenes to then be able to disappear from your code, doing its work silently in the background.
@@ -69,13 +69,13 @@ I'll unpack point 5 as it has a nice lesson that can stand on its own. Victor du
 - KISS - don't hide behind abstractions
 - DDD - speak the same language as the domain
 
-Whenever this gets forgotten, we're in danger of twisting the idea until it is no longer useful. It's something [I consider especially important](https://radanskoric.com/articles/misunderstand-practice-misuse-it).
+Whenever this gets forgotten, we're in danger of twisting the idea until it is no longer useful. It's something [I consider especially important](/articles/misunderstand-practice-misuse-it).
 
 You should watch the full talk to understand the full meaning of other points.
 
 ### Networking
 
-After lunch I took a break from the talks and went up to the Networking room with [Miha](https://mr.si/) which was completely empty. After making some corny sarcastic jokes about programmers being great at Networking, [Bartosz](https://github.com/bblimke), the creator of [Webmock gem](https://github.com/bblimke/webmock) wandered in with the same idea. We ended up having a very interesting conversation about various topics, including sustainability of open source. This was also a topic of a later panel in which Bartosz participated. Bartosz was also kind enough to become the 200th subscriber to this blog. Thank you Bartosz, I'm humbled to have you as a subscriber.
+After lunch I took a break from the talks and went up to the Networking room with [Miha](https://mr.si/){:target="_blank"} which was completely empty. After making some corny sarcastic jokes about programmers being great at Networking, [Bartosz](https://github.com/bblimke){:target="_blank"}, the creator of [Webmock gem](https://github.com/bblimke/webmock){:target="_blank"} wandered in with the same idea. We ended up having a very interesting conversation about various topics, including sustainability of open source. This was also a topic of a later panel in which Bartosz participated. Bartosz was also kind enough to become the 200th subscriber to this blog. Thank you Bartosz, I'm humbled to have you as a subscriber.
 
 ### Lessons From Escaping  Dependency Upgrade Maze by Marko Ćilimković
 
@@ -91,13 +91,13 @@ Most of the talk was about prerequisites to making the upgrade process smooth, s
 - Reducing dependencies
 - ...
 
-To track the Project health in a score they implemented an internal solution. This is something that could be useful for teams focused on one project as well. For all of you interested, the automatic score calculation is open sourced as the [polariscope gem](https://github.com/infinum/polariscope).
+To track the Project health in a score they implemented an internal solution. This is something that could be useful for teams focused on one project as well. For all of you interested, the automatic score calculation is open sourced as the [polariscope gem](https://github.com/infinum/polariscope){:target="_blank"}.
 
 ### Keynote: Evolution of real-time and AnyCable Pro by Irina Nazarova
 
 ![Anycable growth in 2024](/assets/img/posts/euruko2024/anycable.jpeg)
 
-Irina is a CEO at Evil Martians and a cofounder at [AnyCable](https://anycable.io/). Lots of interesting details were presented in the talk including the detailed breakdown of the business side of growing AnyCable as an open core product.
+Irina is a CEO at Evil Martians and a cofounder at [AnyCable](https://anycable.io/){:target="_blank"}. Lots of interesting details were presented in the talk including the detailed breakdown of the business side of growing AnyCable as an open core product.
 
 I've found it interesting enough that I forgot to take notes, sorry! One thing that surprised me is that the recurring revenue from AnyCable subscriptions is still dwarfed by their consulting revenue, sitting at just ~$30k ARR. Their consulting revenue is very healthy but I was expecting the division to be different. Big thanks to Irina for being so transparent! The talk is an invaluable resource to anyone considering a similar path.
 
@@ -105,7 +105,7 @@ I've found it interesting enough that I forgot to take notes, sorry! One thing t
 
 ![Anycable growth in 2024](/assets/img/posts/euruko2024/fireside.jpeg)
 
-Irina's keynote served as a great intro to her fireside chat with Bartosz Blimke, Adrian Marin & José Valim about a sustainable path in Open Source. Bartosz is the maintainer of the popular [Webmock gem](https://github.com/bblimke/webmock), Adrian is the creator of [the Avo gem](https://avohq.io/) and José is the creator of [the Elixir programming language](https://elixir-lang.org/), among other things.
+Irina's keynote served as a great intro to her fireside chat with Bartosz Blimke, Adrian Marin & José Valim about a sustainable path in Open Source. Bartosz is the maintainer of the popular [Webmock gem](https://github.com/bblimke/webmock){:target="_blank"}, Adrian is the creator of [the Avo gem](https://avohq.io/){:target="_blank"} and José is the creator of [the Elixir programming language](https://elixir-lang.org/){:target="_blank"}, among other things.
 
 Various financial models were discussed:
 - Donations
@@ -121,7 +121,7 @@ My main objection is that there was no actual fire on the stage, as you can see 
 
 ## Day Two
 
-Let me take a break and share a snippet of amazing Bosnian nature. On the second day I went again for a run, joined by [Miha](https://mr.si/) and [Julian](https://juliancheal.co.uk/) . We went to the Spring of Bosnia and were rewarded:
+Let me take a break and share a snippet of amazing Bosnian nature. On the second day I went again for a run, joined by [Miha](https://mr.si/){:target="_blank"} and [Julian](https://juliancheal.co.uk/){:target="_blank"} . We went to the Spring of Bosnia and were rewarded:
 
 ![The spring of Bosnia](/assets/img/posts/euruko2024/vrelo_bosne.jpeg)
 
@@ -153,7 +153,7 @@ My talk was second to last and I was so nervous about it that I didn't carefully
 
 ### Async Ruby by Bruno Sutic
 
-[Bruno](https://brunosutic.com/) is one of the other two co-organiser of Ruby Zagreb meetup, along with myself. In this talk he dives into the not so often used concurrency solution: Async Ruby. He's an early adopter and the talk goes into fair amount of depth to explain the difference between the different primitives in Ruby:
+[Bruno](https://brunosutic.com/){:target="_blank"} is one of the other two co-organiser of Ruby Zagreb meetup, along with myself. In this talk he dives into the not so often used concurrency solution: Async Ruby. He's an early adopter and the talk goes into fair amount of depth to explain the difference between the different primitives in Ruby:
 - Processes
 - Threads
 - Ractors
@@ -176,7 +176,7 @@ Finally, he contrasts Async Ruby, based on Fibers, with a more conventional appr
 
 José is a frequent guest on Euruko conferences, even if he mainly doesn't work with Ruby anymore. Elixir draws a lot of inspiration for language design from Ruby and José is a great speaker.
 
-[Livebook](https://livebook.dev/) is an opensource project in the similar vein as Jupyter notebooks. The talk is very interactive with a lot of live coding. I will not try to replicate here but I will just say: **It got me thinking that it would be nice to have something like this in Ruby**.
+[Livebook](https://livebook.dev/){:target="_blank"} is an opensource project in the similar vein as Jupyter notebooks. The talk is very interactive with a lot of live coding. I will not try to replicate here but I will just say: **It got me thinking that it would be nice to have something like this in Ruby**.
 
 ### Evening
 
@@ -190,7 +190,7 @@ I'll be honest. by Day Three I was a bit fatigued from the talks so I relaxed on
 
 ### Patterns of Application Development Using AI by Obie Fernandez
 
-The talk is essentially a preview of Obie's book [of the same name as the talk](https://leanpub.com/patterns-of-application-development-using-ai). I know because I bought his book and started reading it. I'm about a third in and I'm really enjoying it so far, looking forward to reading the rest.
+The talk is essentially a preview of Obie's book [of the same name as the talk](https://leanpub.com/patterns-of-application-development-using-ai){:target="_blank"}. I know because I bought his book and started reading it. I'm about a third in and I'm really enjoying it so far, looking forward to reading the rest.
 
 Obie breaks down the experience building an AI based product, Olympia. He settled on a combination of regular AI patterns (like RAG -
 Retrieval-augmented generation) and some I haven't seen mentioned anywhere else (like his Ventriloquist pattern).
@@ -213,10 +213,10 @@ I decided to skip talks in the afternoon and get some hands on practice. Stephen
 
 If you want to go through the workshop on your own, it can be self paced by following the instructions in this repository: https://github.com/fractaledmind/euruko-2024
 
-Also the first half of the talk has a lot of overlap with Stephen's blog post from earlier this year: [SQLite on Rails: The how and why of optimal performance](https://fractaledmind.github.io/2024/04/15/sqlite-on-rails-the-how-and-why-of-optimal-performance/).
+Also the first half of the talk has a lot of overlap with Stephen's blog post from earlier this year: [SQLite on Rails: The how and why of optimal performance](https://fractaledmind.github.io/2024/04/15/sqlite-on-rails-the-how-and-why-of-optimal-performance/){:target="_blank"}.
 
 # Closing thoughts
 
 Besides all the talks, for me personally, Euruko delivered on the most important aspect of conferences: I met some friends I haven't seen in a while and I met a lot of interesting new people. All in all, I was super happy that I went.
 
-P.S. Big thanks to [Predrag](https://www.linkedin.com/in/predrag-radenkovic-07512116/) for driving to and from the conference and suffering, along with Miha, my company along the way.
+P.S. Big thanks to [Predrag](https://www.linkedin.com/in/predrag-radenkovic-07512116/){:target="_blank"} for driving to and from the conference and suffering, along with Miha, my company along the way.
