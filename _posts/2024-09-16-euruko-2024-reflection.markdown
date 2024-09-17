@@ -132,11 +132,11 @@ Koichi, the creator of YARV, the current reference Ruby implementation started b
 The talk then went into technical details of how YARV works. YARV is a stack based virtual machine and he explained how that works. The rest of this section went into specific optimisations that YARV takes when generating opcodes. Yes, the talk got increasingly more technical as it went.
 
 It was interesting to see what he sees as good and bad points with YARV:
-- Good point: Defining the Ruby VM instruction set. Before that people were even unsure if Ruby, with its heavy dynamic nature, can have a usable low level instruction set.
-- Good point: Human readable instruction names.
-- Bad point: There's no well defined instruction set. YARV does not have a published instruction set it sticks to. Tools rely on the current instruction set but it's not guaranteed to be stable. However, YJIT relies on the current specification and it's having an effect of stabilising the instruction set.
-- Good point: Optimising method dispatch. It's an extremely hard problem in Ruby. The implementation was rewritten many times over the years.
-- Good point: Optimising specialised instructions. This is mainly about specifically optimising dispatch of small frequently used standard library methods, e.g. `String#empty?`, `Integer#+` ...
+- Good: Defining the Ruby VM instruction set. Before that people were even unsure if Ruby, with its heavy dynamic nature, can have a usable low level instruction set.
+- Good: Human readable instruction names.
+- Bad: There's no well defined instruction set. YARV does not have a published instruction set it sticks to. Tools rely on the current instruction set but it's not guaranteed to be stable. However, YJIT relies on the current specification and it's having an effect of stabilising the instruction set.
+- Good: Optimising method dispatch. It's an extremely hard problem in Ruby. The implementation was rewritten many times over the years.
+- Good: Optimising specialised instructions. This is mainly about specifically optimising dispatch of small frequently used standard library methods, e.g. `String#empty?`, `Integer#+` ...
 - Good: Providing a way to handle instructions. This is about the methods for inspecting the compiles Ruby with `RubyVM::InstructionSequence`. Along the same lines is `prelude.rb`.
 
 And interesting future improvement he talked about is the concept of lazy loading. Having compiled code stored as a binary and then load just the code that's needed. Potentially this could open a possibility of packing an application with all its gems into one binary that's then lazy loaded as needed.
@@ -158,6 +158,7 @@ My talk was second to last and I was so nervous about it that I didn't carefully
 - Threads
 - Ractors
 - Fibers
+
 He explains where async Ruby fits in that picture (spoiler alert: it's a higher layer relying on Fibers and a fiber scheduler). The gems ecosystem around Async is explained.
 
 The talk then moves into a practical examples. The concept of async tasks and how they are used is explained. It's essentially a small crash course in writing async ruby.
@@ -211,7 +212,7 @@ In the end Viana do Castelo won by a relatively narrow margin. I'll be honest, i
 
 I decided to skip talks in the afternoon and get some hands on practice. Stephen is maybe the foremost current expert on using SQLite with Rails and the workshop was very detailed and well put together. My only gripe is that it could have been better paced since we ran out of time a few sections before the end of the workshop.
 
-If you want to go through the workshop on your own, it can be self paced by following the instructions in this repository: https://github.com/fractaledmind/euruko-2024
+If you want to go through the workshop on your own, it can be self paced by following the instructions in the [fractaledmind/euruko-2024](https://github.com/fractaledmind/euruko-2024){:target="_blank"} github repository.
 
 Also the first half of the talk has a lot of overlap with Stephen's blog post from earlier this year: [SQLite on Rails: The how and why of optimal performance](https://fractaledmind.github.io/2024/04/15/sqlite-on-rails-the-how-and-why-of-optimal-performance/){:target="_blank"}.
 
@@ -219,4 +220,4 @@ Also the first half of the talk has a lot of overlap with Stephen's blog post fr
 
 Besides all the talks, for me personally, Euruko delivered on the most important aspect of conferences: I met some friends I haven't seen in a while and I met a lot of interesting new people. All in all, I was super happy that I went.
 
-P.S. Big thanks to [Predrag](https://www.linkedin.com/in/predrag-radenkovic-07512116/){:target="_blank"} for driving to and from the conference and suffering, along with Miha, my company along the way.
+P.S. Big thanks to [Predrag](https://www.linkedin.com/in/predrag-radenkovic-07512116/){:target="_blank"} for driving to and from the conference and suffering, together with Miha, my company along the way.
