@@ -97,7 +97,7 @@ To track the Project health in a score they implemented an internal solution. Th
 
 ![Anycable growth in 2024](/assets/img/posts/euruko2024/anycable.jpeg)
 
-Irina is a CEO at Evil Martians and a cofounder at [AnyCable](https://anycable.io/){:target="_blank"}. Lots of interesting details were presented in the talk including the detailed breakdown of the business side of growing AnyCable as an open core product.
+Irina is the Evil Martians CEO and a cofounder at [AnyCable](https://anycable.io/){:target="_blank"}. Lots of interesting details were presented in the talk including the detailed breakdown of the business side of growing AnyCable as an open core product.
 
 I've found it interesting enough that I forgot to take notes, sorry! One thing that surprised me is that the recurring revenue from AnyCable subscriptions is still dwarfed by their consulting revenue, sitting at just ~$30k ARR. Their consulting revenue is very healthy but I was expecting the division to be different. Big thanks to Irina for being so transparent! The talk is an invaluable resource to anyone considering a similar path.
 
