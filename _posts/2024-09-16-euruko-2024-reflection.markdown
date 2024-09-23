@@ -34,7 +34,7 @@ Not to spoil the talk, some of the lessons were:
 - **Making interfaces ergonomic**: strive to make the interface fool proof by designing an API that is hard or impossible to use incorrectly. Xavier makes a nice analogy with a bread cutter from his local supermarket. It has blades that could cut you but the buttons for starting it are disabled until you close the safety lid.
 - **Good interfaces acknowledge asymmetries**: If some code is used more often it is good to acknowledge that and depart from the usual interface to provide it with a simpler and easier to use interface so this particular common use case would become very simple for the users.
 
-The talk concludes with an interesting comment about the future. Xavier explains a gap, an edge case, in the current library design. As it turns out, Ruby 3.2. `Module#const_added` allows him to solve it. That will be the fix that triggers an upgrade of the mayor version to Zeitwerk 3. And with that he believes the library will be complete, all cases covered. Quite an accomplishment.
+The talk concludes with an interesting comment about the future. Xavier explains a gap, an edge case, in the current library design. As it turns out, Ruby 3.2. `Module#const_added` allows him to solve it. That will be the fix that triggers an upgrade of the major version to Zeitwerk 3. And with that he believes the library will be complete, all cases covered. Quite an accomplishment.
 
 ### A decade of Rails Bug Fixes by Jean Boussier
 
