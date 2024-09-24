@@ -220,4 +220,6 @@ Also the first half of the talk has a lot of overlap with Stephen's blog post fr
 
 Besides all the talks, for me personally, Euruko delivered on the most important aspect of conferences: I met some friends I haven't seen in a while and I met a lot of interesting new people. All in all, I was super happy that I went.
 
+To get more details on Euruko 2024, check out [Tomasz's post](https://tomash.wrug.eu/blog/2024/09/23/euruko-2024-sarajevo/){:target="_blank"}. He went to different sessions so his post nicely complements mine.
+
 P.S. Big thanks to [Predrag](https://www.linkedin.com/in/predrag-radenkovic-07512116/){:target="_blank"} for driving to and from the conference and suffering, together with Miha, my company along the way.
