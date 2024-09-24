@@ -138,7 +138,7 @@ Finally, if we hit a mine we exit early with `:lose`. Otherwise we check if all 
 The only thing missing here is the neighbours method on the coordinate. We implement it by first creating a list of offsets to all 8 neighbours:
 ```ruby
 Coordinate = Data.define(:x, :y) do
-  NEIGHBOURS = (Enumerator.product([-1, 0, 1], [-1, 0, 1]).to_a - [0, 0]).map { |x, y| self.new(x, y) }
+  NEIGHBOURS = (Enumerator.product([-1, 0, 1], [-1, 0, 1]).to_a - [[0, 0]]).map { |x, y| self.new(x, y) }
   # ...
 end
 ```
