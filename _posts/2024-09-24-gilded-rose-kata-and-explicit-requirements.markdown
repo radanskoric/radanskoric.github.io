@@ -182,6 +182,8 @@ What we accomplished is that:
 - We didn't have to understand any of the other rules, they are completely independent.
 - The language used in the code is nearly identical to the wording of the new requirement.
 
+You can see the full final implementation [here](https://github.com/radanskoric/GildedRose-Refactoring-Kata/blob/radan-kata-solution/ruby/gilded_rose.rb){:target="_blank"}.
+
 ## Closing thoughts
 
 I found time and time again that refactoring the code to be extremely close to the actual wording of the business requirements is very beneficial. If you don't do that, every conversation with stakeholders involves you **translating in your head what they're saying to the concepts encoded in the code**. That is both tiring and a continuous source of bugs.
