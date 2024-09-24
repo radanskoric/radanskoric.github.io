@@ -51,9 +51,8 @@ I'll express the rules as lambdas assigned to a variable with an expressive name
 can_expire = ->(item) { item.sell_in -= 1}
 quality_degrades = ->(item) { item.quality -= 1 }
 ```
+Pretty simple, right? Well this is where it gets interesting:
 
->Pretty simple, right? Well this is where it gets interesting:
->
 >- Once the sell by date has passed, `Quality` degrades twice as fast
 
 Looks like we need to amend the quality degradation rule:
@@ -63,9 +62,11 @@ quality_degrades = ->(item) { item.quality -= item.sell_in.negative? ? 2 : 1 }
 
 > - The `Quality` of an item is never negative
 > - The `Quality` of an item is never more than `50`
+
 ```ruby
 limit_quality = ->(item) { item.quality = item.quality.clamp(0, 50) }
 ```
+Clamp is a function that limits the value of a number to a given range.
 
 > - __"Aged Brie"__ actually increases in `Quality` the older it gets
 
@@ -159,7 +160,9 @@ That's it, the refactoring is finished. Unpacking what's going on here:
 Finally, let's add the new requirement:
 > We have recently signed a supplier of conjured items. This requires an update to our system:
 >
-> - **"Conjured"** items degrade in `Quality` twice as fast as normal items. *My note: In the integration tests we can see that the item is actually called: "Conjured Mana Cake".*
+> - **"Conjured"** items degrade in `Quality` twice as fast as normal items.
+
+*My note: In the integration tests we can see that the item is actually called: "Conjured Mana Cake".*
 
 All we need to do is define the new rule and map the new item to the rule:
 ```diff
