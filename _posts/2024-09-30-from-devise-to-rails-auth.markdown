@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Migrating from Devise to Rails Auth before you can say \"Rails World keynote\""
-date: 2024-09-24
+date: 2024-09-30
 categories: articles
 tags: rails authentication devise refactoring
 author: miha
