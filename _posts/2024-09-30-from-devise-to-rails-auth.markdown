@@ -25,13 +25,13 @@ So, imagine my surprise, when after upgrading Visualizer to Rails 8.0 everything
 
 But, wait…hmmm…Turbo Streams are broken in production?
 
-Interesting:
-1. I see `connection.js:39 WebSocket connection to 'wss://visualizer.coffee/cable' failed` in the console.
+Interesting, I see:
+1. `connection.js:39 WebSocket connection to 'wss://visualizer.coffee/cable' failed` in the console.
 2. `ActionController::RoutingError (No route matches [GET] "/cable")` in logs.
 
 Huh, it works locally? Oh, wait a second: it doesn't work locally when I run it in `production` environment. Probably something is broken in Rails, it is **beta 1** after all. Let's make a `rails new` app, and confirm it's broken. *But it isn't!* Hmmmm…time for a deeper dive.
 
-A couple of `bundle open`s later and pokings around I found [this block](https://github.com/rails/rails/blob/15ddce90583bdf169ae69449b42db10be9f714c9/actioncable/lib/action_cable/engine.rb#L66-L68){:target="_blank"} which prepends the mounting of `"/cable"` to routes. With some further puts debugging I found that in the brand-new app the block registers and executes while in Visualizer it registers but **never executes**.
+A couple of `bundle open`s later and pokings around I found [this block](https://github.com/rails/rails/blob/15ddce90583bdf169ae69449b42db10be9f714c9/actioncable/lib/action_cable/engine.rb#L66-L68){:target="_blank"} which prepends the mounting of `"/cable"` to routes. With some further [puts debugging](https://tenderlovemaking.com/2016/02/05/i-am-a-puts-debuggerer/){:target="_blank"} I found that in the brand-new app the block registers and executes while in Visualizer it registers but **never executes**.
 
 I added some puts debugs inside [ActionDispatch#clear!](https://github.com/rails/rails/blob/15ddce90583bdf169ae69449b42db10be9f714c9/actionpack/lib/action_dispatch/routing/route_set.rb#L490-L497){:target="_blank"} and found that in the new app the ActionCable initializer is registered *before* first `clear` call, but in my app it happened `after`. So it has no chance to run the block. **Culprit found**.
 
