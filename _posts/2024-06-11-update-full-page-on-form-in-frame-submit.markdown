@@ -2,6 +2,7 @@
 layout: post
 title: "How to refresh the full page when submitting a form inside a Turbo Frame?"
 date: 2024-06-11
+last_modified_at: 2024-10-07
 categories: articles
 tags: rails hotwire turbo turbo-frames forms
 ---
@@ -48,7 +49,7 @@ def create
   @record = Record.create(record_params)
   if @record.valid?
     respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.action(:refresh, "") }
+      format.turbo_stream { render turbo_stream: turbo_stream.refresh(request_id: nil) }
       format.html { redirect_to :index }
     end
   else
@@ -59,6 +60,12 @@ end
 An important assumption of this approach is that you want to modify the current page. Next approach covers the case when that's not true.
 
 **Use when** you need to show errors and the happy path leads back to the same page.
+
+> You're probably wondering, why `request_id: nil`? By default Turbo will ignore refreshes that result from requests
+> started from the current page. This is done to avoid double refresh when we make a change which then broadcasts a
+> refresh through ActionCable.
+> However, in this case this is exactly what we want to do so we have to clear request id.
+{: .prompt-info}
 
 ### Use custom full page redirect stream action
 
