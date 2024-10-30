@@ -14,7 +14,7 @@ While both projects share many fundamental values and even goals, they take diff
 
 > My primary experience is with Hotwire. I have worked with it extensively. My interest in HTMX is mainly to expand my mental horizon: by learning other technologies I often find valuable new ideas.
 >
-> To ensure a balanced view **I bought and read the book [Hypermedia Systems](https://hypermedia.systems/){:target="_blank"}, written by the authors of HTMX**. They explain their ideas and walk through building a HTMX powered application.
+> To ensure a balanced view **I bought and read the book [Hypermedia Systems](https://hypermedia.systems/){:target="_blank"}, written by the authors of HTMX**. They explain their ideas and walk through building an HTMX-powered application.
 >
 > *If you notice I misunderstood something, please, write in the comments or to me directly and I'll improve the article.*
 {: .prompt-info }
