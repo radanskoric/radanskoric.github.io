@@ -6,6 +6,9 @@ categories: articles
 tags: hotwire htmx turbo comparison
 ---
 
+*A [Chinese translation](https://www.beansmile.com/blog/hotwire-htmx-same-principles-different-approaches){:target="_blank"} of this article is also available.*
+
+
 [Hotwire](https://hotwired.dev/){:target="_blank"} and [HTMX](https://htmx.org/){:target="_blank"} are two powerful libraries that both have the same goal: **simplify building modern web applications**.
 
 Both embrace the HTML+CSS basis of the web and enhance it to enable slick UIs with little or no javascript needed.
