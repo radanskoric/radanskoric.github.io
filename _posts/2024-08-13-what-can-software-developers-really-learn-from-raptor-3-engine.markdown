@@ -3,7 +3,7 @@ layout: post
 title: "What can software developers really learn from SpaceX Raptor 3 engine?"
 date: 2024-08-13
 categories: articles
-tags: meta "software development" analogies
+tags: meta "software development" analogies opinion
 ---
 
 On August 3rd, [SpaceX revealed the Raptor 3 engine](https://x.com/SpaceX/status/1819772716339339664?t=RsB0_UVopBQndGZ6dHeeuA&s=19){:target="_blank"} which looks stunning: They have achieved a very impressive sleek and simplified design while greatly [increasing the specs](https://www.nextbigfuture.com/2024/08/spacex-reveals-raptor-3-engine-and-specifications.html){:target="_blank"}. The difference is even more striking when seen compared to its previous iterations:
