@@ -6,6 +6,10 @@ categories: articles
 tags: rails low-code opinion
 ---
 
+*Update 2024-12-02 : There was a lively discussion about the post on Hacker News you might also find interesting: [link to thread](https://news.ycombinator.com/item?id=42253735){:target="_blank"}.*
+
+* * *
+
 "We need a very simple CRUD app for managing the reservations." **They**[^1] said. "Don't spend too much time on it." **They** added.
 
 My thoughts are racing: "Hm, I am very good with Ruby on Rails, this seems like a good fit. But then I've also used these low code tools before, they are supposed to be the perfect solution for stuff like this. What should I use here ... ". In that very moment, *and only for the duration of this article*, I gain the ability to project my thoughts into the future down the timelines caused by both choices. Someone whispers "Lisan Al Gaib"[^2] but I ignore it.
