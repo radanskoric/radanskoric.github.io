@@ -2,9 +2,12 @@
 layout: post
 title: "Hidden feature of Turbo: stream actions inside regular HTML"
 date: 2024-05-14
+last_modified_at: 2025-01-08
 categories: articles
 tags: rails hotwire turbo stream-actions
 ---
+
+*Updated 2025-01-08: [My PR](https://github.com/hotwired/turbo/pull/1263){:target="_blank"} to add a test to Turbo that validates the behaviour described in this article has been merged, i.e. it is now an official Turbo feature.*
 
 ## The feature
 
@@ -107,8 +110,8 @@ It has been working like this from the very first version of turbo, `7.0.0-beta.
 
 I couldn't find anything mentioned about this in [the official documentation](https://turbo.hotwired.dev/handbook/streams){:target="_blank"}. There's nothing in the [7.0.0-beta.1 release notes](https://github.com/hotwired/turbo/releases/tag/v7.0.0-beta.1){:target="_blank"} nor in the [Turbo 7 official release announcement](https://world.hey.com/hotwired/turbo-7-0dd7a27f){:target="_blank"}.
 
-That said, there is a passing reference in the documentation that hints at this feature but I only caught it after going in with the debugger and figuring out how it works.
-The docs say: "Turbo knows to automatically **attach** `<turbo-stream>` elements". The attach word is significant. To understand why, read on to find out how it works.
+That said, there is a passing reference in the documentation that hints at this feature but I only caught it after going in with the debugger and figuring out how it works. I have [opened a PR](https://github.com/hotwired/turbo-site/pull/192){:target="_blank"} to add it explicitly to the documentation.
+For now, the docs say: "Turbo knows to automatically **attach** `<turbo-stream>` elements". The attach word is significant. To understand why, read on to find out how it works.
 
 > Consider subscribing to get more articles like this one and to get my [printable Turbo 8 cheat-sheet](/cheatsheet):
 > <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
@@ -136,6 +139,6 @@ And if anything else were to **attach** a `<turbo-stream>` element it would also
 
 ## Conclusion
 
-Considering how the feature was implemented and how it's not mentioned anywhere and Turbo doesn't do anything specifically to make it work, it seems almost accidental that we got this feature. However, the mechanism behind it working is so fundamental and so simple that I don't expect this feature to go anywhere and I'm very comfortable using it.
+Considering how the feature was implemented and how it's not mentioned anywhere and Turbo doesn't do anything specifically to make it work, it seems almost accidental that we got this feature. However, [my PR adding a test to Turbo](https://github.com/hotwired/turbo/pull/1263){:target="_blank"} for the behaviour was merged which means that it's now officially supported.
 
-I've [opened an issue on Turbo](https://github.com/hotwired/turbo/issues/1258){:target="_blank"} to clarify the situation and initial feedback is positive. I will update here as it develops.
+[My PR expanding the official documentation](https://github.com/hotwired/turbo-site/pull/192){:target="_blank"} is still pending. I'll update here if and when it is also merged.
