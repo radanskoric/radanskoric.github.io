@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Hidden feature of Turbo: stream actions inside regular HTML"
+title: "Versatile feature of Turbo: stream actions inside regular HTML"
 date: 2024-05-14
 last_modified_at: 2025-01-08
 categories: articles
 tags: rails hotwire turbo stream-actions
 ---
 
-*Updated 2025-01-08: [My PR](https://github.com/hotwired/turbo/pull/1263){:target="_blank"} to add a test to Turbo that validates the behaviour described in this article has been merged, i.e. it is now an official Turbo feature.*
+*__Update (January 8, 2025)__: When I originally wrote this article the behaviour described in it was not official. But, I also opened two PRs: [one to add a test to Turbo that validates the behaviour](https://github.com/hotwired/turbo/pull/1263){:target="_blank"} and [another to expand the official documentation](https://github.com/hotwired/turbo-site/pull/192){:target="_blank"}. Both have been merged which means that the behaviour is now official. It is [documented in official docs](https://turbo.hotwired.dev/reference/streams#stream-elements-inside-html){:target="_blank"}. In light of that I changed the article title from "Hidden feature ..." to "Versatile feature ...".*
 
 ## The feature
 
@@ -25,7 +25,7 @@ Quickly, without checking, answer this: will a stream action work if it is just 
 
 The answer is **yes**. The article title probably gives it away anyway.
 
-But, for me it came as a surprise. It's because the documentation doesn't mention this explicitly. And since the list of places where you can use stream actions is so specific, I expected it to also be exhaustive.
+But, for me it originally came as a surprise. It's because the documentation didn't mention this explicitly. Now, because of this article, [it does](https://turbo.hotwired.dev/reference/streams#stream-elements-inside-html){:target="_blank"} (see update note at the top for explanation). And since the list of places where you can use stream actions is so specific, I expected it to also be exhaustive.
 
 The feature is actually very simple. Here is a minimal example showing it in action, just a small piece of static HTML. Turbo can easily be [used without Rails](/experiments/using-turbo-frame-streams-without-rails):
 ```html
@@ -104,15 +104,6 @@ StreamActions.log = function () {
 ```
 The other approach outlined in [the documentation](https://turbo.hotwired.dev/handbook/streams#custom-actions){:target="_blank"}, using `turbo:before-stream-render` won't work because the tag can be rendered before the listener is attached. To find out why, read on.
 
-## Is this documented?
-
-It has been working like this from the very first version of turbo, `7.0.0-beta.1` (Turbo inherited versioning from [Turbolinks](https://github.com/turbolinks/turbolinks){:target="_blank"}, which is why it started counting versions at 7).
-
-I couldn't find anything mentioned about this in [the official documentation](https://turbo.hotwired.dev/handbook/streams){:target="_blank"}. There's nothing in the [7.0.0-beta.1 release notes](https://github.com/hotwired/turbo/releases/tag/v7.0.0-beta.1){:target="_blank"} nor in the [Turbo 7 official release announcement](https://world.hey.com/hotwired/turbo-7-0dd7a27f){:target="_blank"}.
-
-That said, there is a passing reference in the documentation that hints at this feature but I only caught it after going in with the debugger and figuring out how it works. I have [opened a PR](https://github.com/hotwired/turbo-site/pull/192){:target="_blank"} to add it explicitly to the documentation.
-For now, the docs say: "Turbo knows to automatically **attach** `<turbo-stream>` elements". The attach word is significant. To understand why, read on to find out how it works.
-
 > Consider subscribing to get more articles like this one and to get my [printable Turbo 8 cheat-sheet](/cheatsheet):
 > <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
 {: .prompt-info}
@@ -139,6 +130,7 @@ And if anything else were to **attach** a `<turbo-stream>` element it would also
 
 ## Conclusion
 
-Considering how the feature was implemented and how it's not mentioned anywhere and Turbo doesn't do anything specifically to make it work, it seems almost accidental that we got this feature. However, [my PR adding a test to Turbo](https://github.com/hotwired/turbo/pull/1263){:target="_blank"} for the behaviour was merged which means that it's now officially supported.
+I have found this feature useful on many occasions. It's not surprising since it's basically a much cleaner and more maintainable way of executing
+javascript from inside the HTML. A handy little swiss knife.
 
-[My PR expanding the official documentation](https://github.com/hotwired/turbo-site/pull/192){:target="_blank"} is still pending. I'll update here if and when it is also merged.
+If you need to reference it, you can also reference its paragraph in the [official documentation](https://turbo.hotwired.dev/reference/streams#stream-elements-inside-html){:target="_blank"}.
