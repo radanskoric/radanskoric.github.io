@@ -7,7 +7,7 @@ categories: news
 tags: ruby conference euruko
 ---
 
-*__Update (January 20th, 2025)__: Added the links to presentation recordings now that they have been published.*
+*__Update (January 20th, 2025)__: Added the links to presentation recordings now that they have been published. Full list on [rubyvideo.dev](https://www.rubyvideo.dev/events/euruko-2024){:target="_blank"}.*
 
 I love Sarajevo. It's one of my favourite cities. A unique mix of cultures in this part of the world. I've visited it multiple times and have many fond memories. Unfortunately, it's been many years since the last time I visited. Because, well, life. Not a great excuse. Apologies to my Sarajevo friends. I'm sorry I needed the European Ruby Conference to be in Sarajevo to visit again. Some of you pointed it out. Ok, well, one of you pointed it. It was Mirza. You were right, Mirza.
 
