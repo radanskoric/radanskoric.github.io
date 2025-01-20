@@ -2,9 +2,12 @@
 layout: post
 title: "EuRuKo 2024 conference reflection"
 date: 2024-09-16
+last_modified_at: 2025-01-20
 categories: news
 tags: ruby conference euruko
 ---
+
+*__Update (January 20th, 2025)__: Added the links to presentation recordings now that they have been published.*
 
 I love Sarajevo. It's one of my favourite cities. A unique mix of cultures in this part of the world. I've visited it multiple times and have many fond memories. Unfortunately, it's been many years since the last time I visited. Because, well, life. Not a great excuse. Apologies to my Sarajevo friends. I'm sorry I needed the European Ruby Conference to be in Sarajevo to visit again. Some of you pointed it out. Ok, well, one of you pointed it. It was Mirza. You were right, Mirza.
 
@@ -14,14 +17,13 @@ As far as I'm aware, this was the largest Euruko ever in terms of content. Every
 
 I couldn't possibly see everything. And I usually don't have the mental capacity to even completely follow a single track. So you'll get the conference from my eyes. Just keep in mind that I personally saw only **a small part of it**.
 
-> When the talk videos come out I will update the article with links to all the videos.
-{: .prompt-info}
-
 ## Day One
 
 I love conference starts, it's buzzing with excitement and I'm looking forward to all of the conversations I'll have, old friends I'll see and new people I'll meet. I went for a run with friends in the morning and got in just in time for the first keynote.
 
 ### Keynote by Xavier Noria
+
+[*Video recording*](https://www.rubyvideo.dev/talks/opening-keynote-zeitwerk-a-retrospective){:target="_blank"}
 
 ![Main conference hall](/assets/img/posts/euruko2024/conference.jpeg)
 
@@ -38,6 +40,8 @@ The talk concludes with an interesting comment about the future. Xavier explains
 
 ### A decade of Rails Bug Fixes by Jean Boussier
 
+[*Video recording*](https://www.rubyvideo.dev/talks/a-decade-of-rails-bug-fixes){:target="_blank"}
+
 In the next talk I caught, Jean broke down the process of fixing 2 Rails bugs, his first one, over 10 years ago, and a very tricky one relatively recently. It was super technical but I enjoy these deep dives. The talks felt like watching over the shoulder of a very skilled colleague as they wrestle a hard issue.
 
 The bugs were in Rails internals, in the areas I'm not familiar with, but the explanation was easy to follow. I won't recount the bugs themselves but I'll repeat the generally applicable lessons:
@@ -48,6 +52,8 @@ The bugs were in Rails internals, in the areas I'm not familiar with, but the ex
 These lessons ring very true. I've certainly traced issues down into gems on multiple occasions.
 
 ### Seven Things I know after 25 years of development by Victor Shepelev
+
+[*Video recording*](https://www.rubyvideo.dev/talks/seven-things-i-know-after-25-years-of-development){:target="_blank"}
 
 ![Victor presenting the talk remotely](/assets/img/posts/euruko2024/zverok.jpeg)
 
@@ -79,6 +85,8 @@ After lunch I took a break from the talks and went up to the Networking room wit
 
 ### Lessons From Escaping  Dependency Upgrade Maze by Marko Ćilimković
 
+[*Video recording*](https://www.rubyvideo.dev/talks/lessons-from-escaping-the-dependency-upgrade-maze){:target="_blank"}
+
 I went to catch a talk of Marko who is also a member of the Zagreb Ruby community. He works for an agency that has many clients and many projects that they maintain for their clients. The problem he tackled was keeping the projects up to date. Number of outdated gems increase every month and bringing it down is a lot of work.
 
 The talk was driven mainly by big agency problems, i.e. lots of clients in long maintenance mode. It will be less applicable if you're a team owning one product in continuous development.
@@ -95,6 +103,8 @@ To track the Project health in a score they implemented an internal solution. Th
 
 ### Keynote: Evolution of real-time and AnyCable Pro by Irina Nazarova
 
+[*Video recording*](https://www.rubyvideo.dev/talks/keynote-evolution-of-real-time-anycable-pro-and-me){:target="_blank"}
+
 ![Anycable growth in 2024](/assets/img/posts/euruko2024/anycable.jpeg)
 
 Irina is the Evil Martians CEO and a cofounder at [AnyCable](https://anycable.io/){:target="_blank"}. Lots of interesting details were presented in the talk including the detailed breakdown of the business side of growing AnyCable as an open core product.
@@ -102,6 +112,8 @@ Irina is the Evil Martians CEO and a cofounder at [AnyCable](https://anycable.io
 I've found it interesting enough that I forgot to take notes, sorry! One thing that surprised me is that the recurring revenue from AnyCable subscriptions is still dwarfed by their consulting revenue, sitting at just ~$30k ARR. Their consulting revenue is very healthy but I was expecting the division to be different. Big thanks to Irina for being so transparent! The talk is an invaluable resource to anyone considering a similar path.
 
 ### Fireside chat: A sustainable path in Open Source
+
+[*Video recording*](https://www.rubyvideo.dev/talks/fireside-chat-open-source-business){:target="_blank"}
 
 ![Anycable growth in 2024](/assets/img/posts/euruko2024/fireside.jpeg)
 
@@ -127,6 +139,8 @@ Let me take a break and share a snippet of amazing Bosnian nature. On the second
 
 ### Keynote: 20 years of YARV by Koichi
 
+[*Video recording*](https://www.rubyvideo.dev/talks/keynote-20th-years-of-yarv){:target="_blank"}
+
 Koichi, the creator of YARV, the current reference Ruby implementation started by giving an overview of his history of working on YARV. It's very fortunate for the community that he was able to work for basically the whole time on YARV thanks to a series of employers that sponsored his work. They hired him to work on YARV, to continue contributing to open source. It's especially interesting in the light of day 1 discussion on sustainability of open source.
 
 The talk then went into technical details of how YARV works. YARV is a stack based virtual machine and he explained how that works. The rest of this section went into specific optimisations that YARV takes when generating opcodes. Yes, the talk got increasingly more technical as it went.
@@ -145,6 +159,8 @@ A potential future project he might take on is implementing a Flexible JIT compi
 
 ### Lightning talks
 
+*Unfortunately, the lightning talks were not recorded.*
+
 I really like Lightning talks, so much that I gave one at this years conference. Big thanks to Miha for helping me put it together.
 
 As most lightning talks do, mine had just one point: to convince people on the fence about Hotwire to give it a try and to consider starting with Turbo Frames. It was fun to make and give, I titled it: **"The point is that it’s a gateway drug: Turbo Frames"** The other point was that people should subscribe to my blog. :D
@@ -152,6 +168,8 @@ As most lightning talks do, mine had just one point: to convince people on the f
 My talk was second to last and I was so nervous about it that I didn't carefully follow any of the previous talks, sorry.
 
 ### Async Ruby by Bruno Sutic
+
+[*Video recording*](https://www.rubyvideo.dev/talks/async-ruby-euruko-2024){:target="_blank"}
 
 [Bruno](https://brunosutic.com/){:target="_blank"} is one of the other two co-organiser of Ruby Zagreb meetup, along with myself. In this talk he dives into the not so often used concurrency solution: Async Ruby. He's an early adopter and the talk goes into fair amount of depth to explain the difference between the different primitives in Ruby:
 - Processes
@@ -173,6 +191,8 @@ Finally, he contrasts Async Ruby, based on Fibers, with a more conventional appr
 
 ### Keynote: Livebook: where Web, AI, and Concurrency meet by José Valim
 
+*Unfortunately, this excellent keynote was not recorded.*
+
 ![Livebook in action](/assets/img/posts/euruko2024/livebook.jpeg)
 
 José is a frequent guest on Euruko conferences, even if he mainly doesn't work with Ruby anymore. Elixir draws a lot of inspiration for language design from Ruby and José is a great speaker.
@@ -190,6 +210,8 @@ The evening had the usual Euruko party which this year featured Karaoke in one o
 I'll be honest. by Day Three I was a bit fatigued from the talks so I relaxed on the notes taking. But, since this is a an article recounting my experience of the conference, the short talk descriptions are an accurate account of my real attention span on this day, even though the talks were good.
 
 ### Patterns of Application Development Using AI by Obie Fernandez
+
+[*Video recording*](https://www.rubyvideo.dev/talks/patterns-of-application-development-using-ai){:target="_blank"}
 
 The talk is essentially a preview of Obie's book [of the same name as the talk](https://leanpub.com/patterns-of-application-development-using-ai){:target="_blank"}. I know because I bought his book and started reading it. I'm about a third in and I'm really enjoying it so far, looking forward to reading the rest.
 
@@ -209,6 +231,8 @@ And that was it, no more candidates. As far as a I remember, every other Euruko 
 In the end Viana do Castelo won by a relatively narrow margin. I'll be honest, it came as a surprise to me. That said, I wish the organiser all the best, I have utmost respect for everyone willing to take on the monumental work of putting together a conference like Euruko.
 
 ### Workshop: SQLite on Rails: From rails new to 50k concurrent users and everything in between by Stephen Margheim
+
+*Unfortunately, this excellent workshop was not recorded.*
 
 I decided to skip talks in the afternoon and get some hands on practice. Stephen is maybe the foremost current expert on using SQLite with Rails and the workshop was very detailed and well put together. My only gripe is that it could have been better paced since we ran out of time a few sections before the end of the workshop.
 
