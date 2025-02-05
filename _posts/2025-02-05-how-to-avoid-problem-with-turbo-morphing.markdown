@@ -14,7 +14,7 @@ tags: rails turbo hotwire morphing tips
 
 ## The problem with morphing
 
-Turbo 8 [debuted](https://dev.37signals.com/a-happier-happy-path-in-turbo-with-morphing/) a new page refresh approach: [morphing](https://turbo.hotwired.dev/handbook/page_refreshes). For the rest of the article I'm going to assume you are at least familiar with it.
+Turbo 8 [debuted](https://dev.37signals.com/a-happier-happy-path-in-turbo-with-morphing/){:target="_blank"} a new page refresh approach: [morphing](https://turbo.hotwired.dev/handbook/page_refreshes){:target="_blank"}. For the rest of the article I'm going to assume you are familiar with it.
 
 Like other Rails "magic", morphing delights when it works and frustrates when it interferes. And its interference can be extremely annoying.
 
@@ -34,7 +34,7 @@ The solutions fall into 3 categories:
 
 Each strategy is best for different scenarios.
 
->Find the accompanying demo at [https://demo.radanskoric.com/morphing](https://demo.radanskoric.com/morphing). Browse its source code here: [https://github.com/radanskoric/demo/tree/main/demos/morphing](https://github.com/radanskoric/demo/tree/main/demos/morphing). If you want to look at concrete examples I will mention them throughout the article..
+>Find the accompanying demo at [https://demo.radanskoric.com/morphing](https://demo.radanskoric.com/morphing){:target="_blank"}. Browse its source code here: [https://github.com/radanskoric/demo/tree/main/demos/morphing](https://github.com/radanskoric/demo/tree/main/demos/morphing){:target="_blank"}. If you want to look at concrete examples I will mention them throughout the article..
 {: .prompt-info }
 
 ### Telling Turbo to leave it alone
@@ -57,7 +57,7 @@ Notice that this technique doesn't mention morphing. It will also work if you're
 
 Note: by marking an element as permanent you might have the opposite problem: the element staying completely unaffected even if it should change a bit. Usually it will be enough to listen to the appropriate event and modify the state.
 
-In the [demo](https://demo.radanskoric.com/morphing), the rich text editor is marked as permanent. This causes the typed in text to remain even after submitting the form. To solve that, the form listens to the form submit event and resets itself.
+In the [demo](https://demo.radanskoric.com/morphing){:target="_blank"}, the rich text editor is marked as permanent. This causes the typed in text to remain even after submitting the form. To solve that, the form listens to the form submit event and resets itself.
 
 #### Before morphing callbacks
 
@@ -65,9 +65,9 @@ Turbo provides two morphing-specific callbacks:
 1. `turbo:before-morph-element` fires before element morphing
 2. `turbo:before-morph-attribute` fires before attribute morphing
 
-You can call `event.preventDefault()` in these listeners to stop specific morphing actions. See the [official documentation](https://turbo.hotwired.dev/reference/events#page-refreshes) for details.
+You can call `event.preventDefault()` in these listeners to stop specific morphing actions. See the [official documentation](https://turbo.hotwired.dev/reference/events#page-refreshes){:target="_blank"} for details.
 
-In the [demo](https://demo.radanskoric.com/morphing), the counter element at the bottom uses that approach.
+In the [demo](https://demo.radanskoric.com/morphing){:target="_blank"}, the counter element at the bottom uses that approach.
 
 ### Limiting the update scope
 
@@ -77,7 +77,7 @@ Turbo gives us two tools to update specific page sections:
 
 #### Turbo stream actions
 
-[Replace](https://turbo.hotwired.dev/reference/streams#replace) and [update](https://turbo.hotwired.dev/reference/streams#update) stream actions modify elements completely or update their content. Both support updating with morphing through the `method="morph"` attribute.
+[Replace](https://turbo.hotwired.dev/reference/streams#replace){:target="_blank"} and [update](https://turbo.hotwired.dev/reference/streams#update){:target="_blank"} stream actions modify elements completely or update their content. Both support updating with morphing through the `method="morph"` attribute.
 
 These actions apply the same morphing logic as full-page updates but scoped to the target element. All the other  mentioned techniques also work within this scope.
 
@@ -89,11 +89,11 @@ This approach particularly helps when adding morphing to **legacy applications**
 
 Turbo frames scope the updates to a part of the page. However, there is a bit of a problem if we're talking about morphing: it doesn't support it.
 
-You may now be thinking: "Wait a minute! there's a `refresh="morph"` attribute!" And you're right, it's right there in the [official documentation](https://turbo.hotwired.dev/reference/frames#frame-that-will-get-reloaded-with-morphing-during-page-refreshes). But notice the wording: "Frame that will get reloaded with morphing **during page refreshes**" (emphasis mine). The morphing algorithm runs **only** when the frame is refreshed as part of a *full page refresh*, not if just the frame itself is being refreshed.
+You may now be thinking: "Wait a minute! there's a `refresh="morph"` attribute!" And you're right, it's right there in the [official documentation](https://turbo.hotwired.dev/reference/frames#frame-that-will-get-reloaded-with-morphing-during-page-refreshes){:target="_blank"}. But notice the wording: "Frame that will get reloaded with morphing **during page refreshes**" (emphasis mine). The morphing algorithm runs **only** when the frame is refreshed as part of a *full page refresh*, not if just the frame itself is being refreshed.
 
 Still, frames might provide smooth enough updates without morphing. Focus on the user experience rather than specific technical approaches.
 
-> This is not entirely true, a frame with `refresh="morph"` will also update using morphing if it is explicitly reloaded from javascript using `.reload()`. There is an [unmerged documentation PR that clarifies this](https://github.com/hotwired/turbo-site/pull/170).
+> This is not entirely true, a frame with `refresh="morph"` will also update using morphing if it is explicitly reloaded from javascript using `.reload()`. There is an [unmerged documentation PR that clarifies this](https://github.com/hotwired/turbo-site/pull/170){:target="_blank"}.
 {: .prompt-info }
 
 ### Getting the server state to match the browser state
@@ -119,7 +119,7 @@ This best usage of this approach is when it also has a UX benefit beyond fixing 
 
 If database is not the appropriate place to store it, consider whether it makes sense to store it in the session object.
 
-In the [demo](https://demo.radanskoric.com/morphing), this is exactly where the open/closed state of the info box at the top is stored, using a custom Stimulus controller.
+In the [demo](https://demo.radanskoric.com/morphing){:target="_blank"}, this is exactly where the open/closed state of the info box at the top is stored, using a custom Stimulus controller.
 
 #### Preserving the state in the URL
 
@@ -129,7 +129,7 @@ For example: when a user opens the sidebar, we could modify the URL to include a
 
 This approach also enables URL sharing with preserved UI states. Many highly interactive web apps use URL parameters for this purpose.
 
-In the [demo](https://demo.radanskoric.com/morphing), the details sections on the saved notes store their open/closed state in the URL, using a custom Stimulus controller.
+In the [demo](https://demo.radanskoric.com/morphing){:target="_blank"}, the details sections on the saved notes store their open/closed state in the URL, using a custom Stimulus controller.
 
 ## What if none of this works for your case?
 
