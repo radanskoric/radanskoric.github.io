@@ -5,7 +5,7 @@ order: 5
 title: Turbo 8 Cheat-sheet
 ---
 
-I am thrilled to introduce a compact, **printable A4 cheat-sheet** packed with essential information and quick references to help you use Turbo 8 to its fullest. This single-page guide is an indispensable resource to keep close at hand as you leverage the robust features of Turbo 8.
+This is a **printable A4 cheat-sheet** packed with essential information and quick references to help you use Turbo 8 to its fullest. This two-page guide is an indispensable resource to keep close at hand as you leverage the robust features of Turbo 8.
 
 ![The Turbo 8 cheat-sheet on my desk](/assets/img/turbo_cheatsheet_photo.jpeg)
 

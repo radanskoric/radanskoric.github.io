@@ -21,6 +21,7 @@ module Commands
             print_channel(post_doc, "RUBYZG SLACK", "rubyzg", "slack")
             print_channel(post_doc, "LINKEDIN", "linkedin", "social")
             print_channel(post_doc, "TWITTER", "twitter", "social")
+            print_channel(post_doc, "BLUESKY", "bsky", "social")
             print_channel(post_doc, "DISCUSS", "discuss", "forum") do |url|
               "<a href=\"#{url}\">#{post_doc.data["title"]}</a>"
             end
