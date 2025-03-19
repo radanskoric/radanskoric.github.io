@@ -116,7 +116,7 @@ For every asset that's found in the asset folder Propshaft will:
 
 The only thing that the rest of the application needs from Propshaft is a way to get the public folder path from the original filename. Propshaft does that by implementing the `path_to_asset` helper[^2] which resolves the filename to the actual fingerprinted public folder path.
 
-This is what Propshaft does out of the box. It doesn't do anything else you might expect from an asset processor: like minification or tree-shaking. There is a way to get that but that I'll cover that and how it works under the hood in the next article. Subscribe to not miss it. As a bonus I'll also send you a printableTurbo 8 cheatsheet:
+This is what Propshaft does out of the box. It doesn't do anything else you might expect from an asset processor: like minification or tree-shaking. There is a way to get and that is covered in the [next article in the series](/articles/rails-assets-deep-dive-propshaft). Subscribe to not miss it. As a bonus I'll also send you a printableTurbo 8 cheatsheet:
 
 <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.kit.com/c481ada422/index.js"></script>
 
@@ -176,7 +176,7 @@ With the above importmap, whenever we use a statement like `import "@hotwired/tu
 - Uses the concept of pinning an import name to asset name which it then resolves to the actual source file location with `path_to_asset`. **This is the only touching point between the two gems.**
 - Does not do any changes to the asset files.
 
-Now we know how the Rails 8 asset pipeline is integrated. In the next article I'll dive into how asset processing gets integrated with Propshaft and then we'll round off the miniseries with some examples of things you can do with this asset pipeline, including the one that sent me looking at the source. Subscribe below to not miss it.
+Now we know how the Rails 8 asset pipeline is integrated. In the [next article](/articles/rails-assets-deep-dive-propshaft) I dive into how asset processing gets integrated with Propshaft. I'm also preparing an article with some examples of things you can do with this asset pipeline, including the one that sent me looking at the source. Subscribe below to not miss it.
 
 ## Footnotes
 
