@@ -34,7 +34,7 @@ Propshaft gem is the latest iteration of the Rails asset processing pipeline, in
 If you're interested, you can read more about the transition from Sprockets in the [Rails' guide to the asset pipeline](https://guides.rubyonrails.org/asset_pipeline.html#sprockets-to-propshaft).
 ### What is importmap-rails?
 
-I'm assuming you're familiar with the `import` statement [available in javascript modules](https://github.com/hotwired/turbo-rails/pull/699#issuecomment-2693675954). It allows you to import javascript functionality from a different module file for use in the current one.
+I'm assuming you're familiar with the `import` statement [available in javascript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import){:target="_blank"}. It allows you to import javascript functionality from a different module file for use in the current one.
 
 However, this typically requires providing URLs to the other JavaScript module sources. **Importmaps** are a way to avoid specifying the full location of the source and instead use a shorter name. This increases readability and allows us to move files, e.g. to a CDN, without rewriting the `import` statements.
 
@@ -176,7 +176,7 @@ With the above importmap, whenever we use a statement like `import "@hotwired/tu
 - Uses the concept of pinning an import name to asset name which it then resolves to the actual source file location with `path_to_asset`. **This is the only touching point between the two gems.**
 - Does not do any changes to the asset files.
 
-Now we know how the Rails 8 asset pipeline is integrated. In the [next article](/articles/rails-assets-deep-dive-propshaft) I dive into how asset processing gets integrated with Propshaft. I'm also preparing an article with some examples of things you can do with this asset pipeline, including the one that sent me looking at the source. Subscribe below to not miss it.
+Now we know how the Rails 8 asset pipeline is integrated. In the [next article](/articles/rails-assets-deep-dive-propshaft) I dive into how asset processing gets integrated with Propshaft. And after that one I [explore how to combine multiple importmaps](/articles/rails-assets-combine-importmaps).
 
 ## Footnotes
 

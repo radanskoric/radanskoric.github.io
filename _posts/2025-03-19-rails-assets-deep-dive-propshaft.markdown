@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rails 8 Assets - Deep dive into Propshaft"
+title: "Rails 8 Assets: Deep dive into Propshaft"
 date: 2025-03-18
 categories: articles
 tags: rails assets propshaft
@@ -94,4 +94,4 @@ The flow is then pretty simple:
 
 Propshaft does much less than other asset processing tools. I'd argue that is its strength, making it simple to understand and easy to extend.
 
-The next article will conclude this examination of the Rails 8 pipeline by providing examples of modifying the Rails 8 Asset pipeline. Subscribe below to not miss it.
+The next article [explores how to combine multiple importmaps](/articles/rails-assets-combine-importmaps).
