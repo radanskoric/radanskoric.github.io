@@ -34,11 +34,11 @@ This produces the following importmap in your HTML:
 
 Your rails application has its `importmap.rb` and if you're using Rails engines, each will get its own `importmap.rb` file with its own definitions.
 
-I was setting up my [demo site](https://demo.radan.dev/){:target="_blank"} and I wanted to isolate each demo into a namespace so that I can have all its files conveniently separated. **I wanted to make the engine's importmap extend the main application's one.**  This the issue that [sent me down the path](/articles/rails-assets-propshaft-importmaps) of reading the source of Propshaft and importmap-rails.
+I was setting up my [demo site](https://demo.radan.dev/){:target="_blank"} and I wanted to isolate each demo into a namespace so that I can have all its files conveniently separated. **I wanted to make the engine's importmap extend the main application's one.**  This was the issue that [sent me down the path](/articles/rails-assets-propshaft-importmaps) of reading the source of Propshaft and importmap-rails.
 
 ## How to combine them
 
-Key to doing that is understanding how the gem evaluates `importmap.rb`: it is loaded and `instance_eval`'d in the context of an `Importmap::Map` instance. It exposes a `draw` which does exactly that ([source code](https://github.com/rails/importmap-rails/blob/d91d5e134d3f27e2332a8cb2ac015ea03d130621/lib/importmap/map.rb#L13-L26)){:target="_blank"}. The DSL of `importmap.rb` is essentially calling methods on the instance of `Importmap::Map`. As you're calling the `pin` method it is building an internal `Hash` with all the entries it will later output into the HTML.
+Key to doing that is understanding how the gem evaluates `importmap.rb`: it is loaded and `instance_eval`'d in the context of an `Importmap::Map` instance. It exposes a `draw` method which does exactly that ([source code](https://github.com/rails/importmap-rails/blob/d91d5e134d3f27e2332a8cb2ac015ea03d130621/lib/importmap/map.rb#L13-L26){:target="_blank"}). The DSL of `importmap.rb` is essentially calling methods on the instance of `Importmap::Map`. As you're calling the `pin` method it is building an internal `Hash` with all the entries it will later output into the HTML.
 
  All we need to do is to call `draw` twice, with the two importmap source files, but on the same importmap instance:
 ```ruby
