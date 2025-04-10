@@ -4,10 +4,9 @@ title: "Rails 8 Assets: Combining importmaps"
 date: 2025-03-26
 categories: articles
 tags: rails assets importmaps importmap-rails
-mermaid: true
 ---
 
-*This post is part of a mini series on Rails 8 asset pipeline. For the full picture, start with [breakdown of how propshaft and importmap-rails work together](/articles/rails-assets-propshaft-importmaps) and [Propshaft deep dive](/articles/rails-assets-deep-dive-propshaft).*
+{% include_relative _includes/asset_pipeline_links.markdown %}
 
 ## Recap of importmap-rails gem
 

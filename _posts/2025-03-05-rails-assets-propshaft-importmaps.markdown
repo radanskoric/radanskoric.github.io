@@ -7,6 +7,8 @@ tags: rails assets propshaft importmaps importmaps-rails
 mermaid: true
 ---
 
+{% include_relative _includes/asset_pipeline_links.markdown %}
+
 I almost gave up and it was actually so simple.
 
 I wanted to change default asset organisation on a fresh Rails 8 application with the default set up: **Propshaft + importmap-rails** gems. And I just couldn't get it to work. Frustrating.

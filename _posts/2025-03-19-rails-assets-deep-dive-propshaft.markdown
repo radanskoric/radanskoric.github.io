@@ -7,7 +7,7 @@ tags: rails assets propshaft
 mermaid: true
 ---
 
-Read the [previous article](/articles/rails-assets-propshaft-importmaps) to learn how Propshaft and importmap-rails work together to form the Rails 8 Asset pipeline. That article focuses on the interplay between the two and explains more of the importmap-rails side. Now, let's dive into how Propshaft actually processes the assets.
+{% include_relative _includes/asset_pipeline_links.markdown %}
 
 ## TL:DR;
 
