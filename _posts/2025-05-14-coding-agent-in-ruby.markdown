@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Coding agent in 94 lines of Ruby"
-date: 2025-05-13
+date: 2025-05-14
 categories: articles
 tags: ruby ai llm coding-agent
 ---
