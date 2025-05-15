@@ -364,7 +364,7 @@ Interested in what it generated? It's in this GitHub repo: [radanskoric/coding_a
 
 There are two main takeaways for me:
 1. Building a coding agent requires almost no specialist AI skills. It's mostly just regular software development. Also, notice I improved on the original article's agent by adding another tool. I didn't use any AI engineering knowledge for this. Instead, my extensive experience testing my own broken code told me this should make a difference. Not exactly rocket surgery.
-2. Ruby is really well suited for this. The RubyLLM gem's excellent boilerplate elimination isn't accidental. First of all: Ruby is built for programmer happiness. Secondly: the Ruby community highly values readability. This is the norm in Ruby. And the effect is that: *English instructions don't stick out from the Ruby code. It all flows nicely together.*
+2. Ruby is really well suited for this. The RubyLLM gem's excellent boilerplate elimination isn't accidental. First of all: Ruby is built for programmer happiness. Secondly: the Ruby community highly values readability. This is the norm in Ruby. And the effect is that: **English instructions don't stick out from the Ruby code. It all flows nicely together.**
 
 So, if you have a coding agent idea, there's nothing preventing you from experimenting. The coding agent from this article is available at [https://github.com/radanskoric/coding_agent](https://github.com/radanskoric/coding_agent){:target="_blank"} under the permissive MIT license. It would make me very happy if you forked it.
 
