@@ -69,12 +69,12 @@ module MyEngine
 
   class Engine < ::Rails::Engine
     # Set it up in a new initializer
-    initializer "morphing.importmap", before: "importmap" do |app|
-      Morphing.importmap = Importmap::Map.new
+    initializer "my_engine.importmap", before: "importmap" do |app|
+      MyEngine.importmap = Importmap::Map.new
       # Evaluate the main application's importmap
-      Morphing.importmap.draw(app.root.join("config/importmap.rb"))
+      MyEngine.importmap.draw(app.root.join("config/importmap.rb"))
       # Evaluate the engine's importmap
-      Morphing.importmap.draw(root.join("config/importmap.rb"))
+      MyEngine.importmap.draw(root.join("config/importmap.rb"))
     end
   end
 end
