@@ -26,3 +26,27 @@
   font-size: 1rem;
   border-left: 0;
 }
+
+#sidebar .sidebar-bottom {
+  margin-top: 1rem;
+}
+
+.ruby-webring-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#sidebar .webring-nav .webring-btn {
+  border: 2px solid var(--sidebar-btn-color);
+}
+
+#sidebar .webring-nav .webring-btn:hover {
+  background-color: var(--sidebar-hover-bg);
+}
