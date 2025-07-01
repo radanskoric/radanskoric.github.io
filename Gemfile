@@ -6,9 +6,9 @@ ruby RUBY_VERSION
 gem "jekyll-theme-chirpy", "~> 6.3"
 
 group :development, :test do
-  gem "html-proofer", "~> 4.4"
+  gem "html-proofer", "~> 5.0"
 
-  gem "pry", "~> 0.14.2"
+  gem "pry", "~> 0.15.2"
   gem "pry-doc", require: false
 
   # The whole section below is gems for tests accompanying blog posts.
@@ -17,9 +17,9 @@ group :development, :test do
   gem "rspec"
 
   # For AR related blog posts.
-  gem "activerecord", "~> 7.1"
-  gem "sqlite3", "~> 1.3", ">= 1.3.11"
-  gem 'concurrent-ruby', '~> 1.2', '>= 1.2.2'
+  gem "activerecord", "~> 8.0"
+  gem "sqlite3", "~> 2.7"
+  gem 'concurrent-ruby', '~> 1.3'
 end
 
 group :jekyll_plugins do
