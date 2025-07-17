@@ -5,5 +5,5 @@ permalink: /subscribe
 ---
 
 <div class="container-fluid convertkit-form">
-  <script async data-uid="5debe56286" src="https://thoughtful-producer-2834.ck.page/5debe56286/index.js"></script>
+  <script async data-uid="13d2774a6c" src="https://thoughtful-producer-2834.ck.page/13d2774a6c/index.js"></script>
 </div>
