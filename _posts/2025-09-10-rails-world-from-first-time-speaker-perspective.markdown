@@ -176,6 +176,8 @@ The technicians hooked me up to the microphone and I had about 10 min to kill. I
 
 Typecraft came, greeted me, went out, announced me and I went on. The rest went very fast for me, almost in a blur. I've rehearsed it enough that I was doing it almost on autopilot. The time went by so fast that at one point when I had about a third of the presentation left, I looked at the clock and saw it showing 11:30. I freaked out for a moment because I thought I'm going way too fast and will finish too soon. And then I calmed down because the clock changed to 11:29 and I realised it's counting down not up. The fact that this whole thought process took literally a second, tells you how fast my mind was racing under the adrenaline.
 
+![My presentation under way](/assets/img/posts/railsworld2025/intro-slide.jpg)
+
 And then it was over. I went off, various friends came to tell me it went great and I could now fully relax and enjoy the closing Keynote.
 
 During the talk I also shared a [30% discount code for my book](https://masterhotwire.com/?discount=RAILSWORLD){:target="_blank"}. The code never expires so whenever you're reading this, it'll be good.
