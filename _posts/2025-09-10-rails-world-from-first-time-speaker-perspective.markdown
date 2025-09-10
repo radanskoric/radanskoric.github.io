@@ -64,7 +64,7 @@ The talk featured a recap of all the mayor additions to Rails that will be relea
 - The "frontier" of native mobile apps has some heavy lifting features coming:
     - Turbo Offline - More on that later when I'll talk about Rosa's talk where she talked just about that.
     - Native push notifications got an out of the box solution: ActionPush which is Action Push Native and Action Push Web for PWAs. This also included an unexpected bit of news: [Campfire is now free and MIT licensed](https://github.com/basecamp/once-campfire/){:target="_blank"}. The stated reason is that DHH wants someone to extract the Action Push Web out of its code and upstream it to ActionPush. My RubyZG co-organiser [Stanko](https://stanko.io/){:target="_blank"} who recently started working at 37signals got the honour of managing the influx of PRs that followed shortly afterwards.
-- Rails make better use of Docker even if you're not developing with devcontainers by making it easy to put just the databases into Docker.
+- Rails will make better use of Docker even if you're not developing with devcontainers by making it easy to put just the databases into Docker.
 - They're dropping system tests: they removed 180 system tests from Hey, and reduced it to just 10 smoke tests. Since then they have not seen a single bug get to production that would have been caught by the removed tests. So, going forward, Rails will not suggest system tests by default in its generators. The framework is still there, and you can use just as before, but it's no longer suggested. This one is likely to be a controversial decision.
 - Support for Local CI running. Due to much better hardware in local machines it's very feasible to just run CI tests locally. The only thing you need to make sure is that tests were actually run. So Rails is getting a DSL for configuring local CI runs with signoff supported using [github signoff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-the-commit-signoff-policy-for-your-repository#about-commit-signoffs){:target="_blank"}.
 
@@ -205,7 +205,7 @@ A few of us later found some remedy in a Karaoke bar in central Amsterdam. We di
 
 ## Closing thoughts
 
-And that was a wrap, I'm writing these words on a plane heading back to Zagreb, somewhere above Germany. The impressions are still sinking in. I'm extremely grateful to everyone that made this possible, and that made this journey more enjoyable. Everyone I met and talked to. By an large the people were normal down to earth, nice people.
+And that was a wrap, I'm writing these words on a plane heading back to Zagreb, somewhere above Germany. The impressions are still sinking in. I'm extremely grateful to everyone that made this possible, and that made this journey more enjoyable. Everyone I met and talked to. By and large, the people were normal, nice and down to earth.
 
 It's a good community to be a part of.
 
