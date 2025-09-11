@@ -13,7 +13,7 @@ This time I was speaking at RailsWorld 2025. My first time giving a talk at an e
 
 ## Day 0 - arrival
 
-I arrived to the speaker hotel on Wednesday mid day. The room was not ready so I visited the viewing platform at the top of the hotel, worked a bit with a wonderful view of the Amsterdam canal and grabbed lunch with several attendees I haven't met before. I pleasantly surprised that some people recognised my name from reading my blog. I put a lot of work into my blog and hearing in person that I actually helped someone is a huge motivator. What a great start.
+I arrived to the speaker hotel on Wednesday mid day. The room was not ready so I visited the viewing platform at the top of the hotel, worked a bit with a wonderful view of the Amsterdam canal and grabbed lunch with several attendees I haven't met before. I was pleasantly surprised that some people recognised my name from reading my blog. I put a lot of work into my blog and hearing in person that I actually helped someone is a huge motivator. What a great start.
 
 ![Working from Sir Adam tower hotel sky bar](/assets/img/posts/railsworld2025/tower-laptop.jpeg)
 
@@ -49,7 +49,7 @@ Well done Amanda Perino and the rest of the organisation team!
 
 Now, the keynote by DHH. Here is the [link to the video recording](https://www.youtube.com/watch?v=gcwzWzC7gUA){:target="_blank"}.
 
-The theme of the keynote was: stepping back and looking at the whole problem. He talked about how we've forgotten the idea of what the problem was, that we've gone backwards and he wanted to think about the whole problem, all of web development. In the keynote he teased that he'll talk later about the problem beyond web development, but I'll give you spoiler. That part of the presentation was about Omarchy.
+The theme of the keynote was: stepping back and looking at the whole problem. He talked about how we've forgotten the idea of what the problem was, that we've gone backwards and he wanted to think about the whole problem, all of web development. In the keynote he teased that he'll talk later about the problem beyond web development, but I'll give you a spoiler. That part of the presentation was about [Omarchy](https://omarchy.org/){:target="_blank"}.
 
 In real life the keynote continued with the now familiar theme of compressing complexity and simplifying work. He drew a lot of comparisons between the experience of developing web pages in 90s vs today.  The Roman empire makes an appearance but I won't spoil that, watch the video.
 
@@ -68,9 +68,9 @@ The talk featured a recap of all the mayor additions to Rails that will be relea
 - They're dropping system tests: they removed 180 system tests from Hey, and reduced it to just 10 smoke tests. Since then they have not seen a single bug get to production that would have been caught by the removed tests. So, going forward, Rails will not suggest system tests by default in its generators. The framework is still there, and you can use just as before, but it's no longer suggested. This one is likely to be a controversial decision.
 - Support for Local CI running. Due to much better hardware in local machines it's very feasible to just run CI tests locally. The only thing you need to make sure is that tests were actually run. So Rails is getting a DSL for configuring local CI runs with signoff supported using [github signoff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-the-commit-signoff-policy-for-your-repository#about-commit-signoffs){:target="_blank"}.
 
-What followed felt a bit like a side presentation: installing Omarchy on a brand new Framework desktop. David started installation with a stopwatch and talked about his experience of leaving Mac, going to Ubuntu, finding Typecraft videos on Hyperland and tumbling down that rabbit hole. He was interrupted by the installation finishing 4:45 and moved on to giving a tour of Omarchy.
+What followed felt a bit like a side presentation: installing Omarchy on a brand new Framework desktop. David started installation with a stopwatch and talked about his experience of leaving Mac, going to Ubuntu, finding Typecraft videos on Hyprland and tumbling down that rabbit hole. He was interrupted by the installation finishing in 4:45 and moved on to giving a tour of Omarchy.
 
-The rest of the talk was mostly about 37Signals taking a stab at the problem of edge computing for their new product Fizzy. He gave a taste of what they're doing but I'll say a bit more about that in my comments on the next two talks I went to.
+The rest of the talk was mostly about 37signals taking a stab at the problem of edge computing for their new product Fizzy. He gave a taste of what they're doing but I'll say a bit more about that in my comments on the next two talks I went to.
 
 Overall, the talk was about adding more stuff but have it all aimed at needing less: more local development, more out of the box setup, less moving parts with more functionality. I personally like this direction a lot.
 
@@ -78,17 +78,17 @@ Overall, the talk was about adding more stuff but have it all aimed at needing l
 
 [Mike Dalessio](https://mike.daless.io/){:target="_blank"} talked about multi-tenancy. First, multi tenancy can mean: comingled data (same database but separated by a key) or separate databases.
 
-For reasons that will become clear when I cover the after lunch talk, 37Signals wants separate databases, with the focus on SQLite. They decided to build it on top of Rails 6.1 work for horizontal sharding and other multi db improvements. The goal was to have it deeply integrated with every part of Rails so it mostly works out of the box.
+For reasons that will become clear when I cover the after lunch talk, 37signals wants separate databases, with the focus on SQLite. They decided to build it on top of Rails 6.1 work for horizontal sharding and other multi db improvements. The goal was to have it deeply integrated with every part of Rails so it mostly works out of the box.
 
 What followed was a detailed ride through the implementation. The feeling I got was that this kind of work is very whack-a-mole because after he did the hard work of figuring out how it will be implemented, he had to track down many many places in the framework where the pattern needs to be applied.
 
-And I think doing this in the framework is the perfect place for this. This way we'll all experience some of the bugs while testing, instead of one company experiencing all of the bugs. And we'll get a robust solution built into framework.
+And I think doing this in the framework is the perfect place for this. This way we'll all experience some of the bugs while testing, instead of one company experiencing all of the bugs. And we'll get a robust solution built into the framework.
 
 ### SQLite Replication with Beamer
 
 After lunch [Kevin McConnell](https://x.com/kevinmcconnell){:target="_blank"} essentially gave Part II of the multi-tenancy talk, the other side of the coin: Once you have one database per tenant, you can move it closer to the tenant and then add replication to low latency reads from anywhere.
 
-The talk started with an overview of what replication is and why it is useful. I'll bottom line it: it's to avoid points of failure and allow scaling horizontally. This was followed by a speed run overview of how Beamer works, and how Sqlite works.
+The talk started with an overview of what replication is and why it is useful. I'll bottom line it: it's to avoid points of failure and allow scaling horizontally. This was followed by a speed run overview of how Beamer works, and how SQLite works.
 
 The motivation for this whole work is their new product: Fizzy, a ticket tracking system. They want it to be fast and the approach they're taking is edge computing, which is a fancy way of saying: *we'll put a server near every customer*. Fizzy is behind most of the big contributions 37signals has added to the framework recently. For example, Kamal Proxy, which was introduced on last RailsWorld is a critical piece of that puzzle.
 
