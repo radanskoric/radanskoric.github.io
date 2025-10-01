@@ -22,7 +22,7 @@ When you click the link, the frame updates. All good. Except, I want to change t
 
 ![Extraframe content being updated with the frame](/assets/img/posts/extraframe.gif)
 
-Currently the title highlight doesn't update since only the frame content gets updated. All that is really needed is to remove the highlight CSS classes from the current chapter and add them to the just clicked chapter. A simple Stimulus controller could do this. However, for reasons that will become apparent if you read the article until the end, I don't want to do it like this. I want to keep the logic fully on the backend.
+Notice that title highlight updates when I click. That doesn't happen by default since only the frame content gets updated. All that is really needed is to remove the highlight CSS classes from the current chapter and add them to the just clicked chapter. A simple Stimulus controller could do this. However, for reasons that will become apparent if you read the article until the end, I don't want to do it like this. I want to keep the logic fully on the backend.
 
 ## The solution
 
