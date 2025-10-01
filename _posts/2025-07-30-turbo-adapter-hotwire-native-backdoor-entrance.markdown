@@ -5,6 +5,7 @@ date: 2025-07-25
 categories: articles
 tags: turbo adapter hotwire hotwire-native
 mermaid: true
+image: /assets/img/posts/hotwire-native-architecture.svg
 ---
 
 Understanding exactly how Hotwire Native integrates with the web app can be very helpful both in debugging issues and deciding if Hotwire Native is the right choice in the first place. In particular, it's useful to understand how it takes over web navigation so it can make it feel native. This is exactly what this article explains.

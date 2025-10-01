@@ -4,6 +4,7 @@ title: "Rails World 2025 from a first time speaker perspective"
 date: 2025-09-10
 categories: news
 tags: ruby conference rails-world
+image: /assets/img/posts/railsworld2025/intro-slide.jpg
 ---
 
 Last time I was in Amsterdam I was 17 and it was a different kind of trip.

@@ -4,6 +4,7 @@ title: "How to elegantly update other UI when a Turbo Frame is updated"
 date: 2025-09-29
 categories: articles
 tags: rails hotwire turbo turbo-frames
+image: /assets/img/posts/extraframe-improved.gif
 ---
 
 Turbo Frames are great for carving out a part of the UI and having it update via normal server interaction. If all that needs to be updated is this specific part of the UI and nothing else then standard Turbo Frames usage is all you need. It's great for localised changes.
