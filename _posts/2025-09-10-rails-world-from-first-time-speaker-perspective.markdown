@@ -2,7 +2,6 @@
 layout: post
 title: "Rails World 2025 from a first time speaker perspective"
 date: 2025-09-10
-last_modified_at: 2025-09-10
 categories: news
 tags: ruby conference rails-world
 ---

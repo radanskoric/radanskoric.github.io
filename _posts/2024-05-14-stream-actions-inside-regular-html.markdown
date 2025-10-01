@@ -72,6 +72,8 @@ Depending on the details of your case you could [use full page Turbo Morphing](/
 
 But sometimes you want to make the minimal change needed to make it work. For that you could render the stream action for the side-effects *inside the frame* and rely on the feature we are discussing here. You achieve the side-effect with minimal changes and keep the main logic simple.
 
+Here is a concrete example of using it to [update extraframe content](/articles/turbo-extraframe-updates).
+
 ### Example: Updating multiple parts of the page after following a GET link
 
 For GET requests Turbo will **not** expect a Turbo streams response and if you do return a Turbo stream response (i.e. Content-type of `text/vnd.turbo-stream.html` instead of `text/html`), it will not attempt to process it as such. It will simply not work. The assumption is that you're either updating a full page or one frame.
