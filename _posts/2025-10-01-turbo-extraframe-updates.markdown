@@ -30,7 +30,10 @@ Notice that title highlight updates when I click. That doesn't happen by default
 > The code snippets demonstrating the solution are extracted from the actual code, the book's web version which is a custom Rails app. But, I've simplified them to make the point clearer. I'm using Tailwind so the biggest change is omitting all the tailwind classes.
 {: .prompt-info }
 
-First of all, the view layout contains a rendering slot for the sidebar content:
+The highlevel idea behind the solution is to render the full page with the sidebar content rendered in the regular place, *outside the frame*.
+And then, on the Turbo Frame request to **update it using a Turbo Stream rendered inside the frame**.
+
+Let's look at the code. First, the view layout contains a rendering slot for the sidebar content:
 ```erb
 <body>
   <aside>
@@ -43,9 +46,9 @@ First of all, the view layout contains a rendering slot for the sidebar content:
 ```
 {: file="app/views/layouts/application.html.erb"}
 
-The idea is to render into the `sidebar` slot for the full page load. However, for the turbo frame request we'll emit a turbo stream that will update the sidebar in place. The key implementation part is a small view helper implementing the key logic. Before I get to the helper I'll show you the other views. This will make the helper easier to understand.
+For the full page load render we'll render into the `sidebar` slot. However, for a turbo frame request we'll emit a turbo stream that will update the sidebar in place. The key implementation part is a small view helper. Before I get to the helper I'll show you the other views. This will make the helper easier to understand.
 
-In the view for the chapter page I render the turbo frame with the sidebar content and the chapter content:
+In the view for the chapter page I render the turbo frame with both the sidebar and chapter content:
 ```erb
 <%= turbo_frame_tag :chapter_content do %>
   <%= render 'sidebar', chapters: @chapters, chapter: @chapter %>
@@ -136,6 +139,13 @@ With the "turbo aware content for" approach, the first step is to update the sid
 And the second step ... well actually, there's no second step. *We're done!* Because of everything else that is set up, after this change it all works as expected. When the chapter link is clicked, frame is loaded, the turbo stream renders the new sidebar content which is smoothly updated using morphing. The full page load also just works.
 
 To make it nicer I added some CSS transitions to have the subheadings expand out when the element is created and that's it.
+
+> **What’s the benefit of this vs just a full page Turbo morph?**
+>
+> Turbo will not use a full page morph here. It’s navigating between different pages and Turbo will use full page morphing only if we’re navigating back to the same page. Without morphing *the local state will be reset*. In this example the sidebar with chapter titles has its own scroll which would be reset every time you click the chapter title. I could have restored the scroll with some JavaScript but solution presented here is more robust and also a little bit more performant.
+>
+> Effectively what we’re doing is a more informed update. We know that the chapter content is completely changing so it's better to just replaced while the sidebar content is only tweaked so better to morph it. Which is exactly what we're doing by combining a Turbo frame and stream.
+{: .prompt-info }
 
 With this technique any change in the extraframe content only requires changing how that content is rendered on the server. The setup takes care of everything else.
 
