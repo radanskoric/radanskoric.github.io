@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to elegantly update other UI when a Turbo Frame is updated"
-date: 2025-09-29
+date: 2025-10-01
 categories: articles
 tags: rails hotwire turbo turbo-frames
 image: /assets/img/posts/extraframe-improved.gif
