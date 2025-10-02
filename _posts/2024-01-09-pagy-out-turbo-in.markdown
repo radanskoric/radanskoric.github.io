@@ -47,7 +47,7 @@ At the heart of it is a simple helper method that takes a relation[^3], and retu
 
 ```ruby
 module CursorPaginatable
-  def paginate_with_cursor(relation, items: 20, before: nil, by: :id, direction: :desc)
+  def paginate_with_cursor(relation, items: 20, before: nil, by: :id)
 
     # Filter by cursor start value, if one is provided. If missing, we know we're on the first page.
     relation = relation.where(by => ..before) if before.present?
@@ -55,7 +55,8 @@ module CursorPaginatable
     # Order the relation by the cursor field, and limit it to `items + 1` records.
     # This is because we want to know if there are more records to load,
     # and we need to know that before we actually load them.
-    relation = relation.order(by => direction).limit(items + 1).to_a
+    # `reorder` is used in case relation already has an order we need to override.
+    relation = relation.reorder(by => :desc).limit(items + 1).to_a
 
     # If we don't have more records, we can just return the relation as is.
     # If we do, we remove the last record because we only need its cursor value
