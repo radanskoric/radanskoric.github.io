@@ -6,6 +6,7 @@ order: 4
 
 ### Talks given at conferences
 
+* [Lessons from Migrating a Legacy Frontend to Hotwire](https://www.youtube.com/watch?v=kWFYc6qrXIo&list=PLHFP2OPUpCebhAv1ZWb_978cTl1o-yue-) (Rails World 2025)
 * [Battling complexity](https://www.youtube.com/watch?v=UzWxrIaL0xM&t=13s) (Webcamp Zagreb 2016)
 * [State of Remote Freelancing](https://www.youtube.com/watch?v=g9UgPsdP9vI) (Webcamp Zagreb 2015)
 
