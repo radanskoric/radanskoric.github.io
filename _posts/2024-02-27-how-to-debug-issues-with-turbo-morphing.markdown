@@ -2,6 +2,7 @@
 layout: post
 title: "How to debug issues with Turbo Morphing"
 date: 2024-02-26
+last_modified_at: 2025-10-10
 categories: articles
 tags: debugging rails turbo hotwire morphing
 ---
@@ -81,20 +82,16 @@ All of the 3 options are useful in some scenarios:
 
 ## Setting breakpoints inside Turbo source
 
-At this point, if you just set breakpoints on the relevant elements and go through the recreation steps you'll probably find them firing before you got to the relevant reproduction step. You can keep pressing "Resume" to let it continue running until you get to the reproduction point but that is tedious. It will be easier if you stop execution just before the morphing starts and then set the breakpoints on elements while paused.
+At this point, if you have your issue reproduction steps, you can set breakpoints on the relevant elements. However, you'll probably find that they are firing before you get to the actual morphing. You can keep pressing "Resume" to let it continue running until you get to the reproduction point but that is tedious. It will be easier if you stop execution just before the morphing starts and then set the breakpoints on elements while execution is paused. I will now give you tips on specific places in Turbo source where it is useful to add breakpoints.
 
-You don't need to know the entire turbo source, there are just a few key points to be aware of. As of the time of this writing turbo version is **v8.0.3**. I will give you snippets to search for instead of source links since those are more likely to remain true in future versions.
+You don't need to know the entire turbo source, there are just a few key points to be aware of. As of the time of this writing turbo version is **v8.0.18**. I will give you snippets to search for instead of source links since those are more likely to remain true in future versions.
 
-In the developer tools, navigate to Elements tab and in the `<head>` find the `script` tag for turbo, right click and select "Reveal in Sources tab". There you can:
-1. Search for `async #morphBody` and place a breakpoint inside it. If morphing is triggering as expected, this is where the actual morphing will start.
-2. Search for `shouldMorphPage =`. This will land you inside the `PageView#renderPage` method which handles the actual rendering of the response received from the server. If you're not hitting the morph body breakpoint, try here as this should fire every time.
-3. Finally, if you have issues getting it to even call through to the server, search for `linkClicked=` this is a callback that attaches to links and lets Turbo takeover from default browser behaviour.
+In the developer tools, navigate to **Sources** tab and in the left panel find Turbo under assets and click on it to open it. There you can search specific snippets of code:
+1. Search `"turbo:morph"` to find the place where it dispatches this event. This is the point where morphing has finished. The surrounding method, called `renderElements`, is where the actual morphing is done.  Place a breakpoint at the **beginning** of that method.
+2. Search for `shouldMorphPage =`. This will land you inside the `PageView#renderPage` method which handles the actual rendering of the response received from the server. If you're not hitting the morph body breakpoint at all, try here as this should fire every time.
+3. Finally, if you have issues getting it to even call through to the server, search for `linkClicked =` this is a callback that attaches to links and lets Turbo takeover from default browser behaviour.
 
-Go through your reproduction steps and wait until you hit the breakpoint. Only then use one of "Break on" options
-with the problematic elements and then resume script execution. Note that in the debugger sidebar you can turn on and
-off individual breakpoints for quicker set up in subsequent runs.
-
-And good luck!
+Go through your reproduction steps and wait until you hit the breakpoint. Only then use one of "Break on" options with the problematic elements and then resume script execution. Note that in the debugger sidebar, next to the lines of code, you can turn on and off individual breakpoints for quicker set up in subsequent runs.
 
 # A request for your feedback
 
