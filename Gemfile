@@ -17,7 +17,7 @@ group :development, :test do
   gem "rspec"
 
   # For AR related blog posts.
-  gem "activerecord", "~> 8.0"
+  gem "activerecord", "~> 8.1"
   gem "sqlite3", "~> 2.7"
   gem 'concurrent-ruby', '~> 1.3'
 end
