@@ -6,7 +6,7 @@ ruby RUBY_VERSION
 gem "jekyll-theme-chirpy", "~> 6.3"
 
 group :development, :test do
-  gem "html-proofer", "~> 5.0"
+  gem "html-proofer", "~> 5.1"
 
   gem "pry", "~> 0.15.2"
   gem "pry-doc", require: false
@@ -18,7 +18,7 @@ group :development, :test do
 
   # For AR related blog posts.
   gem "activerecord", "~> 8.0"
-  gem "sqlite3", "~> 2.7"
+  gem "sqlite3", "~> 2.8"
   gem 'concurrent-ruby', '~> 1.3'
 end
 
