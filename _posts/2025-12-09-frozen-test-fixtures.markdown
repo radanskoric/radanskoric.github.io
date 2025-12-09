@@ -65,6 +65,7 @@ test "active scope returns active projects" do
     active_projects = Project.active
     assert_includes active_projects, projects(:active1)
     assert_includes active_projects, projects(:active2)
+
     refute_includes active_projects, projects(:inactive)
 end
 ```
