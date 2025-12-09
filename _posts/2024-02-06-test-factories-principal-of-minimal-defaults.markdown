@@ -99,9 +99,8 @@ Non minimal factories do more than the minimum needed for the test setup. Less s
 
 This is not the full solution to the speed problem but it is a significant part of it.
 
-> If you are finding this useful, consider subscribing to not miss future articles and to get my [printable Turbo 8 cheat-sheet](/cheatsheet):
-> <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
-{: .prompt-info}
+> You might be thinking: "But what about fixtures? They're even faster!" Well, they have their own set of problems. Different problems. But those problems also have solutions and I wrote about a big one: [Why frozen test fixtures are a problem on large projects and how to avoid them](/articles/frozen-test-fixtures). Both fixtures and factories have their place, their problems and ways to address them.
+{: .prompt-tip}
 
 ## How to implement the principle
 
@@ -114,3 +113,5 @@ To make things worse, when you're just creating the factory, not following this 
 The good news, in my experience, is that once most of your factories are built like this, the inertia starts working in your favour. Anyone expanding the factory will see there are lots of specific traits and is very likely to stick to the pattern. When adding a new factory they will probably have a look at an existing factory.
 
 And just like that, the flywheel is spinning in your favour.
+
+
