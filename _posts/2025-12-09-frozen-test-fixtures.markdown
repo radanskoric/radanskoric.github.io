@@ -128,9 +128,12 @@ Sometimes I decide to go wild and use both, because that way I can annoy everyon
 
 Which is why I didn't write an article about which one is better, enough digital ink has been spilled on that hill. I did write before about [a principle that makes factories easier to use](/articles/test-factories-principal-of-minimal-defaults), if that is something you're interested in.
 
+> This article sparked a lively [discussion on Hacker News](https://news.ycombinator.com/item?id=46203948){:target="_blank"}.
+{: .prompt-info}
+
 ## Footnotes
 
-[^3]: [Never miss an opportunity to reference Spinal Tap](https://www.youtube.com/watch?v=4xgx4k83zzc)
+[^3]: [Never miss an opportunity to reference Spinal Tap](https://www.youtube.com/watch?v=4xgx4k83zzc){:target="_blank"}
 
 [^2]: Bluntly but with a zen overtone. If you don't like this, tough luck, ever since I became a dad I have an excuse for such jokes.
 
