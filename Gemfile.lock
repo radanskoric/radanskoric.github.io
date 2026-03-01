@@ -188,7 +188,7 @@ GEM
       google-protobuf (~> 4.31)
       rake (>= 13)
     securerandom (0.4.1)
-    sqlite3 (2.9.0)
+    sqlite3 (2.9.1)
       mini_portile2 (~> 2.8.0)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
