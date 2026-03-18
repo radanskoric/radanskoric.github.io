@@ -1,0 +1,18 @@
+#js-driven-tag-editor .hidden {
+  display: none;
+}
+#js-driven-tag-editor .tag-list li.only-tag {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #3a9e75;
+  color: white;
+}
+#js-driven-tag-editor .tag-list li.only-tag .remove-btn {
+  color: white;
+}
+#js-driven-tag-editor .tag-list li:not(.only-tag) {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  background: #e8e8e8;
+  color: #444;
+}

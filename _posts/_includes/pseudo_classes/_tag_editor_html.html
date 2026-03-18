@@ -1,0 +1,15 @@
+<div id="pseudo-class-driven-tag-editor" class="tag-editor" data-controller="tag-editor">
+  <div class="input-area">
+    <input type="text" placeholder="Add a tag..." data-tag-editor-target="input"
+      data-action="keydown.enter->tag-editor#addTag:prevent">
+    <button type="button" class="clear-btn" data-action="click->tag-editor#clear">&times;</button>
+  </div>
+  <p class="empty-message">You have no tags</p>
+  <ul class="tag-list" data-tag-editor-target="tagList"></ul>
+  <template data-tag-editor-target="tagTemplate">
+    <li>
+      <slot name="tag-name"></slot>
+      <button class="remove-btn" data-action="click->tag-editor#removeTag">&times;</button>
+    </li>
+  </template>
+</div>

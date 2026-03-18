@@ -1,0 +1,18 @@
+  #pseudo-class-driven-tag-editor.tag-editor .input-area input:placeholder-shown ~ .clear-btn {
+    display: none;
+  }
+  #pseudo-class-driven-tag-editor.tag-editor:has(.tag-list li) .empty-message {
+    display: none;
+  }
+  #pseudo-class-driven-tag-editor.tag-editor:not(:has(.tag-list li)) .tag-list {
+    display: none;
+  }
+  #pseudo-class-driven-tag-editor.tag-editor .tag-list li:only-child {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: #3a9e75;
+    color: white;
+  }
+  #pseudo-class-driven-tag-editor.tag-editor .tag-list li:only-child .remove-btn {
+    color: white;
+  }

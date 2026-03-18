@@ -1,0 +1,16 @@
+<div id="js-driven-tag-editor" class="tag-editor" data-controller="js-tag-editor">
+  <div class="input-area">
+    <input type="text" placeholder="Add a tag..." data-js-tag-editor-target="input"
+      data-action="keydown.enter->js-tag-editor#addTag:prevent input->js-tag-editor#toggleClearButton">
+    <button type="button" class="clear-btn hidden" data-js-tag-editor-target="clearButton"
+      data-action="click->js-tag-editor#clear">&times;</button>
+  </div>
+  <p class="empty-message" data-js-tag-editor-target="emptyMessage">You have no tags</p>
+  <ul class="tag-list hidden" data-js-tag-editor-target="tagList"></ul>
+  <template data-js-tag-editor-target="tagTemplate">
+    <li>
+      <slot name="tag-name"></slot>
+      <button class="remove-btn" data-action="click->js-tag-editor#removeTag">&times;</button>
+    </li>
+  </template>
+</div>
