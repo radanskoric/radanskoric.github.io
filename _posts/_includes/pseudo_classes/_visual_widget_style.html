@@ -1,0 +1,83 @@
+<style>
+  .tag-editor {
+    max-width: 480px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #d0d0d0;
+    border-radius: 12px;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #fdfdfd;
+    color: #333;
+  }
+
+  .tag-editor .input-area {
+    position: relative;
+  }
+
+  .tag-editor .input-area input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    background: white;
+    color: #333;
+  }
+
+  .tag-editor .input-area input:focus {
+    border-color: #5b8def;
+  }
+
+  .tag-editor .clear-btn {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #999;
+  }
+
+  .tag-editor .empty-message {
+    color: #999;
+    font-style: italic;
+    padding: 1rem 0;
+    margin: 0;
+  }
+
+  .tag-editor .tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag-editor .tag-list li {
+    padding: 0.3rem 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    background: #e8e8e8;
+    color: #444;
+  }
+
+  .tag-editor .tag-list li .remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    opacity: 0.6;
+    padding: 0;
+    line-height: 1;
+  }
+</style>
