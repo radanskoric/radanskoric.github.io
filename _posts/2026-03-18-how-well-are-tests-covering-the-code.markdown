@@ -5,6 +5,7 @@ date: 2026-03-18
 categories: articles
 tags: ruby testing coverage new-craft
 image: /assets/img/posts/test-coverage/branch_coverage.png
+mermaid: true
 ---
 
 *The student asked: "Master, what should I pay more attention to, my tests or my code?". \
