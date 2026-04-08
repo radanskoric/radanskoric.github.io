@@ -32,9 +32,7 @@ Here's an implementation that uses JS for all of those requirements. This is an 
   {% include_relative _includes/pseudo_classes/_js_tag_editor.css %}
 </style>
 
-<script type="module">
-  {% include_relative _includes/pseudo_classes/_js_tag_editor.js %}
-</script>
+<script type="module" src="/assets/js/pseudo_classes/js_tag_editor.js"></script>
 
 {% include_relative _includes/pseudo_classes/_js_tag_editor.html %}
 
@@ -75,9 +73,7 @@ The full list of supported pseudo-classes [is rather long](https://developer.moz
 
 First, let's remove all of the presentation logic from the controller and see what's left:
 
-<script type="module">
-{% include_relative _includes/pseudo_classes/_tag_editor.js %}
-</script>
+<script type="module" src="/assets/js/pseudo_classes/tag_editor.js"></script>
 
 {% include_relative _includes/pseudo_classes/_tag_editor_bare.html %}
 
