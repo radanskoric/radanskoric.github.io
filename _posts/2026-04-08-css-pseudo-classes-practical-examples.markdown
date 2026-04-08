@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Practical CSS: Combining :has, :not, :only-child and :placeholder-shown pseudo-classes"
+title: "Practical CSS: simplifying UI code with pseudo-classes"
 date: 2026-04-08
 categories: articles
 tags: css pseudo-classes frontend
