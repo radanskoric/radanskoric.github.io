@@ -34,7 +34,7 @@ The solutions fall into 3 categories:
 
 Each strategy is best for different scenarios.
 
->Find the accompanying demo at [https://demo.radanskoric.com/morphing](https://demo.radanskoric.com/morphing){:target="_blank"}. Browse its source code here: [https://github.com/radanskoric/demo/tree/main/demos/morphing](https://github.com/radanskoric/demo/tree/main/demos/morphing){:target="_blank"}. If you want to look at concrete examples I will mention them throughout the article..
+>Find the accompanying demo at [https://demo.radan.dev/morphing](https://demo.radan.dev/morphing){:target="_blank"}. Browse its source code here: [https://github.com/radanskoric/demo/tree/main/demos/morphing](https://github.com/radanskoric/demo/tree/main/demos/morphing){:target="_blank"}. If you want to look at concrete examples I will mention them throughout the article..
 {: .prompt-info }
 
 ### Telling Turbo to leave it alone
@@ -57,7 +57,7 @@ Notice that this technique doesn't mention morphing. It will also work if you're
 
 Note: by marking an element as permanent you might have the opposite problem: the element staying completely unaffected even if it should change a bit. Usually it will be enough to listen to the appropriate event and modify the state.
 
-In the [demo](https://demo.radanskoric.com/morphing){:target="_blank"}, the rich text editor is marked as permanent. This causes the typed in text to remain even after submitting the form. To solve that, the form listens to the form submit event and resets itself.
+In the [demo](https://demo.radan.dev/morphing){:target="_blank"}, the rich text editor is marked as permanent. This causes the typed in text to remain even after submitting the form. To solve that, the form listens to the form submit event and resets itself.
 
 #### Before morphing callbacks
 
@@ -67,7 +67,7 @@ Turbo provides two morphing-specific callbacks:
 
 You can call `event.preventDefault()` in these listeners to stop specific morphing actions. See the [official documentation](https://turbo.hotwired.dev/reference/events#page-refreshes){:target="_blank"} for details.
 
-In the [demo](https://demo.radanskoric.com/morphing){:target="_blank"}, the counter element at the bottom uses that approach.
+In the [demo](https://demo.radan.dev/morphing){:target="_blank"}, the counter element at the bottom uses that approach.
 
 ### Limiting the update scope
 
@@ -119,7 +119,7 @@ This best usage of this approach is when it also has a UX benefit beyond fixing 
 
 If database is not the appropriate place to store it, consider whether it makes sense to store it in the session object.
 
-In the [demo](https://demo.radanskoric.com/morphing){:target="_blank"}, this is exactly where the open/closed state of the info box at the top is stored, using a custom Stimulus controller.
+In the [demo](https://demo.radan.dev/morphing){:target="_blank"}, this is exactly where the open/closed state of the info box at the top is stored, using a custom Stimulus controller.
 
 #### Preserving the state in the URL
 
@@ -129,7 +129,7 @@ For example: when a user opens the sidebar, we could modify the URL to include a
 
 This approach also enables URL sharing with preserved UI states. Many highly interactive web apps use URL parameters for this purpose.
 
-In the [demo](https://demo.radanskoric.com/morphing){:target="_blank"}, the details sections on the saved notes store their open/closed state in the URL, using a custom Stimulus controller.
+In the [demo](https://demo.radan.dev/morphing){:target="_blank"}, the details sections on the saved notes store their open/closed state in the URL, using a custom Stimulus controller.
 
 ## What if none of this works for your case?
 

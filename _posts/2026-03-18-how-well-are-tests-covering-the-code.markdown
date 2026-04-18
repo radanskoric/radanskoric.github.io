@@ -60,7 +60,7 @@ Now that we have our setup, we can start adding tests and look at coverage. Sinc
 
 > All of the code in this article is available in a github repo: [https://github.com/radanskoric/test_coverage_examples](https://github.com/radanskoric/test_coverage_examples)
 >
-> All of the coverage reports can be found at: [https://radanskoric.com/test_coverage_examples/](https://radanskoric.com/test_coverage_examples/)
+> All of the coverage reports can be found at: [https://radan.dev/test_coverage_examples/](https://radan.dev/test_coverage_examples/)
 {: .prompt-info }
 
 ## Step 1: Line/statement coverage

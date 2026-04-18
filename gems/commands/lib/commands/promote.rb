@@ -43,7 +43,7 @@ module Commands
       end
 
       def utm_link(doc, source, medium)
-        "https://radanskoric.com#{doc.url}?utm_source=#{source}&utm_medium=#{medium}&utm_campaign=#{doc.data["slug"]}"
+        "https://radan.dev#{doc.url}?utm_source=#{source}&utm_medium=#{medium}&utm_campaign=#{doc.data["slug"]}"
       end
     end
   end

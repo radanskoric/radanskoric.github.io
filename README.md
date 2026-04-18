@@ -1,2 +1,2 @@
-My personal [website](https://radanskoric.com).
+My personal [website](https://radan.dev).
 
