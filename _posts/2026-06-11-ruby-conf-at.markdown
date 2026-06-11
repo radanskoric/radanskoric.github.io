@@ -67,14 +67,14 @@ I lingered in the hallway track for a bit longer and skipped the next talk, but 
 
 Next up was a very fun talk titled "Why Go Surfing with Strangers: Creating Connection in the Ruby Community". The talk was more of a story about community building and the purpose of conferences, interspersed with music. The talk had very little technical content, and yet it felt very appropriate for a technical conference.
 
-> Between the lines was the penultimate clue: the technical side is the conference trigger, but the conference point is not the technical content.
+> Between the lines was the **penultimate clue**: the technical side is the conference trigger, but the conference point is not the technical content.
 {: .prompt-tip }
 
 [Dave Thomas](https://pragdave.me/){:target="_blank"} delivered the penultimate performance of the conference, on a better approach to writing classes in Ruby. I was so happy that, to round off the day, we got something purely about the craft of expressing ideas in Ruby. For a moment, we forgot the discussion about whether the topic is still professionally relevant or just a hobby craft, and we just enjoyed a wonderfully presented view on a better way to structure classes.
 
 ![Dave Thomas on classes](/assets/img/posts/rubyconfat/clean-classes.jpg)
 
-> This gave me the final clue: It is ok to enjoy the craft, even if you're unsure about commercial value. This talk was an exercise in thinking and elegant expression through code. Its commercial merit in a post-AI world is debatable, but it was undoubtedly enjoyable and the auditorium was full.
+> This gave me the **final clue**: It is ok to enjoy the craft, even if you're unsure about commercial value. This talk was an exercise in thinking and elegant expression through code. Its commercial merit in a post-AI world is debatable, but it was undoubtedly enjoyable and the auditorium was full.
 {: .prompt-tip }
 
 ## The closing
