@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "RubyConf Austria and the future of Ruby conferences"
-date: 2026-06-10
+date: 2026-06-11
 categories: news
 tags: ruby conference rubyconf-at
 image: /assets/img/posts/rubyconfat/violins.jpg
