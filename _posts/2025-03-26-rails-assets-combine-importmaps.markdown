@@ -93,12 +93,10 @@ Now use it in the engine's layout file:
 
 See a real-world implementation [in my demo application](https://github.com/radanskoric/demo/blob/ec47a45701bfea85ce9b94014d359987a7c421b0/demos/morphing/lib/morphing/engine.rb#L14-L16){:target="_blank"}.
 
-> In the next article I'll explain how to combine bundled with importmap assets, i.e. how to keep using the default asset pipeline
-> but still be able to use more complicated bundled packages from npm. Subscribe below to not miss it.
->
-> <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.kit.com/c481ada422/index.js"></script>
+> In the next article I explain how to combine bundled with importmap assets, i.e. how to keep using the default asset pipeline
+> but still be able to use more complicated bundled packages from npm: [Rails 8 Assets: Adding a bundled package alongside vanilla setup
+](/articles/rails-assets-bundled-with-vanilla)
 {: .prompt-info}
-
 
 ## Use cases for combined importmaps
 

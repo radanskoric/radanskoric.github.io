@@ -178,9 +178,6 @@ flowchart LR
 
 Remember that at the top level, in the case where new content is a list of nodes, we found the best match and morphed the old content into its best match. Well, this also means that there is more content at the top level: _around the best match_. Now we insert that content around the old content we just morphed, completing the morphing. This will only be relevant when morphing remote turbo frames since the full page morph will always have just the one top level `html` element.
 
-Before we get to the playground, I also have a [printable Turbo 8 cheat-sheet](/cheatsheet) that you can get by subscribing:
-<script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
-
 ## Interactive playground {#playground}
 
 Below is an interactive idimorph playground. There are two blocks of HTML code, old and new, and then rendered HTML with color coding depending on what idiomorph did with a block: **Orange are nodes that are being morphed, green are new nodes that were added and red are nodes that were removed**.
@@ -406,4 +403,3 @@ Here are also some premade examples for you to try:
 
   loadExample("reorder");
 </script>
-

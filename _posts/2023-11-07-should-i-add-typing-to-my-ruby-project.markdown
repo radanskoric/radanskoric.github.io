@@ -56,7 +56,7 @@ There are many dimensions that make up a measure of quality software development
 
 And that is why it is safe to conclude that whether you would benefit from adopting gradual typing in your Ruby project is going to depend on a number of factors, i.e. you should do a **cost** vs **benefit** analysis for your particular project with considerations of [**alternative solutions**](/articles/preventing-bugs-in-ruby-tools-of-the-trade).
 
-If you are finding this useful, consider subscribing to not miss future articles and to get my [printable Turbo 8 cheat-sheet](/cheatsheet):
+If you are finding this useful, consider subscribing to not miss future articles and to get extra subscriber only articles:
 <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
 
 ## Evaluation {#evaluation}

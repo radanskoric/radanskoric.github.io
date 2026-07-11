@@ -118,9 +118,7 @@ For every asset that's found in the asset folder Propshaft will:
 
 The only thing that the rest of the application needs from Propshaft is a way to get the public folder path from the original filename. Propshaft does that by implementing the `path_to_asset` helper[^2] which resolves the filename to the actual fingerprinted public folder path.
 
-This is what Propshaft does out of the box. It doesn't do anything else you might expect from an asset processor: like minification or tree-shaking. There is a way to get and that is covered in the [next article in the series](/articles/rails-assets-deep-dive-propshaft). Subscribe to not miss it. As a bonus I'll also send you a printableTurbo 8 cheatsheet:
-
-<script async data-uid="c481ada422" src="https://thoughtful-producer-2834.kit.com/c481ada422/index.js"></script>
+This is what Propshaft does out of the box. It doesn't do anything else you might expect from an asset processor: like minification or tree-shaking. There is a way to add that and it is covered in the [next article in the series](/articles/rails-assets-deep-dive-propshaft).
 
 ### Building the importmap
 
@@ -185,5 +183,3 @@ Now we know how the Rails 8 asset pipeline is integrated. In the [next article](
 [^1]: Not saying those were good PRs but I did manage to review them. The PRs should have probably been smaller. If you ever made such a PR you better had a really good reason! You know who you are.
 [^2]: It's available in the Rails console via the helper object: `helper.path_to_asset("application.js")`.
 [^3]: You can inspect the manifest file from the Rails console which can be useful for debugging: `Rails.application.assets.load_path.manifest`.
-
-

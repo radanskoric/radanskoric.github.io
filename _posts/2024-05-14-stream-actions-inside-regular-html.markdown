@@ -106,9 +106,8 @@ StreamActions.log = function () {
 ```
 The other approach outlined in [the documentation](https://turbo.hotwired.dev/handbook/streams#custom-actions){:target="_blank"}, using `turbo:before-stream-render` won't work because the tag can be rendered before the listener is attached. To find out why, read on.
 
-> Consider subscribing to get more articles like this one and to get my [printable Turbo 8 cheat-sheet](/cheatsheet):
-> <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
-{: .prompt-info}
+> You might also find my [printable Turbo 8 cheat-sheet](/cheatsheet) useful.
+{: .prompt-tip}
 
 ## How does this feature work?
 

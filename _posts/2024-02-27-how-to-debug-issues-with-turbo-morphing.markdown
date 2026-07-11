@@ -76,9 +76,8 @@ All of the 3 options are useful in some scenarios:
 - **node removal:** This is probably the least useful option because if a node is being completely removed when you expect it in the final output, the most likely cause is that it's missing in the new HTML response. Anything other than that is a bug in the morphing library.
 
 
-> To help you, you can also get my [printable Turbo 8 cheat-sheet](/cheatsheet) by subscribing to my blog:
-> <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
-{: .prompt-info}
+> To help you, you can also download my [printable Turbo 8 cheat-sheet](/cheatsheet).
+{: .prompt-tip}
 
 ## Setting breakpoints inside Turbo source
 

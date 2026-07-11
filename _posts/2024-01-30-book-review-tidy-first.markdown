@@ -47,7 +47,7 @@ This part had me frequently stopping to think about what I just read and how I w
 
 This is also the part to which I expect to return most often. In fact, for example, while writing this I paused to re-read chapter 30.
 
-If you are finding this useful, consider subscribing to not miss future articles and to get my [printable Turbo 8 cheat-sheet](/cheatsheet):
+If you are finding this useful, consider subscribing to not miss future articles and get extra subscriber only articles:
 <script async data-uid="c481ada422" src="https://thoughtful-producer-2834.ck.page/c481ada422/index.js"></script>
 
 ## Who is it for?
