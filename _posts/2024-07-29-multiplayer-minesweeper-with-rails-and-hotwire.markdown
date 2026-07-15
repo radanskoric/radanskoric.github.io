@@ -2,6 +2,7 @@
 layout: post
 title: "Exercise: Multiplayer Minesweeper with Rails and Hotwire"
 date: 2024-07-29
+last_modified_at: 2026-07-15
 categories: experiments
 tags: ruby game exercise rails hotwire minesweeper
 mermaid: true
@@ -177,6 +178,9 @@ This means that every new click record we create will automatically update the `
 
 It's very important that we don't broadcast the new state of the game, but instead broadcast a *refresh* turbo stream action. It doesn't carry data, but simply instructs the browser to refresh the page. This means that we don't have to care about updates from other players coming in the correct order. If refresh actions come out of order we will still fetch the most up to date game state from the server.
 
+> The refresh approach I describe here is the simplest way to implement correct behaviour. However, since I wrote this article I have replaced it with a more sophisticated approach that gives better UX. I've written about it in a followup article: [When broadcasting a Turbo refresh is not enough: faster UX with versioned immediate updates](/articles/turbo-versioned-updates)
+{: .prompt-tip}
+
 ### Making it efficient with caching
 
 Our data model is great for resolving race conditions but it's not very efficient. Whenever we need the current state of the game we have to replay all of the `Click` records. We now resolve that in the view layer by caching the board rendering:
@@ -207,6 +211,3 @@ If you just want to see how I did it, [here is the commit](https://github.com/ra
 [^1]: Mines win by humans losing, because mines are not intelligent, just artificial, see what I did there, wink, wink ... I'll see myself out.
 [^2]: In this case I'm using SQLite3 but the basic mechanism is so basic that it would work with any SQL database.
 [^3]: In [the previous article](/experiments/minesweeper-100-lines-of-clean-ruby) we already coded the game logic to ignore double clicks. Multiple clicks on the same cell can still be stored and they are resolved by the game logic.
-
-
-

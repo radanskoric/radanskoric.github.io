@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "When broadcasting a Turbo refresh is not enough: faster UX with versioned immediate updates"
-date: 2026-07-11
+date: 2026-07-15
 categories: articles
 tags: rails hotwire turbo stream-actions
 mermaid: true
@@ -16,7 +16,7 @@ This post explains the refresh approach, the problem and the fix. The full monty
 
 ## The problem
 
-Let's assume we're implementing a game because that is an example I have handy. My little [MinesVsHumanity](https://github.com/radanskoric/minesvshumanity/) game uses the approach I will explain.
+Let's assume we're implementing a game because that is an example I have handy. My little [MinesVsHumanity](https://github.com/radanskoric/minesvshumanity/){:target="_blank"} game uses the approach I will explain.
 
 The easiest way to make it update live is to broadcast refreshes from the game model:
 
@@ -112,7 +112,7 @@ Notice that we only need to reject stale updates. Eventually, we're going to get
 
 First, we need a way to version our state. In MinesVsHumanity, I use the game's move count.
 
-If you don't have a handy number like that, use [Active Record Optimistic Locking](https://api.rubyonrails.org/classes/ActiveRecord/Locking/Optimistic.html). It automatically provides a perfect version number: `lock_version`. Add it to the main model behind the relevant page, and Rails automatically increments it with each update. The trick is to ensure that all changes propagate to the main model. Use the [`touch` option available on Active Record association helpers](https://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#method-i-belongs_to-label-Options) to achieve this easily. Even if you don't actually need optimistic locking, it's perfectly OK to introduce it just to get a robust version number.
+If you don't have a handy number like that, use [Active Record Optimistic Locking](https://api.rubyonrails.org/classes/ActiveRecord/Locking/Optimistic.html){:target="_blank"}. It automatically provides a perfect version number: `lock_version`. Add it to the main model behind the relevant page, and Rails automatically increments it with each update. The trick is to ensure that all changes propagate to the main model. Use the [`touch` option available on Active Record association helpers](https://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#method-i-belongs_to-label-Options){:target="_blank"} to achieve this easily. Even if you don't actually need optimistic locking, it's perfectly OK to introduce it just to get a robust version number.
 
 With that in place, render the version in a `data-version` attribute whenever you render the relevant element. Always include it, even in the element rendered as part of the replace stream action.
 
