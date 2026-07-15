@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="240 75 690 430" role="img" aria-labelledby="title description">
+  <title id="title">Versioned Turbo updates reject stale messages</title>
+  <desc id="description">A hand-drawn browser keeps version two while rejecting a stale version one update.</desc>
+  <defs>
+    <filter id="pencil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.075" numOctaves="2" seed="17" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.15" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+    <style>
+      .ink {
+        fill: none;
+        stroke: #202124;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .thin {
+        fill: none;
+        stroke: #202124;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .hand {
+        fill: #202124;
+        font-family: "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive;
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="#fff" />
+
+  <g filter="url(#pencil)">
+    <g transform="translate(413 108)">
+      <path d="M5 7 C110 1 359 5 468 10 L463 344 C351 350 112 342 8 348 Z" fill="#fff" stroke="#202124" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round" />
+      <path class="thin" d="M7 58 C118 64 354 55 466 61" />
+      <circle cx="34" cy="34" r="6" fill="#202124" />
+      <circle cx="58" cy="34" r="6" fill="#202124" />
+      <circle cx="82" cy="34" r="6" fill="#202124" />
+      <path d="M125 118 C190 109 302 115 363 122 L357 273 C287 281 192 270 128 277 Z" fill="#e7f4ff" stroke="#202124"
+        stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      <text class="hand" x="244" y="224" font-size="82" font-weight="700" text-anchor="middle">v2</text>
+      <path class="thin" d="M180 303 C224 298 275 304 311 301" />
+      <text class="hand" x="245" y="330" font-size="22" text-anchor="middle">current version</text>
+    </g>
+
+    <g transform="translate(320 344) rotate(-11)">
+      <path d="M5 7 C39 1 105 4 139 9 L135 88 C97 94 40 86 8 91 Z" fill="#fff0ed" stroke="#202124" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round" />
+      <text class="hand" x="72" y="61" font-size="43" font-weight="700" text-anchor="middle">v1</text>
+      <path class="ink" d="M7 93 L137 3" />
+    </g>
+
+    <path class="ink" d="M475 347 L450 327 M477 363 L441 365 M485 380 L460 404" />
+    <text class="hand" x="356" y="478" font-size="25" text-anchor="middle">stale</text>
+
+  </g>
+</svg>

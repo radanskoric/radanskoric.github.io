@@ -5,6 +5,7 @@ date: 2026-07-11
 categories: articles
 tags: rails hotwire turbo stream-actions
 mermaid: true
+image: /assets/img/posts/turbo-versioned-updates.png
 ---
 
 The simplest way to make a page collaborative with Hotwire and Rails is to subscribe to changes and broadcast a refresh when relevant models update.
