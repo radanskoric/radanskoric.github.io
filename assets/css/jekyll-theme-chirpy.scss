@@ -1,7 +1,11 @@
 ---
 ---
 
-@import 'main';
+@import 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
 
 /* append your custom style below */
 
@@ -49,4 +53,20 @@
 
 #sidebar .webring-nav .webring-btn:hover {
   background-color: var(--sidebar-hover-bg);
+}
+
+/* These classes are trimmed from Chirpy's production Bootstrap bundle. */
+.alert-info {
+  --bs-alert-color: #055160;
+  --bs-alert-bg: #cff4fc;
+  --bs-alert-border-color: #9eeaf9;
+  --bs-alert-link-color: #055160;
+}
+
+.convertkit-form {
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+  padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
 }

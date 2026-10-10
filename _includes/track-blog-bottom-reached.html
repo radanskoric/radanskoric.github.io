@@ -4,7 +4,9 @@
   const element = document.getElementById("postBottom");
   const reportContentBottomReached = function() {
     if (element && element.getBoundingClientRect().top < window.innerHeight) {
-      plausible("Blog bottom reached");
+      if (typeof window.plausible === "function") {
+        window.plausible("Blog bottom reached");
+      }
       this.removeEventListener("scroll", reportContentBottomReached);
     }
   };
