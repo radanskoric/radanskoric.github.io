@@ -1,6 +1,7 @@
 ---
 name: extract-post-blurb
 description: Read the post and construct a short blurb to share on social media and other channels.
+disable-model-invocation: true
 ---
 
 Read the post and construct a short blurb to share on social media, RubyFlow, forums and other channels.
