@@ -1,6 +1,7 @@
 ---
 ---
 
+/* prettier-ignore */
 @use 'main
 {%- if jekyll.environment == 'production' -%}
   .bundle
@@ -9,12 +10,17 @@
 
 /* append your custom style below */
 
-.floating-image {
+/* Chirpy keeps custom image classes on the image; size its floating wrapper. */
+.img-link:has(> .floating-image) {
   width: 50%;
 }
 
+.img-link > .floating-image {
+  width: 100%;
+}
+
 @media (max-width: 400px) {
-  .floating-image {
+  .img-link:has(> .floating-image) {
     width: auto;
     max-width: 400px;
   }
