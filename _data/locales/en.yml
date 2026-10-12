@@ -1,0 +1,4 @@
+tabs:
+  talks: Talks
+  # Chirpy's browser-title lookup uses the lowercased page title.
+  "turbo 8 cheat-sheet": Turbo 8 Cheat-sheet
