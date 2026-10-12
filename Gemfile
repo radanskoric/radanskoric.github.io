@@ -9,7 +9,7 @@ group :development, :test do
   gem "html-proofer", "~> 5.2"
 
   gem "pry", "~> 0.16.0"
-  gem "pry-doc", require: false
+  gem "pry-doc", "~> 1.7", require: false
 
   # The whole section below is gems for tests accompanying blog posts.
   # The idea is to test the code that appears in the posts so I know
@@ -19,11 +19,11 @@ group :development, :test do
   # For AR related blog posts.
   gem "activerecord", "~> 8.1"
   gem "sqlite3", "~> 2.9"
-  gem 'concurrent-ruby', '~> 1.3'
+  gem "concurrent-ruby", "~> 1.3"
 end
 
 group :jekyll_plugins do
-  gem "commands", "0.1.0", path: "gems/commands"
+  gem "commands", "~> 0.1.0", path: "gems/commands"
 end
 
 # === Various platform normalizations ===
