@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <title>New Craft — Code forge</title>
+  <desc>Curly braces surround an amber spark above a charcoal anvil.</desc>
+  <g id="brace">
+    <path fill="#374151" d="M42 6H32C22 6 18 12 18 22v4c0 5-3 7-10 7v10c7 0 10 2 10 7v4c0 10 4 16 14 16h10V58H32c-2 0-3-1-3-4v-4c0-6-2-10-7-12 5-2 7-6 7-12v-4c0-3 1-4 3-4h10z"/>
+    <path fill="#6b7280" d="M42 6H32C22 6 18 12 18 22v4c0 5-3 7-10 7l14 5c5-2 7-6 7-12v-4c0-3 1-4 3-4h10z"/>
+  </g>
+  <use href="#brace" transform="translate(128 0) scale(-1 1)"/>
+  <path fill="#f59e0b" d="m64 9 7 20 20 8-20 7-7 20-7-20-20-7 20-8z"/>
+  <path fill="#fde68a" d="m64 9 7 20-7 8-7-8z"/>
+  <path fill="#374151" d="M8 72h112v14H94L78 99v8l18 13H34l18-13v-8L32 88H22z"/>
+  <path fill="#6b7280" d="M8 72h112L96 82H28z"/>
+  <path fill="#111827" d="M96 82h24v4H94L78 99v8l18 13H64V98z"/>
+</svg>
