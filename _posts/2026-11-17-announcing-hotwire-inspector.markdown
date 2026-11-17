@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing Hotwire Inspector"
-date: 2026-11-16
+date: 2026-11-17
 categories: news
 tags: hotwire turbo stimulus tools
 image: /assets/img/posts/hotwire-inspector-icon.svg
