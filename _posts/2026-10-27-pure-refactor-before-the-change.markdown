@@ -4,11 +4,14 @@ title: "\"Make the change easy, then make the easy change\" is a great way to co
 date: 2026-10-27
 categories: articles
 tags: new-craft ai-coding refactoring
+image: /assets/img/posts/pure-refactor-before-the-change.svg
 ---
 
 I firmly believe that we still need to read some of the code.[^1] It's suboptimal to read all of the code, but I consider it irresponsible to read none of it. I won't explain why now because that would fill several more articles. I just want to share this upfront because it clarifies where I'm coming from.
 
 But I am trying to be smart about it[^2], and I've found the quote in the title very useful: *"Make the change easy, then make the easy change"*.
+
+![Tangled code rearranged to make a new feature just a slot in.](/assets/img/posts/pure-refactor-before-the-change.svg){: .image-two-thirds }
 
 ## Separate refactoring from new behaviour
 

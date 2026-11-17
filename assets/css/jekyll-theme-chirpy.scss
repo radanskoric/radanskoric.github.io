@@ -14,6 +14,14 @@
 
 /* append your custom style below */
 
+#post-list .preview-img {
+  background: none;
+
+  img {
+    object-fit: contain;
+  }
+}
+
 .topic {
   display: flex;
   align-items: center;
@@ -67,6 +75,19 @@
 }
 
 /* Chirpy keeps custom image classes on the image; size its floating wrapper. */
+.img-link:has(> .image-two-thirds) {
+  width: 66%;
+}
+
+.image-two-thirds {
+  width: 66%;
+  height: auto;
+}
+
+.img-link > .image-two-thirds {
+  width: 100%;
+}
+
 .img-link:has(> .floating-image) {
   width: 50%;
 }

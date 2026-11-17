@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 30 1000 330" role="img" aria-labelledby="title description">
+  <title id="title">Make the change easy, then make the easy change</title>
+  <desc id="description">Tangled blue code blocks are rearranged into a tidy structure with an empty slot, preserving behaviour. A small green feature then fits neatly into that slot.</desc>
+  <defs>
+    <filter id="pencil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.075" numOctaves="2" seed="17" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.15" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+    <style>
+      .ink, .block, .slot, .feature { stroke: #202124; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .ink { fill: none; }
+      .block { fill: #e7f4ff; }
+      .slot { fill: none; stroke: #9a9b9d; stroke-width: 2.5; stroke-dasharray: 7 9; }
+      .feature { fill: #e5f5df; }
+    </style>
+    <g id="tidy-code">
+      <path class="ink" d="M46 62 V89 M46 148 V177 M88 34 H129" />
+      <path class="block" d="M3 3 Q47 -1 90 4 L88 63 Q43 67 2 62 Z" />
+      <path class="block" d="M2 88 Q48 84 89 89 L91 150 Q42 153 3 148 Z" />
+      <path class="block" d="M128 4 Q171 0 215 3 L212 65 Q171 62 126 66 Z" />
+      <path class="block" d="M3 175 Q48 179 91 175 L89 237 Q47 240 2 235 Z" />
+    </g>
+  </defs>
+  <rect width="1000" height="460" fill="#fff" />
+  <g filter="url(#pencil)">
+    <!-- The same four pieces, before and after the refactoring. -->
+    <g transform="translate(60 78)">
+      <path class="ink" d="M48 39 C234 20 190 221 50 206 C-28 196 224 60 173 118 C117 175 -34 51 48 39 M173 118 C253 169 105 270 50 206" />
+      <path class="block" d="M6 4 L94 12 L88 72 L0 65 Z" />
+      <path class="block" d="M126 87 L213 79 L219 141 L132 149 Z" />
+      <path class="block" d="M7 174 L95 180 L90 241 L2 234 Z" />
+      <path class="block" d="M119 175 L207 169 L211 230 L124 237 Z" />
+    </g>
+    <path class="ink" d="M304 195 Q331 189 359 195 M344 180 L361 195 L344 210" />
+    <g transform="translate(390 78)">
+      <use href="#tidy-code" />
+      <path class="slot" d="M128 89 L214 89 L214 237 L127 237 Z" />
+    </g>
+    <path class="ink" d="M634 195 Q661 189 689 195 M674 180 L691 195 L674 210" />
+    <g transform="translate(720 78)">
+      <path class="ink" d="M171 63 V90" />
+      <use href="#tidy-code" />
+      <path class="feature" d="M128 89 Q174 85 214 90 L212 237 Q172 240 127 235 Z" />
+      <path class="ink" d="M152 162 L166 177 L193 145" />
+    </g>
+  </g>
+</svg>
